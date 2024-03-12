@@ -210,8 +210,7 @@
     },
     "mainEntity_of" : {
       "@reverse" : "schema:mainEntity",
-      "@type" : "@id",
-      ""
+      "@type" : "@id"
     }
   }
 }

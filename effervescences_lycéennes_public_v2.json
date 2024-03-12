@@ -34,9 +34,9 @@
   ],
   "mainTitle" : "Éffervescences lycéennes.",
   "title" : "#KeyTitle",
-  "format" : "Medium:Print",
+  "format" : "medium:Print",
   "identifier" : "0247-0624",
-  "type" : "http://marc21rdf.info/terms/formofmaterial#a",
+  "type_dct" : "http://marc21rdf.info/terms/formofmaterial#a",
   "issn_bibo" : "0247-0624",
   "isPartOf" : {
     "id" : "resource/ISSN-L/0247-0624",
@@ -46,7 +46,7 @@
   "name" : [ "Éffervescences lycéennes.", "Éffervescences lycéennes" ],
   "publication" : {
     "id" : "#ReferencePublicationEvent",
-    "@type" : "schema:PublicationEvent",
+    "type" : "schema:PublicationEvent",
     "location" : {
       "id" : "http://id.loc.gov/vocabulary/countries/fr",
       "label" : "France"
