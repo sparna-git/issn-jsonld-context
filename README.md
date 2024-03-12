@@ -22,12 +22,18 @@ This is the case for :
 
 ### Controlled vocabularies namespaces
 
-We do not follow the naming convention used in the application profile. For consistency we set the keys to :
+We follow the naming convention used in the application profile. :
 
 ```
-    "IdentifierStatus":"http://issn.org/vocabularies/IdentifierStatus#",
-    "RecordStatus":"http://issn.org/vocabularies/RecordStatus#",
-    "Medium":"http://issn.org/vocabularies/Medium#",
+    "idStatus":"http://issn.org/vocabularies/IdentifierStatus#",
+    "recordStatus":"http://issn.org/vocabularies/RecordStatus#",
+    "medium":"http://issn.org/vocabularies/Medium#",
+```
+
+We add :
+
+```
+    "issnCenter":"http://issn.org/organization/ISSNCenter#",
 ```
 
 ## TODO
@@ -44,3 +50,6 @@ Right now we specify it as "@id"
 
 Should we declare controlled list values in the context ?
 
+### Should we declare additional namespaces for controlled vocabularies ?
+
+e.g. `http://marc21rdf.info/terms/formofmaterial#a`, `http://id.loc.gov/vocabulary/countries/fr` ?

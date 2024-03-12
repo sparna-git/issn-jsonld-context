@@ -1,8 +1,5 @@
 {
   "@context": {
-    "@base":"http://issn.org/",
-
-
     "id":"@id",
     "type":"@type",
 
@@ -28,14 +25,10 @@
     "xsd":"http://www.w3.org/2001/XMLSchema#",
 
     
-    "IdentifierStatus":"http://issn.org/vocabularies/IdentifierStatus#",
-    "RecordStatus":"http://issn.org/vocabularies/RecordStatus#",
-    "Medium":"http://issn.org/vocabularies/Medium#",
-
-
-    "Valid" : "IdentifierStatus:Valid",
-    "Register" : "RecordStatus:Register",
-
+    "idStatus":"http://issn.org/vocabularies/IdentifierStatus#",
+    "recordStatus":"http://issn.org/vocabularies/RecordStatus#",
+    "medium":"http://issn.org/vocabularies/Medium#",
+    "issnCenter":"http://issn.org/organization/ISSNCenter#",
 
     "carrier" : {
       "@id" : "bf:carrier",
@@ -214,6 +207,11 @@
     "status" : {
       "@id" : "bf:status",
       "@type" : "@id"
+    },
+    "mainEntity_of" : {
+      "@reverse" : "schema:mainEntity",
+      "@type" : "@id",
+      ""
     }
   }
 }
