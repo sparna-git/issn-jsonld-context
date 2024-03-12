@@ -83,10 +83,12 @@ e.g. `http://marc21rdf.info/terms/formofmaterial#a`, `http://id.loc.gov/vocabula
 
 Not sure we really need this, this will hide a lot of URI. Maybe the URIs should be kept in clear ?
 
-
 ### check values of dct:spatial on Organization
 
 Is it using URIs ?
+
+
+## Application Profile document update
 
 ### Update the use of bibschema in the application profile
 
@@ -114,3 +116,7 @@ xsd:number is wrong and should be replaced by xsd:decimal
 ### reference to issn: namespace
 
 issn: namespace should be replaced by issnprop: namespace
+
+### memberOf is not in the application profile
+
+nature exemple uses memberOf on classification information, but this is not in the AP table, not in the diagrams. The mapping table contains it, but with visible errors in the URIs. Should it be added to the AP ?

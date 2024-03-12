@@ -398,6 +398,10 @@
     },
 
 
+    "memberOf" : {
+      "@id" : "http://purl.org/dc/terms/memberOf",
+      "@type" : "@id"
+    },
     "value" : {
       "@id" : "rdf:value",
       "@type" : "xsd:string"
@@ -504,6 +508,6 @@
     "mainEntity" : {
       "@id" : "schema:mainEntity",
       "@type" : "@id"
-    },
+    }
   }
 }
