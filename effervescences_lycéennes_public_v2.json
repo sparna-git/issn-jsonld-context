@@ -59,7 +59,7 @@
     "id" : "#Record",
     "type" : "schema:CreativeWork",    
     "status" : "recordStatus:Register",
-    "modified" : "20040609165600.0",
+    "modified" : "2004-06-09",
     "wasAttributedTo" : {
       "id" : "issnCenter:_7",
       "type" : "schema:Organization"

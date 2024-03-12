@@ -481,5 +481,29 @@
       "@type" : "xsd:string"
     },
     
+    "creativeWorkStatus" : {
+      "@id" : "schema:creativeWorkStatus",
+      "@type" : "xsd:string"
+    },
+    "description" : {
+      "@id" : "schema:description",
+      "@type" : "xsd:string"
+    },
+    "abstract" : {
+      "@id" : "schema:abstract",
+      "@type" : "xsd:string"
+    },
+    "dateModified" : {
+      "@id" : "schema:dateModified",
+      "@type" : "xsd:date"
+    },
+    "temporalCoverage" : {
+      "@id" : "schema:temporalCoverage",
+      "@type" : "xsd:string"
+    },
+    "mainEntity" : {
+      "@id" : "schema:mainEntity",
+      "@type" : "@id"
+    },
   }
 }
