@@ -89,11 +89,7 @@
       "@id" : "bfrel:isb",
       "@type" : "@id"
     },
-    "issn" : {
-      "@id" : "bibo:issn",
-      "@type" : "xsd:string"
-    },
-    "issn" : {
+    "issn_bibo" : {
       "@id" : "bibo:issn",
       "@type" : "xsd:string"
     },
@@ -120,6 +116,98 @@
     "hasCancelledISSN-L" : {
       "@id" : "issnprop:hasCancelledISSN-L",
       "@type" : "xsd:string"
+    },
+    "hasIncorrectISSN" : {
+      "@id" : "issnprop:hasIncorrectISSN",
+      "@type" : "xsd:string"
+    },
+    "M00806" : {
+      "@id" : "m2100X:M00806",
+      "@type" : "@id"
+    },
+    "M008CR22" : {
+      "@id" : "m2100X:M008CR22",
+      "@type" : "@id"
+    },
+    "M008CR23" : {
+      "@id" : "m2100X:M008CR23",
+      "@type" : "@id"
+    },
+    "M008CR33" : {
+      "@id" : "m2100X:M008CR33",
+      "@type" : "@id"
+    },
+    "M3620_a" : {
+      "@id" : "m213xx:M3620_a",
+      "@type" : "xsd:string"
+    },
+    "M3620_z" : {
+      "@id" : "m213xx:M3620_z",
+      "@type" : "xsd:string"
+    },
+    "M3621_a" : {
+      "@id" : "m213xx:M3621_a",
+      "@type" : "xsd:string"
+    },
+    "M3621_z" : {
+      "@id" : "m213xx:M3621_z",
+      "@type" : "xsd:string"
+    },
+    "about" : {
+      "@id" : "schema:about",
+      "@type" : "@id"
+    },
+    "alternateName" : {
+      "@id" : "schema:alternateName",
+      "@type" : "xsd:string"
+    },
+    "contributor" : {
+      "@id" : "schema:contributor",
+      "@type" : "@id"
+    },
+    "endDate" : {
+      "@id" : "schema:endDate",
+      "@type" : "xsd:string"
+    },
+    "inLanguage" : {
+      "@id" : "schema:inLanguage",
+      "@type" : "@id"
+    },
+    "isPartOf" : {
+      "@id" : "schema:isPartOf",
+      "@type" : "@id"
+    },
+    "issn_schema" : {
+      "@id" : "schema:issn",
+      "@type" : "xsd:string"
+    },
+    "keywords" : {
+      "@id" : "schema:keywords",
+      "@type" : "xsd:string"
+    },
+    "name" : {
+      "@id" : "schema:name",
+      "@type" : "xsd:string"
+    },
+    "publication" : {
+      "@id" : "schema:publication",
+      "@type" : "@id"
+    },
+    "publisher" : {
+      "@id" : "schema:publisher",
+      "@type" : "@id"
+    },
+    "startDate" : {
+      "@id" : "schema:startDate",
+      "@type" : "xsd:string"
+    },
+    "url" : {
+      "@id" : "schema:url",
+      "@type" : "xsd:string"
+    },
+    "subjectOf" : {
+      "@id" : "schema:subjectOf",
+      "@type" : "@id"
     },
 
 
