@@ -36,6 +36,16 @@ We add :
     "issnCenter":"http://issn.org/organization/ISSNCenter#",
 ```
 
+### use of indexing
+
+```
+    "identifiedBy" : {
+      "@id" : "bf:identifiedBy",
+      "@type" : "@id",
+      "@container": "@id"
+    },
+```
+
 ## TODO
 
 ### accrualPeriodicity

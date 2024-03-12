@@ -10,28 +10,25 @@
     "bf:Instance",
     "schema:Periodical" 
   ],
-  "identifiedBy" : [
-      {
-        "id" : "#KeyTitle",
-        "type" : [ 
+  "identifiedBy" : {
+    "#KeyTitle" : {
+      "type" : [ 
           "bf:Identifier",
           "bf:KeyTitle"
-        ],
-        "value" : "Éffervescences lycéennes"
-      },
-      {
-        "id" : "#ISSN-L",
-        "type" : "bf:IssnL",
-        "status" : "idStatus:Valid",
-        "value" : "0247-0624"
-      },
-      {
-        "id" : "#ISSN",
-        "type" : "bf:Issn",
-        "status" : "idStatus:Valid",
-        "value" : "0247-0624"
-      }
-  ],
+      ],
+      "value" : "Éffervescences lycéennes"
+    },
+    "#ISSN-L" : {
+      "type" : "bf:IssnL",
+      "status" : "idStatus:Valid",
+      "value" : "0247-0624"
+    },
+    "#ISSN" : {
+      "type" : "bf:Issn",
+      "status" : "idStatus:Valid",
+      "value" : "0247-0624"
+    }
+  },
   "mainTitle" : "Éffervescences lycéennes.",
   "title" : "#KeyTitle",
   "format" : "medium:Print",

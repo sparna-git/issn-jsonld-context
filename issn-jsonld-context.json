@@ -48,7 +48,8 @@
     },
     "identifiedBy" : {
       "@id" : "bf:identifiedBy",
-      "@type" : "@id"
+      "@type" : "@id",
+      "@container": "@id"
     },
     "mainTitle" : {
       "@id" : "bf:mainTitle",
