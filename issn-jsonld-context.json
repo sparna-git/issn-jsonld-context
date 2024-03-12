@@ -1,0 +1,45 @@
+{
+  "@context": {
+    "@base":"http://issn.org/",
+
+
+    "id":"@id",
+    "rdf:type":"@type",
+
+
+    "bf":"http://id.loc.gov/ontologies/bibframe/",
+    "bfrel":"http://id.loc.gov/vocabulary/relators/",
+    "bfmarc":"http://bibfra.me/vocab/marc",
+    "bibo":"http://purl.org/ontology/bibo/",
+    "bibschema":"https://bib.schema.org/",  
+    "dc":"http://purl.org/dc/dcam",
+    "dcam":"http://purl.org/dc/dcam",
+    "dct":"http://purl.org/dc/terms/",
+    "dctype":"http://purl.org/dc/dcmitype/",
+    "gn":"http://www.geonames.org/ontology#",
+    "issnprop":"http://issn.org/vocabularies/properties/",
+    "m2100x":"http://marc21rdf.info/elements/00X/",
+    "m213xx":"http://marc21rdf.info/elements/3XX/",
+    "m21terms":"http://marc21rdf.info/terms/",
+    "prov":"http://www.w3.org/ns/prov#",
+    "rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs":"http://www.w3.org/2000/01/rdf-schema#",
+    "schema":"http://schema.org/",
+    "xsd":"http://www.w3.org/2001/XMLSchema#",
+
+    
+    "IdentifierStatus":"http://issn.org/vocabularies/IdentifierStatus#",
+    "RecordStatus":"http://issn.org/vocabularies/RecordStatus#",
+    "Medium":"http://issn.org/vocabularies/Medium#",
+
+
+    "Valid" : "IdentifierStatus:Valid",
+    "Register" : "RecordStatus:Register",
+
+
+    "carrier" : {
+      "@id" : "bf:carrier",
+      "@type" : "@id"
+    }
+  }
+}
