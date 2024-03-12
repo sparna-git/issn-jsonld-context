@@ -1,139 +1,193 @@
 {
   "@context": {
     "@import": "https://raw.githubusercontent.com/sparna-git/issn-jsonld-context/main/issn-jsonld-context.json",
-    "@base": "http://issn.org/resource/ISSN/0028-0836",
-    "resource": "http://issn.org/resource/"
+    "@base": "http://issn.org/resource/ISSN/0028-0836"
   },
 
-  "@graph" : [ {
-    "@id" : "_:b1",
-    "memberOf" : "http://purl.org/dc/terms/DDC",
+  "id" : "",
+  "regularity" : "http://marc21rdf.info/terms/continuingreg#r",
+  "absorbed" : [ "resource:ISSN/0300-8746", "resource:ISSN/0090-0028" ],
+  "classification" : {
+    "type" : "bf:ClassificationDdc",
+    "memberOf" : "dct:DDC",
     "value" : "505"
-  }, {
-    "@id" : "http://id.loc.gov/vocabulary/countries/enk",
-    "label" : "England"
-  }, {
-    "@id" : "organization/ISSNCenter#_2",
-    "@type" : "http://schema.org/Organization"
-  }, {
-    "@id" : "resource/ISSN-L/0028-0836",
-    "identifiedBy" : "resource/ISSN/0028-0836#ISSN-L"
-  }, {
-    "id" : "",
-    "regularity" : "http://marc21rdf.info/terms/continuingreg#r",
-    "absorbed" : [ "resource:ISSN/0300-8746", "resource:ISSN/0090-0028" ],
-    "classification" : {
-      "type" : "bf:ClassificationDdc",
-      "memberOf" : "dct:DDC",
-      "value" : "505"
+  },
+  "identifiedBy" : {
+    "#KeyTitle" : {
+      "type" : [ 
+        "bf:Identifier",
+        "bf:KeyTitle"
+      ],
+      "value" : "Nature (London)"
     },
-    "identifiedBy" : 
-
-
-
-    [ "resource/ISSN/0028-0836#KeyTitle", "resource/ISSN/0028-0836#CODEN", "resource/ISSN/0028-0836#ISSN-L", "resource/ISSN/0028-0836#AbbreviatedKeyTitle" ],
-    "mainTitle" : "Nature.",
-    "otherPhysicalFormat" : "resource/ISSN/1476-4687",
-    "provisionActivityStatement" : [ "London Macmillan 1869-", "London Springer Nature Limited", "London Nature Publishing Group" ],
-    "supplementTo" : [ "resource/ISSN/1746-4366", "resource/ISSN/0266-6561" ],
-    "title" : [ "resource/ISSN/0028-0836#AbbreviatedKeyTitle", "resource/ISSN/0028-0836#KeyTitle" ],
-    "hasCancelledISSN" : "0302-2889#ISSN",
-    "M00806" : "http://marc21rdf.info/terms/alltyp#c",
-    "M008CR22" : "http://marc21rdf.info/terms/continuingori##",
-    "M008CR33" : "http://marc21rdf.info/terms/continuingscr#23a",
-    "format" : "vocabularies/medium#Print",
-    "relation" : [ "resource/ISSN/0266-6561", "resource/ISSN/1072-8368", "resource/ISSN/0090-0028", "resource/ISSN/0300-8746", "resource/ISSN/1746-4366" ],
-    "accrualPeriodicity" : "http://purl.org/cld/freq/weekly",
-    "isFormatOf" : "resource/ISSN/1476-4687",
-    "spatial" : "http://id.loc.gov/vocabulary/countries/enk",
-    "type" : "http://marc21rdf.info/terms/formofmaterial#a",
-    "about" : "http://udcdata.info/025403",
-    "alternateName" : "Nature (Lond.)",
-    "endDate" : "9999",
-    "inLanguage" : "http://id.loc.gov/vocabulary/iso639-2/eng",
-    "isPartOf" : "resource/ISSN-L/0028-0836",
-    "keywords" : "MATHEMATICS. NATURAL SCIENCES",
-    "name" : [ "Nature.", "Nature (London)" ],
-    "publication" : [ "resource/ISSN/0028-0836#EarliestPublicationEvent", "resource/ISSN/0028-0836#ReferencePublicationEvent", "resource/ISSN/0028-0836#InterveningPublicationEvent[1]", "resource/ISSN/0028-0836#LatestPublicationEvent" ],
-    "publisher" : [ "resource/ISSN/0028-0836#Publisher-Macmillan", "resource/ISSN/0028-0836#Publisher-Nature_Publishing_Group", "resource/ISSN/0028-0836#Publisher-Springer_Nature_Limited" ],
-    "startDate" : "1869"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#AbbreviatedKeyTitle",
-    "@type" : [ "http://id.loc.gov/ontologies/bibframe/Identifier", "http://id.loc.gov/ontologies/bibframe/AbbreviatedTitle" ],
-    "value" : "Nature (Lond.)"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#CODEN",
-    "@type" : "http://id.loc.gov/ontologies/bibframe/Coden",
-    "value" : "NATUAS"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#EarliestPublicationEvent",
-    "@type" : "http://schema.org/PublicationEvent",
-    "publishedBy" : "resource/ISSN/0028-0836#Publisher-Macmillan",
-    "temporal" : "1869-",
-    "location" : "resource/ISSN/0028-0836#PublicationPlace-London"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#ISSN-L",
-    "@type" : "http://id.loc.gov/ontologies/bibframe/IssnL",
-    "status" : "vocabularies/IdentifierStatus#Valid",
-    "value" : "0028-0836"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#InterveningPublicationEvent[1]",
-    "@type" : "http://schema.org/PublicationEvent",
-    "publishedBy" : "resource/ISSN/0028-0836#Publisher-Nature_Publishing_Group",
-    "location" : "resource/ISSN/0028-0836#PublicationPlace-London"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#KeyTitle",
-    "@type" : [ "http://id.loc.gov/ontologies/bibframe/Identifier", "http://id.loc.gov/ontologies/bibframe/KeyTitle" ],
-    "value" : "Nature (London)"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#LatestPublicationEvent",
-    "@type" : "http://schema.org/PublicationEvent",
-    "publishedBy" : "resource/ISSN/0028-0836#Publisher-Springer_Nature_Limited",
-    "location" : "resource/ISSN/0028-0836#PublicationPlace-London"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#PublicationPlace-London",
-    "@type" : "http://schema.org/Place",
-    "geo" : "resource/ISSN/0028-0836#PublicationPlace-London-Geocoordinates",
-    "label" : "London"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#PublicationPlace-London-Geocoordinates",
-    "@type" : "http://schema.org/GeoCoordinates"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#PublicationPlace-London_:",
-    "geo" : "resource/ISSN/0028-0836#PublicationPlace-London_:-Geocoordinates",
-    "sameAs" : "http://sws.geonames.org/2643743/"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#PublicationPlace-London_:-Geocoordinates",
-    "@type" : "http://schema.org/GeoCoordinates",
-    "addressCountry" : "United Kingdom",
-    "latitude" : "51.50853",
-    "longitude" : "-0.12574"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#Publisher-Macmillan",
-    "@type" : "http://schema.org/Organization",
-    "name" : "Macmillan"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#Publisher-Nature_Publishing_Group",
-    "@type" : "http://schema.org/Organization",
-    "name" : "Nature Publishing Group"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#Publisher-Springer_Nature_Limited",
-    "@type" : "http://schema.org/Organization",
-    "name" : "Springer Nature Limited"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#Record",
-    "@type" : "http://schema.org/CreativeWork",
-    "modified" : "20230915141218.827752",
-    "mainEntity" : "resource/ISSN/0028-0836",
-    "wasAttributedTo" : "organization/ISSNCenter#_2"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#RecordCreation",
-    "@type" : "http://www.w3.org/ns/prov#Activity",
-    "generated" : [ "resource/ISSN/0028-0836#AbbreviatedKeyTitle", "resource/ISSN/0028-0836#KeyTitle", "resource/ISSN/0028-0836#ISSN-L", "resource/ISSN/0028-0836#ISSN", "resource/ISSN/0028-0836#Record" ],
-    "wasAssociatedWith" : "http://www.w3.org/ns/ISSNCentre#BO"
-  }, {
-    "@id" : "resource/ISSN/0028-0836#ReferencePublicationEvent",
-    "@type" : "http://schema.org/PublicationEvent",
-    "location" : "http://id.loc.gov/vocabulary/countries/enk"
-  } ]
+    "#CODEN" : {
+      "type" : "bf:Coden",
+      "value" : "NATUAS"
+    },
+    "#ISSN-L" : {
+      "type" : "bf:IssnL",
+      "status" : "idStatus:Valid",
+      "value" : "0028-0836"
+    },
+    "#ISSN" : {
+      "type" : "bf:Issn",
+      "status" : "idStatus:Valid",
+      "value" : "0028-0836"
+    },
+    "#AbbreviatedKeyTitle" : {
+      "type" : [ 
+        "bf:Identifier",
+        "bf:AbbreviatedTitle" 
+      ],
+      "value" : "Nature (Lond.)"
+    }
+  },
+  "mainTitle" : "Nature.",
+  "otherPhysicalFormat" : "resource:ISSN/1476-4687",
+  "provisionActivityStatement" : [ 
+    "London Macmillan 1869-",
+    "London Springer Nature Limited",
+    "London Nature Publishing Group"
+  ],
+  "supplementTo" : [ 
+    "resource:ISSN/1746-4366",
+    "resource:ISSN/0266-6561"
+  ],
+  "title" : [ 
+    "#AbbreviatedKeyTitle",
+    "#KeyTitle"
+  ],
+  "hasCancelledISSN" : "resource:ISSN/0302-2889#ISSN",
+  "M00806" : "http://marc21rdf.info/terms/alltyp#c",
+  "M008CR22" : "http://marc21rdf.info/terms/continuingori##",
+  "M008CR33" : "http://marc21rdf.info/terms/continuingscr#23a",
+  "format" : "medium:Print",
+  "relation" : [ 
+    "resource:ISSN/0266-6561",
+    "resource:ISSN/1072-8368",
+    "resource:ISSN/0090-0028",
+    "resource:ISSN/0300-8746",
+    "resource:ISSN/1746-4366"
+  ],
+  "accrualPeriodicity" : "http://purl.org/cld/freq/weekly",
+  "isFormatOf" : "resource:ISSN/1476-4687",
+  "spatial" : {
+    "id" : "http://id.loc.gov/vocabulary/countries/enk",
+    "label" : "England"
+  },
+  "type_dct" : "http://marc21rdf.info/terms/formofmaterial#a",
+  "about" : "http://udcdata.info/025403",
+  "alternateName" : "Nature (Lond.)",
+  "endDate" : "9999",
+  "inLanguage" : "http://id.loc.gov/vocabulary/iso639-2/eng",
+  "isPartOf" : {
+    "id" : "resource:ISSN-L/0028-0836",
+    "identifiedBy" : "#ISSN-L"
+  },
+  "keywords" : "MATHEMATICS. NATURAL SCIENCES",
+  "name" : [ 
+    "Nature.",
+    "Nature (London)"
+  ],
+  "publication" : [ 
+    {
+      "id" : "#EarliestPublicationEvent",
+      "type" : "schema:PublicationEvent",
+      "publishedBy" : {
+        "id" : "#Publisher-Macmillan",
+        "type" : "schema:Organization",
+        "name" : "Macmillan"
+      },
+      "temporal" : "1869-",
+      "location" : {
+        "id" : "#PublicationPlace-London",
+        "type" : "schema:Place",
+        "geo" : {
+          "id" : "#PublicationPlace-London-Geocoordinates",
+          "type" : "schema:GeoCoordinates",
+          "addressCountry" : "United Kingdom",
+          "latitude" : "51.50853",
+          "longitude" : "-0.12574"
+        },
+        "label" : "London"
+      }
+    },
+    {
+      "id" : "#ReferencePublicationEvent",
+      "type" : "schema:PublicationEvent",
+      "location" : {
+        "id" : "http://id.loc.gov/vocabulary/countries/enk",
+        "label" : "England"
+      }
+    },
+    {
+      "id" : "#InterveningPublicationEvent[1]",
+      "type" : "schema:PublicationEvent",
+      "publishedBy" : {
+        "id" : "#Publisher-Nature_Publishing_Group",
+        "type" : "schema:Organization",
+        "name" : "Nature Publishing Group"
+      },
+      "location" : {
+        "id" : "#PublicationPlace-London",
+        "type" : "schema:Place",
+        "label" : "London",
+        "geo" : {
+          "id" : "#PublicationPlace-London-Geocoordinates",
+          "type" : "schema:GeoCoordinates",
+          "addressCountry" : "United Kingdom",
+          "latitude" : "51.50853",
+          "longitude" : "-0.12574"
+        }
+      }
+    },
+    {
+      "id" : "#LatestPublicationEvent",
+      "@type" : "schema:PublicationEvent",
+      "publishedBy" : {
+        "id" : "#Publisher-Springer_Nature_Limited",
+        "type" : "schema:Organization",
+        "name" : "Springer Nature Limited"
+      },
+      "location" : {
+        "id" : "#PublicationPlace-London",
+        "type" : "schema:Place",
+        "label" : "London",
+        "geo" : {
+          "id" : "#PublicationPlace-London-Geocoordinates",
+          "type" : "schema:GeoCoordinates",
+          "addressCountry" : "United Kingdom",
+          "latitude" : "51.50853",
+          "longitude" : "-0.12574"
+        }        
+      }
+    }
+  ],
+  "publisher" : [ 
+    "#Publisher-Macmillan",
+    "#Publisher-Nature_Publishing_Group",
+    "#Publisher-Springer_Nature_Limited"
+  ],
+  "startDate" : "1869", 
+  "mainEntity_of" : {
+    "id" : "#Record",
+    "type" : "schema:CreativeWork",
+    "modified" : "2023-09-15",
+    "wasAttributedTo" : {
+      "id" : "issnCenter:_2",
+      "type" : "schema:Organization"
+    },
+    "generated_by" : {
+      "id" : "#RecordCreation",
+      "type" : "prov:Activity",
+      "generated" : [ 
+        "#AbbreviatedKeyTitle",
+        "#KeyTitle",
+        "#ISSN-L",
+        "#ISSN",
+        "#Record"
+      ],
+      "wasAssociatedWith" : "http://www.w3.org/ns/ISSNCentre#BO"
+    }
+  }
 }

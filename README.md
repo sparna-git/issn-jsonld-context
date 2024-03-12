@@ -4,6 +4,17 @@
 
 We want to hide json-ld specific keys. `@id` is remapped to `id`, `@type` is remapped to `type`.
 
+### @base declaration
+
+Notices should declare their base URI to the record URI, e.g.
+
+```
+"@context": {
+    "@import": "https://raw.githubusercontent.com/sparna-git/issn-jsonld-context/main/issn-jsonld-context.json",
+    "@base": "http://issn.org/resource/ISSN/0028-0836"
+  },
+```
+
 ### sections
 
 Sections in the context files are separated by 2 newlines for readability.
@@ -63,7 +74,27 @@ This forces us to repeat the ISSN-L inside the identifierBy of the ISSN-L, but t
   },
 ```
 
-## TODO
+### reverse properties
+
+We want to have a hierarchical structure from the resource down to its Record and down to its CreationEvent. Thus we need 2 inverse hierarchical links:
+
+```
+"generated_by" : {
+  "@reverse" : "prov:generated",
+  "@type" : "@id"
+},
+```
+
+and 
+
+```
+"mainEntity_of" : {
+  "@reverse" : "schema:mainEntity",
+  "@type" : "@id"
+},
+```
+
+## TODO / Open questions
 
 ### accrualPeriodicity
 
@@ -86,6 +117,10 @@ Not sure we really need this, this will hide a lot of URI. Maybe the URIs should
 ### check values of dct:spatial on Organization
 
 Is it using URIs ?
+
+### How should we handle hierarchical nesting ?
+
+In the case entity is referenced from multiple places
 
 
 ## Application Profile document update
@@ -120,3 +155,18 @@ issn: namespace should be replaced by issnprop: namespace
 ### memberOf is not in the application profile
 
 nature exemple uses memberOf on classification information, but this is not in the AP table, not in the diagrams. The mapping table contains it, but with visible errors in the URIs. Should it be added to the AP ?
+
+### Check dcam namespace: missing a final /
+
+### Check bfmarc namespace: missing a final /
+
+### Check namespace consistence m2100X vs m2100x : should use capital X
+
+## Problem notice Nature
+
+- Missing #ISSN identifier in the data !!
+- hasCancelledISSN : Wrong value URI
+- GeoCoordinates are missing, should this be skipped if no geo information is available ?
+- Problem in URI of "M008CR22" : "http://marc21rdf.info/terms/continuingori##"
+- There is an entity `resource/ISSN/0028-0836#PublicationPlace-London_:` (note the `_:` at the end) that is never referenced from any publication event. Is this an error ? I remove it
+- Wrong URI in `"wasAssociatedWith" : "http://www.w3.org/ns/ISSNCentre#BO"`
