@@ -50,7 +50,7 @@
     "identifiedBy" : {
       "@id" : "bf:identifiedBy",
       "@type" : "@id",
-      "@container": "@id",
+      "@container": "@id"
     },
     "mainTitle" : {
       "@id" : "bf:mainTitle",
