@@ -1,64 +1,61 @@
 {
-  "@graph" : [ 
-  {
-    "id" : "resource/ISSN/0247-0624#Record",
-    "rdf:type" : "schema:CreativeWork",    
-    "status" : "RecordStatus:Register",
-    "modified" : "20040609165600.0",
-    "wasAttributedTo" : {
-      "id" : "organization/ISSNCenter#_7",
-      "@type" : "Organization"
-    },
-    "mainEntity" : {
-      "@id" : "resource/ISSN/0247-0624",
-      "@type" : [ 
-        "bf:Work",
-        "bf:Instance",
-        "schema:Periodical" 
-      ],
-      "identifiedBy" : [
-          {
-            "id" : "resource/ISSN/0247-0624#KeyTitle",
-            "@type" : [ 
-              "bf:Identifier",
-              "bf:KeyTitle"
-            ],
-            "value" : "Éffervescences lycéennes"
-          },
-          {
-            "id" : "resource/ISSN/0247-0624#ISSN-L",
-            "@type" : "bf:IssnL",
-            "status" : "IdentifierStatus:Valid",
-            "value" : "0247-0624"
-          },
-          {
-            "@id" : "resource/ISSN/0247-0624#ISSN",
-            "@type" : "bf:Issn",
-            "status" : "IdentifierStatus:Valid",
-            "value" : "0247-0624"
-          }
-      ],
-      "mainTitle" : "Éffervescences lycéennes.",
-      "title" : "resource/ISSN/0247-0624#KeyTitle",
-      "format" : "Medium:Print",
-      "identifier" : "0247-0624",
-      "type" : "http://marc21rdf.info/terms/formofmaterial#a",
-      "issn" : "0247-0624",
-      "isPartOf" : {
-        "id" : "resource/ISSN-L/0247-0624",
-        "identifiedBy" : "resource/ISSN/0247-0624#ISSN-L"
-      },
-      "schema:issn" : "0247-0624",
-      "name" : [ "Éffervescences lycéennes.", "Éffervescences lycéennes" ],
-      "publication" : {
-        "id" : "resource/ISSN/0247-0624#ReferencePublicationEvent",
-        "@type" : "schema:PublicationEvent",
-        "location" : {
-          "id" : "http://id.loc.gov/vocabulary/countries/fr",
-          "label" : "France"
+  "@context" : "https://raw.githubusercontent.com/sparna-git/issn-jsonld-context/main/issn-jsonld-context.json",
+  "id" : "resource/ISSN/0247-0624#Record",
+  "rdf:type" : "schema:CreativeWork",    
+  "status" : "RecordStatus:Register",
+  "modified" : "20040609165600.0",
+  "wasAttributedTo" : {
+    "id" : "organization/ISSNCenter#_7",
+    "@type" : "Organization"
+  },
+  "mainEntity" : {
+    "@id" : "resource/ISSN/0247-0624",
+    "@type" : [ 
+      "bf:Work",
+      "bf:Instance",
+      "schema:Periodical" 
+    ],
+    "identifiedBy" : [
+        {
+          "id" : "resource/ISSN/0247-0624#KeyTitle",
+          "@type" : [ 
+            "bf:Identifier",
+            "bf:KeyTitle"
+          ],
+          "value" : "Éffervescences lycéennes"
+        },
+        {
+          "id" : "resource/ISSN/0247-0624#ISSN-L",
+          "@type" : "bf:IssnL",
+          "status" : "IdentifierStatus:Valid",
+          "value" : "0247-0624"
+        },
+        {
+          "@id" : "resource/ISSN/0247-0624#ISSN",
+          "@type" : "bf:Issn",
+          "status" : "IdentifierStatus:Valid",
+          "value" : "0247-0624"
         }
+    ],
+    "mainTitle" : "Éffervescences lycéennes.",
+    "title" : "resource/ISSN/0247-0624#KeyTitle",
+    "format" : "Medium:Print",
+    "identifier" : "0247-0624",
+    "type" : "http://marc21rdf.info/terms/formofmaterial#a",
+    "issn" : "0247-0624",
+    "isPartOf" : {
+      "id" : "resource/ISSN-L/0247-0624",
+      "identifiedBy" : "resource/ISSN/0247-0624#ISSN-L"
+    },
+    "schema:issn" : "0247-0624",
+    "name" : [ "Éffervescences lycéennes.", "Éffervescences lycéennes" ],
+    "publication" : {
+      "id" : "resource/ISSN/0247-0624#ReferencePublicationEvent",
+      "@type" : "schema:PublicationEvent",
+      "location" : {
+        "id" : "http://id.loc.gov/vocabulary/countries/fr",
+        "label" : "France"
       }
-    }    
-  }],
-  "@context" : "https://raw.githubusercontent.com/sparna-git/issn-jsonld-context/main/issn-jsonld-context.json"
+    }
+  }
 }
