@@ -40,6 +40,10 @@
     "carrier" : {
       "@id" : "bf:carrier",
       "@type" : "@id"
+    },
+    "status" : {
+      "@id" : "bf:status",
+      "@type" : "@id"
     }
   }
 }
