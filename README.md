@@ -48,6 +48,21 @@ We add :
     },
 ```
 
+This forces us to repeat the ISSN-L inside the identifierBy of the ISSN-L, but this is not bad thing:
+
+```
+  "isPartOf" : {
+    "id" : "http://issn.org/resource/resource/ISSN-L/0247-0624",
+    "identifiedBy" : {
+      "#ISSN-L" : {
+        "type" : "bf:IssnL",
+        "status" : "idStatus:Valid",
+        "value" : "0247-0624"
+      }
+    }
+  },
+```
+
 ## TODO
 
 ### accrualPeriodicity
@@ -68,6 +83,11 @@ e.g. `http://marc21rdf.info/terms/formofmaterial#a`, `http://id.loc.gov/vocabula
 
 Not sure we really need this, this will hide a lot of URI. Maybe the URIs should be kept in clear ?
 
+
+### check values of dct:spatial on Organization
+
+Is it using URIs ?
+
 ### Update the use of bibschema in the application profile
 
 bibschema namespace is outdated. Properties have been integrated directly in schema.org
@@ -81,4 +101,16 @@ I have set the corresponding mapping to schema URI instead of bibschema URIs
 
 ### update versionOf in AP
 
-dct:versionOf does not exist. It should be dct:isVersionOf
+dct:versionOf does not exist. It should be dct:isVersionOf.
+
+### reference to dcterms namespace
+
+At least one reference subsist to dcterms: namespace, should be replaced by dct:
+
+### xsd:number is wrong
+
+xsd:number is wrong and should be replaced by xsd:decimal
+
+### reference to issn: namespace
+
+issn: namespace should be replaced by issnprop: namespace

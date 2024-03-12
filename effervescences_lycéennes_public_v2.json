@@ -36,8 +36,14 @@
   "type_dct" : "formofmaterial:a",
   "issn_bibo" : "0247-0624",
   "isPartOf" : {
-    "id" : "resource/ISSN-L/0247-0624",
-    "identifiedBy" : "#ISSN-L"
+    "id" : "http://issn.org/resource/resource/ISSN-L/0247-0624",
+    "identifiedBy" : {
+      "#ISSN-L" : {
+        "type" : "bf:IssnL",
+        "status" : "idStatus:Valid",
+        "value" : "0247-0624"
+      }
+    }
   },
   "issn_schema" : "0247-0624",
   "name" : [ "Éffervescences lycéennes.", "Éffervescences lycéennes" ],

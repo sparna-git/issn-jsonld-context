@@ -50,7 +50,7 @@
     "identifiedBy" : {
       "@id" : "bf:identifiedBy",
       "@type" : "@id",
-      "@container": "@id"
+      "@container": "@id",
     },
     "mainTitle" : {
       "@id" : "bf:mainTitle",
@@ -338,13 +338,148 @@
     },
 
 
-    "status" : {
-      "@id" : "bf:status",
-      "@type" : "@id"
+    "modified" : {
+      "@id" : "dct:modified",
+      "@type" : "xsd:date"
     },
     "mainEntity_of" : {
       "@reverse" : "schema:mainEntity",
       "@type" : "@id"
-    }
+    },
+    "wasAttributedTo" : {
+      "@reverse" : "prov:wasAttributedTo",
+      "@type" : "@id"
+    },
+    "status" : {
+      "@id" : "bf:status",
+      "@type" : "@id"
+    },
+
+
+    "location" : {
+      "@id" : "schema:location",
+      "@type" : "@id"
+    },
+    "publishedBy" : {
+      "@id" : "schema:publishedBy",
+      "@type" : "@id"
+    },
+    "temporal" : {
+      "@id" : "dct:temporal",
+      "@type" : "xsd:string"
+    },
+
+
+    "label" : {
+      "@id" : "rdfs:label",
+      "@type" : "xsd:string"
+    },
+    "sameAs" : {
+      "@id" : "schema:sameAs",
+      "@type" : "@id"
+    },
+    "geo" : {
+      "@id" : "schema:geo",
+      "@type" : "@id"
+    },
+
+
+    "latitude" : {
+      "@id" : "schema:latitude",
+      "@type" : "xsd:decimal"
+    },
+    "longitude" : {
+      "@id" : "schema:longitude",
+      "@type" : "xsd:decimal"
+    },
+    "addressCountry" : {
+      "@id" : "schema:addressCountry",
+      "@type" : "xsd:string"
+    },
+
+
+    "value" : {
+      "@id" : "rdf:value",
+      "@type" : "xsd:string"
+    },
+    "hasCancelledISSN" : {
+      "@id" : "issnprop:hasCancelledISSN",
+      "@type" : "xsd:string"
+    },
+    "cancelledInFavorOf" : {
+      "@id" : "issnprop:cancelledInFavorOf",
+      "@type" : "xsd:string"
+    },
+
+
+    "variantType" : {
+      "@id" : "bf:variantType",
+      "@type" : "xsd:string"
+    },
+
+
+    "parentOrganization" : {
+      "@id" : "schema:parentOrganization",
+      "@type" : "xsd:string"
+    },
+    "logo" : {
+      "@id" : "schema:logo",
+      "@type" : "xsd:string"
+    },
+    "address" : {
+      "@id" : "schema:address",
+      "@type" : "@id"
+    },
+    "telephone" : {
+      "@id" : "schema:telephone",
+      "@type" : "xsd:string"
+    },
+    "url" : {
+      "@id" : "schema:url",
+      "@type" : "xsd:string"
+    },
+    "email" : {
+      "@id" : "schema:email",
+      "@type" : "xsd:string"
+    },
+    "faxNumber" : {
+      "@id" : "schema:faxNumber",
+      "@type" : "xsd:string"
+    },
+    "contactPoint" : {
+      "@id" : "schema:contactPoint",
+      "@type" : "@id"
+    },
+
+
+    "email" : {
+      "@id" : "schema:email",
+      "@type" : "xsd:string"
+    },
+    "contactType" : {
+      "@id" : "schema:contactType",
+      "@type" : "xsd:string"
+    },
+
+
+    "streetAddress" : {
+      "@id" : "schema:streetAddress",
+      "@type" : "xsd:string"
+    },
+    "addressLocality" : {
+      "@id" : "schema:addressLocality",
+      "@type" : "xsd:string"
+    },
+    "addressCountry" : {
+      "@id" : "schema:addressCountry",
+      "@type" : "xsd:string"
+    },
+
+
+    "noteType" : {
+      "@id" : "bf:noteType",
+      "@type" : "xsd:string"
+    },
+    
   }
 }
