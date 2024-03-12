@@ -41,6 +41,88 @@
       "@id" : "bf:carrier",
       "@type" : "@id"
     },
+    "classification" : {
+      "@id" : "bf:classification",
+      "@type" : "@id"
+    },
+    "content" : {
+      "@id" : "bf:content",
+      "@type" : "@id"
+    },
+    "hasReproduction" : {
+      "@id" : "bf:hasReproduction",
+      "@type" : "@id"
+    },
+    "identifiedBy" : {
+      "@id" : "bf:identifiedBy",
+      "@type" : "@id"
+    },
+    "mainTitle" : {
+      "@id" : "bf:mainTitle",
+      "@type" : "xsd:string"
+    },
+    "media" : {
+      "@id" : "bf:media",
+      "@type" : "@id"
+    },
+    "note" : {
+      "@id" : "bf:note",
+      "@type" : "@id"
+    },
+    "provisionActivityStatement" : {
+      "@id" : "bf:provisionActivityStatement",
+      "@type" : "xsd:string"
+    },
+    "title" : {
+      "@id" : "bf:title",
+      "@type" : "@id"
+    },
+    "regularity" : {
+      "@id" : "bfmarc:regularity",
+      "@type" : "@id"
+    },
+    "reproductionNote" : {
+      "@id" : "bfmarc:reproductionNote",
+      "@type" : "xsd:string"
+    },
+    "isb" : {
+      "@id" : "bfrel:isb",
+      "@type" : "@id"
+    },
+    "issn" : {
+      "@id" : "bibo:issn",
+      "@type" : "xsd:string"
+    },
+    "issn" : {
+      "@id" : "bibo:issn",
+      "@type" : "xsd:string"
+    },
+    "format" : {
+      "@id" : "dc:format",
+      "@type" : "@id"
+    },
+    "identifier" : {
+      "@id" : "dc:identifier",
+      "@type" : "xsd:string"
+    },
+    "accrualPeriodicity" : {
+      "@id" : "dct:accrualPeriodicity",
+      "@type" : "@id"
+    },
+    "spatial" : {
+      "@id" : "dct:spatial",
+      "@type" : "@id"
+    },
+    "type_dct" : {
+      "@id" : "dct:type",
+      "@type" : "@id"
+    },
+    "hasCancelledISSN-L" : {
+      "@id" : "issnprop:hasCancelledISSN-L",
+      "@type" : "xsd:string"
+    },
+
+
     "status" : {
       "@id" : "bf:status",
       "@type" : "@id"

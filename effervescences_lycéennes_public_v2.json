@@ -1,7 +1,7 @@
 {
   "@context" : "https://raw.githubusercontent.com/sparna-git/issn-jsonld-context/main/issn-jsonld-context.json",
   "id" : "resource/ISSN/0247-0624#Record",
-  "rdf:type" : "schema:CreativeWork",    
+  "type" : "schema:CreativeWork",    
   "status" : "RecordStatus:Register",
   "modified" : "20040609165600.0",
   "wasAttributedTo" : {
