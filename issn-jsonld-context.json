@@ -8,7 +8,6 @@
     "bfrel":"http://id.loc.gov/vocabulary/relators/",
     "bfmarc":"http://bibfra.me/vocab/marc",
     "bibo":"http://purl.org/ontology/bibo/",
-    "bibschema":"https://bib.schema.org/",  
     "dc":"http://purl.org/dc/dcam",
     "dcam":"http://purl.org/dc/dcam",
     "dct":"http://purl.org/dc/terms/",
@@ -29,6 +28,8 @@
     "recordStatus":"http://issn.org/vocabularies/RecordStatus#",
     "medium":"http://issn.org/vocabularies/Medium#",
     "issnCenter":"http://issn.org/organization/ISSNCenter#",
+    "formofmaterial":"http://marc21rdf.info/terms/formofmaterial#",
+    "countries": "http://id.loc.gov/vocabulary/countries/",
 
     "carrier" : {
       "@id" : "bf:carrier",
@@ -201,6 +202,138 @@
     },
     "subjectOf" : {
       "@id" : "schema:subjectOf",
+      "@type" : "@id"
+    },
+
+
+    "absorbed" : {
+      "@id" : "bf:absorbed",
+      "@type" : "@id"
+    },
+    "absorbedBy" : {
+      "@id" : "bf:absorbedBy",
+      "@type" : "@id"
+    },
+    "continuedBy" : {
+      "@id" : "bf:continuedBy",
+      "@type" : "@id"
+    },
+    "continuedInPartBy" : {
+      "@id" : "bf:continuedInPartBy",
+      "@type" : "@id"
+    },
+    "continues" : {
+      "@id" : "bf:continues",
+      "@type" : "@id"
+    },
+    "continuesInPart" : {
+      "@id" : "bf:continuesInPart",
+      "@type" : "@id"
+    },
+    "hasSubseries" : {
+      "@id" : "bf:hasSubseries",
+      "@type" : "@id"
+    },
+    "issuedWith" : {
+      "@id" : "bf:issuedWith",
+      "@type" : "@id"
+    },
+    "mergedToForm" : {
+      "@id" : "bf:mergedToForm",
+      "@type" : "@id"
+    },
+    "mergerOf" : {
+      "@id" : "bf:mergerOf",
+      "@type" : "@id"
+    },
+    "otherEdition" : {
+      "@id" : "bf:otherEdition",
+      "@type" : "@id"
+    },
+    "otherPhysicalFormat" : {
+      "@id" : "bf:otherPhysicalFormat",
+      "@type" : "@id"
+    },
+    "precededBy" : {
+      "@id" : "bf:precededBy",
+      "@type" : "@id"
+    },
+    "replacedBy" : {
+      "@id" : "bf:replacedBy",
+      "@type" : "@id"
+    },
+    "replacementOf" : {
+      "@id" : "bf:replacementOf",
+      "@type" : "@id"
+    },
+    "separatedFrom" : {
+      "@id" : "bf:separatedFrom",
+      "@type" : "@id"
+    },
+    "splitInto" : {
+      "@id" : "bf:splitInto",
+      "@type" : "@id"
+    },
+    "subseriesOf" : {
+      "@id" : "bf:subseriesOf",
+      "@type" : "@id"
+    },
+    "supplement" : {
+      "@id" : "bf:supplement",
+      "@type" : "@id"
+    },
+    "supplementTo" : {
+      "@id" : "bf:supplementTo",
+      "@type" : "@id"
+    },
+    "translation" : {
+      "@id" : "bf:translation",
+      "@type" : "@id"
+    },
+    "translationOf" : {
+      "@id" : "bf:translationOf",
+      "@type" : "@id"
+    },
+    "translationOfWork" : {
+      "@id" : "schema:translationOfWork",
+      "@type" : "@id"
+    },
+    "workTranslation" : {
+      "@id" : "schema:workTranslation",
+      "@type" : "@id"
+    },
+    "relation" : {
+      "@id" : "dc:relation",
+      "@type" : "@id"
+    },
+    "isFormatOf" : {
+      "@id" : "dct:isFormatOf",
+      "@type" : "@id"
+    },
+    "isVersionOf" : {
+      "@id" : "dct:isVersionOf",
+      "@type" : "@id"
+    },
+    "citation" : {
+      "@id" : "schema:citation",
+      "@type" : "@id"
+    },
+    "hasPart" : {
+      "@id" : "schema:hasPart",
+      "@type" : "@id"
+    },
+    "isPartOf" : {
+      "@id" : "schema:isPartOf",
+      "@type" : "@id"
+    },
+
+
+    "generated" : {
+      "@id" : "prov:generated",
+      "@type" : "@id"
+    },
+    "wasAssociatedWith" : {
+      "@id" : "prov:wasAssociatedWith",
       "@type" : "@id"
     },
 

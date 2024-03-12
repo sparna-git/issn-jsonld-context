@@ -33,7 +33,7 @@
   "title" : "#KeyTitle",
   "format" : "medium:Print",
   "identifier" : "0247-0624",
-  "type_dct" : "http://marc21rdf.info/terms/formofmaterial#a",
+  "type_dct" : "formofmaterial:a",
   "issn_bibo" : "0247-0624",
   "isPartOf" : {
     "id" : "resource/ISSN-L/0247-0624",
@@ -45,7 +45,7 @@
     "id" : "#ReferencePublicationEvent",
     "type" : "schema:PublicationEvent",
     "location" : {
-      "id" : "http://id.loc.gov/vocabulary/countries/fr",
+      "id" : "countries:fr",
       "label" : "France"
     }
   },
@@ -59,7 +59,5 @@
       "type" : "schema:Organization"
     }
   }
-
-
   
 }

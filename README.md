@@ -34,9 +34,11 @@ We add :
 
 ```
     "issnCenter":"http://issn.org/organization/ISSNCenter#",
+    "formofmaterial":"http://marc21rdf.info/terms/formofmaterial#",
+    "countries": "http://id.loc.gov/vocabulary/countries/",
 ```
 
-### use of indexing
+### use of identifier indexing
 
 ```
     "identifiedBy" : {
@@ -63,3 +65,20 @@ Should we declare controlled list values in the context ?
 ### Should we declare additional namespaces for controlled vocabularies ?
 
 e.g. `http://marc21rdf.info/terms/formofmaterial#a`, `http://id.loc.gov/vocabulary/countries/fr` ?
+
+Not sure we really need this, this will hide a lot of URI. Maybe the URIs should be kept in clear ?
+
+### Update the use of bibschema in the application profile
+
+bibschema namespace is outdated. Properties have been integrated directly in schema.org
+
+- bibschema:translationOfWork exists as schema:translationOfWork
+- bibschema:workTranslation exists as schema:workTranslation
+- bibschema:Atlas, bibschema:Map, bibschema:AudioObject, bibschema:VideoObject, bibschema:Newspaper all exist in schema.org
+- bibschema:publishedBy exists as schema:publishedBy
+
+I have set the corresponding mapping to schema URI instead of bibschema URIs
+
+### update versionOf in AP
+
+dct:versionOf does not exist. It should be dct:isVersionOf
