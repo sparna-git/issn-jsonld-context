@@ -170,3 +170,4 @@ nature exemple uses memberOf on classification information, but this is not in t
 - Problem in URI of "M008CR22" : "http://marc21rdf.info/terms/continuingori##"
 - There is an entity `resource/ISSN/0028-0836#PublicationPlace-London_:` (note the `_:` at the end) that is never referenced from any publication event. Is this an error ? I remove it
 - Wrong URI in `"wasAssociatedWith" : "http://www.w3.org/ns/ISSNCentre#BO"`
+- I can't find an identifier attribute in the Nature record ?

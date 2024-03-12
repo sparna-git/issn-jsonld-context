@@ -352,6 +352,10 @@
       "@reverse" : "schema:mainEntity",
       "@type" : "@id"
     },
+    "mainEntity" : {
+      "@id" : "schema:mainEntity",
+      "@type" : "@id"
+    },
     "wasAttributedTo" : {
       "@id" : "prov:wasAttributedTo",
       "@type" : "@id"

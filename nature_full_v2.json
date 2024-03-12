@@ -6,12 +6,16 @@
 
   "id" : "",
   "regularity" : "http://marc21rdf.info/terms/continuingreg#r",
-  "absorbed" : [ "resource:ISSN/0300-8746", "resource:ISSN/0090-0028" ],
+  "absorbed" : [ 
+    "resource:ISSN/0300-8746",
+    "resource:ISSN/0090-0028"
+  ],
   "classification" : {
     "type" : "bf:ClassificationDdc",
     "memberOf" : "dct:DDC",
     "value" : "505"
   },
+  "identifier" : "0028-0836",
   "identifiedBy" : {
     "#KeyTitle" : {
       "type" : [ 
@@ -173,6 +177,7 @@
     "id" : "#Record",
     "type" : "schema:CreativeWork",
     "modified" : "2023-09-15",
+    "mainEntity" : "",
     "wasAttributedTo" : {
       "id" : "issnCenter:_2",
       "type" : "schema:Organization"
