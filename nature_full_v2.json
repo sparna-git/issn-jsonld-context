@@ -10,11 +10,12 @@
     "resource:ISSN/0300-8746",
     "resource:ISSN/0090-0028"
   ],
-  "classification" : {
+  "classification" : [
+    {
     "type" : "bf:ClassificationDdc",
-    "memberOf" : "dct:DDC",
     "value" : "505"
-  },
+    }
+  ],
   "identifier" : "0028-0836",
   "identifiedBy" : {
     "#KeyTitle" : {
@@ -47,7 +48,9 @@
     }
   },
   "mainTitle" : "Nature.",
-  "otherPhysicalFormat" : "resource:ISSN/1476-4687",
+  "otherPhysicalFormat" : [
+    "resource:ISSN/1476-4687"
+  ],
   "provisionActivityStatement" : [ 
     "London Macmillan 1869-",
     "London Springer Nature Limited",
@@ -61,11 +64,15 @@
     "#AbbreviatedKeyTitle",
     "#KeyTitle"
   ],
-  "hasCancelledISSN" : "resource:ISSN/0302-2889#ISSN",
+  "hasCancelledISSN" : [
+    "resource:ISSN/0302-2889#ISSN"
+  ],
   "M00806" : "http://marc21rdf.info/terms/alltyp#c",
   "M008CR22" : "http://marc21rdf.info/terms/continuingori##",
   "M008CR33" : "http://marc21rdf.info/terms/continuingscr#23a",
-  "format" : "medium:Print",
+  "format" : [
+    "medium:Print"
+  ],
   "relation" : [ 
     "resource:ISSN/0266-6561",
     "resource:ISSN/1072-8368",
@@ -74,21 +81,33 @@
     "resource:ISSN/1746-4366"
   ],
   "accrualPeriodicity" : "http://purl.org/cld/freq/weekly",
-  "isFormatOf" : "resource:ISSN/1476-4687",
-  "spatial" : {
+  "isFormatOf" : [
+    "resource:ISSN/1476-4687"
+  ],
+  "spatial" : [
+    {
     "id" : "http://id.loc.gov/vocabulary/countries/enk",
     "label" : "England"
-  },
+    }
+  ],
   "type_dct" : "http://marc21rdf.info/terms/formofmaterial#a",
-  "about" : "http://udcdata.info/025403",
-  "alternateName" : "Nature (Lond.)",
+  "about" : [
+    "http://udcdata.info/025403"
+  ],
+  "alternateName" : [
+    "Nature (Lond.)"
+  ],
   "endDate" : "9999",
-  "inLanguage" : "http://id.loc.gov/vocabulary/iso639-2/eng",
+  "inLanguage" : [
+    "http://id.loc.gov/vocabulary/iso639-2/eng"
+  ],
   "isPartOf" : {
     "id" : "resource:ISSN-L/0028-0836",
     "identifiedBy" : "#ISSN-L"
   },
-  "keywords" : "MATHEMATICS. NATURAL SCIENCES",
+  "keywords" : [
+    "MATHEMATICS. NATURAL SCIENCES"
+  ],
   "name" : [ 
     "Nature.",
     "Nature (London)"

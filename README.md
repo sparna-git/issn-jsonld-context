@@ -94,7 +94,12 @@ and
 },
 ```
 
+
+
+
 ## TODO / Open questions
+
+### add missing type mapping in examples
 
 ### accrualPeriodicity
 
@@ -104,9 +109,6 @@ Properly handle the IRI or Literal situation :
 
 Right now we specify it as "@id"
 
-### Check the @id vs. @vocab
-
-Should we declare controlled list values in the context ?
 
 ### Should we declare additional namespaces for controlled vocabularies ?
 
@@ -114,13 +116,16 @@ e.g. `http://marc21rdf.info/terms/formofmaterial#a`, `http://id.loc.gov/vocabula
 
 Not sure we really need this, this will hide a lot of URI. Maybe the URIs should be kept in clear ?
 
+--> Leave references to external URIs explicit
+
 ### check values of dct:spatial on Organization
 
 Is it using URIs ?
 
-### How should we handle hierarchical nesting ?
+--> Not in the notices, will be published in the list of ISSN centers.
 
-In the case entity is referenced from multiple places
+
+
 
 
 ## Application Profile document update
@@ -156,11 +161,20 @@ issn: namespace should be replaced by issnprop: namespace
 
 nature exemple uses memberOf on classification information, but this is not in the AP table, not in the diagrams. The mapping table contains it, but with visible errors in the URIs. Should it be added to the AP ?
 
+--> remove from the examples and from the mapping
+
+
 ### Check dcam namespace: missing a final /
 
 ### Check bfmarc namespace: missing a final /
 
 ### Check namespace consistence m2100X vs m2100x : should use capital X
+
+### Nouvelle zone 857
+
+Pointe vers les archives électroniques
+
+### Missing schema:holdingArchive in table
 
 ## Problem notice Nature
 
@@ -170,4 +184,34 @@ nature exemple uses memberOf on classification information, but this is not in t
 - Problem in URI of "M008CR22" : "http://marc21rdf.info/terms/continuingori##"
 - There is an entity `resource/ISSN/0028-0836#PublicationPlace-London_:` (note the `_:` at the end) that is never referenced from any publication event. Is this an error ? I remove it
 - Wrong URI in `"wasAssociatedWith" : "http://www.w3.org/ns/ISSNCentre#BO"`
-- I can't find an identifier attribute in the Nature record ?
+  - Should be declared in the list of ISSN center
+- I can't find an dct:identifier attribute in the Nature record ?
+- missing @type
+- missing issn
+- Missing the country from ISO 044 ?
+
+
+## Problems notice Nature online
+
+- "type":"note" is wrong, should be "type":"Note"
+- "publicationDesignation" does not exists in the application profile
+- is the ISSN-L identifier correct ?
+
+```
+"isPartOf" : {
+    "id" : "resource:ISSN-L/0028-0836",
+    "identifiedBy" : "resource:ISSN/1476-4687#ISSN-L"
+  }
+```
+
+
+
+## Actions
+
+- Thomas propose une documentation du mapping dans le tableau Excel
+- Thomas fait un exemple JSON-LD de l'ISSN-L
+- On l'explique en premier aux développeurs
+- Ajouter un exemple pour les métadonnées Keepers (dans les notices publiques)
+- Ajouter la zone 857 dans le profil d'application
+- Autre notice effervescence lycéenne full à faire en exemple
+

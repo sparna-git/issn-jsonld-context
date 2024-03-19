@@ -30,6 +30,7 @@
     "recordStatus":"http://issn.org/vocabularies/RecordStatus#",
     "medium":"http://issn.org/vocabularies/Medium#",
     "issnCenter":"http://issn.org/organization/ISSNCenter#",
+    "keepers":"http://issn.org/organization/keepers#",
     "formofmaterial":"http://marc21rdf.info/terms/formofmaterial#",
     "countries": "http://id.loc.gov/vocabulary/countries/",
 
@@ -506,6 +507,10 @@
     "abstract" : {
       "@id" : "schema:abstract",
       "@type" : "xsd:string"
+    },
+    "holdingArchive" : {
+      "@id" : "schema:holdingArchive",
+      "@type" : "@id"
     },
     "dateModified" : {
       "@id" : "schema:dateModified",
