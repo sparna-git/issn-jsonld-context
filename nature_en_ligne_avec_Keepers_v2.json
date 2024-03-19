@@ -267,20 +267,27 @@
     }
   ],
   "url" : "http://www.nature.com/nature/",
-  {
-    "@id" : "organization/ISSNCenter#_2",
-    "@type" : "http://schema.org/Organization"
-  },, 
-  }, {
-    "@id" : "resource/ISSN/1476-4687#Record",
-    "@type" : "http://schema.org/CreativeWork",
-    "modified" : "20221124123358.370217",
-    "mainEntity" : "resource/ISSN/1476-4687",
-    "wasAttributedTo" : "organization/ISSNCenter#_2"
-  }, {
-    "@id" : "resource/ISSN/1476-4687#RecordCreation",
-    "@type" : "http://www.w3.org/ns/prov#Activity",
-    "generated" : [ "resource/ISSN/1476-4687#AbbreviatedKeyTitle", "resource/ISSN/1476-4687#KeyTitle", "resource/ISSN/1476-4687#ISSN-L", "resource/ISSN/1476-4687#ISSN", "resource/ISSN/1476-4687#Record" ],
-    "wasAssociatedWith" : "http://www.w3.org/ns/ISSNCentre#_2"
+  
+  "mainEntity_of" : {
+    "id" : "#Record",
+    "type" : "schema:CreativeWork",
+    "modified" : "2022-11-24",
+    "mainEntity" : "",
+    "wasAttributedTo" : {
+      "id" : "issnCenter:_2",
+      "type" : "schema:Organization"
+    },
+    "generated_by" : {
+      "id" : "#RecordCreation",
+      "type" : "prov:Activity",
+      "generated" : [ 
+        "#AbbreviatedKeyTitle",
+        "#KeyTitle",
+        "#ISSN-L",
+        "#ISSN",
+        "#Record"
+      ],
+      "wasAssociatedWith" : "issnCenter:_2"
+    }
   }
 }
