@@ -1,0 +1,37 @@
+{
+  "@context": {
+    "@import": "https://raw.githubusercontent.com/sparna-git/issn-jsonld-context/main/issn-jsonld-context.json",
+    "@base": "http://issn.org/resource/ISSN-L/0256-8888"
+  },
+
+  "id" : "",
+  "type" : [
+      "bf:Instance",
+      "bf:Work"
+  ],
+  "identifiedBy" : {
+    "id" : "resource:ISSN/0256-8888#ISSN-L",
+    "status" : "idStatus:Valid",
+    "value" : "0256-8888"
+  },
+  "name" : "Registre de l'ISDS.",
+  "hasPart" : [ 
+    {
+      "id" : "resource:ISSN/0256-8888",
+      "format" : "medium:DigitalCarrier",
+      "identifier" : "0256-8888"
+    },
+    {
+      "id" : "resource:ISSN/1018-4783",
+      "format" : "medium:DigitalCarrier",
+      "identifier" : "1018-4783"
+    },
+    {
+      "id" : "resource:ISSN/0257-2222",
+      "format" : "medium:Other",
+      "identifier" : "0257-2222"
+    }
+  ]
+}
+
+ 

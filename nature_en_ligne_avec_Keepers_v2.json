@@ -128,7 +128,7 @@
         "type" : "schema:Place",
         "geo" : {
           "id" : "#PublicationPlace-[London]-Geocoordinates",
-          "@type" : "schema:GeoCoordinates"
+          "type" : "schema:GeoCoordinates"
         },
         "label" : "[London]"
       }
