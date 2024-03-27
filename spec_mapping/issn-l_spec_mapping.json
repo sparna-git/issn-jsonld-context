@@ -1,0 +1,62 @@
+// pour générer ces fichiers de données ISSN-L, il faut partir
+// de la liste des ISSN-L dans le registre. Il faut d'abord récupérer tous les ISSN-L
+// renseignés dans la base. Il n'y a pas des ISSN-L renseignés de façon systématique
+// sur tous les ISSN et on ne *peut pas* dériver les ISSN-L à partir des ISSN.
+{
+  "@context": {
+    "@import": "https://raw.githubusercontent.com/sparna-git/issn-jsonld-context/main/issn-jsonld-context.json",
+    // insérer l'ISSN-L
+    "@base": "http://issn.org/resource/ISSN-L/0256-8888"
+  },
+
+  // toujours vide
+  "id" : "",
+  // toujours les 2 même valeurs
+  "type" : [
+      "bf:Instance",
+      "bf:Work"
+  ],
+  "identifiedBy" : {
+    // insérer l'ISSN-L
+    "id" : "resource:ISSN/0256-8888#ISSN-L",
+    // toujours la même valeur
+    "type" : "bf:IssnL",
+    // toujours la même valeur
+    "status" : "idStatus:Valid",
+    // insérer l'ISSN-L
+    "value" : "0256-8888"
+  },
+  // toujours présent, même si une seule valeur
+  "hasPart" : [ 
+    // liste des ISSN membres
+    {
+      // insérer l'ISSN
+      "id" : "resource:ISSN/0256-8888",
+      // le medium
+      // 4 valeurs possibles :
+      // One of media:Print (paper), media:Online
+      // (online publication), media:DigitalCarrier
+      // (CD-ROM, USB keys) or media:Other
+      // (Loose-leaf publications, braille, etc.)
+      // media:Print : 007 commençant par 't'
+      // media:Online : 007 commençant par 'cr'
+      // media:DigitalCarrier : 007 commençant 'c' (sauf 'cr')
+      // media:Other : tout le reste dans les 007
+      "format" : "medium:DigitalCarrier",
+      // insérer l'ISSN
+      "identifier" : "0256-8888"
+    },
+    {
+      "id" : "resource:ISSN/1018-4783",
+      "format" : "medium:DigitalCarrier",
+      "identifier" : "1018-4783"
+    },
+    {
+      "id" : "resource:ISSN/0257-2222",
+      "format" : "medium:Other",
+      "identifier" : "0257-2222"
+    }
+  ]
+}
+
+ 

@@ -1,0 +1,92 @@
+{
+  "@context": {
+    "@import": "https://raw.githubusercontent.com/sparna-git/issn-jsonld-context/main/issn-jsonld-context.json",
+    "@base": "http://issn.org/resource/ISSN/0247-0624"
+  },
+
+
+  "id" : "",
+  "type" : [ 
+    "bf:Work",
+    "bf:Instance",
+    "schema:Periodical" 
+  ],
+  "identifiedBy" : {
+    "#KeyTitle" : {
+      "type" : [ 
+          "bf:Identifier",
+          "bf:KeyTitle"
+      ],
+      "value" : "Éffervescences lycéennes"
+    },
+    "#ISSN-L" : {
+      "type" : "bf:IssnL",
+      "status" : "idStatus:Valid",
+      "value" : "0247-0624"
+    },
+    "#ISSN" : {
+      "type" : "bf:Issn",
+      "status" : "idStatus:Valid",
+      "value" : "0247-0624"
+    }
+  },
+  
+  // ajout Thomas pour exemple
+  "hasIncorrectISSN" : "...",
+  "hasCancelledISSN-L" : "...",
+  "url": "...",
+  "subjectOf" : "...",
+  "spatial" : "",
+
+  "mainTitle" : "Éffervescences lycéennes.",
+  "title" : "#KeyTitle",
+  "format" : "medium:Print",
+  "identifier" : "0247-0624",
+  "type_dct" : "formofmaterial:a",
+  "issn_bibo" : "0247-0624",
+  "isPartOf" : {
+    "id" : "http://issn.org/resource/resource/ISSN-L/0247-0624",
+    "identifiedBy" : {
+      "#ISSN-L" : {
+        "type" : "bf:IssnL",
+        "status" : "idStatus:Valid",
+        "value" : "0247-0624"
+      }
+    }
+  },
+  "issn_schema" : "0247-0624",
+  "name" : [ "Éffervescences lycéennes.", "Éffervescences lycéennes" ],
+  "publication" : [
+    // systématiquement, on créé un événement identifié par l'URI "#ReferencePublicationEvent"
+    // en mettant dedans les pays mentionnés dans les champs 008 et 044
+    {
+      "id" : "#ReferencePublicationEvent",
+      "type" : "schema:PublicationEvent",
+      "location" : [
+        // ISO Country URI
+        // 044
+        {
+          "id" : "countries:fr",
+          "label" : "France"
+        },
+        // MARC Country URI
+        // 008
+        {
+          "id" : "...",
+          "label" : "..."
+        }
+      ]
+    },
+  ],
+  "mainEntity_of" : {
+    "id" : "#Record",
+    "type" : "schema:CreativeWork",    
+    "status" : "recordStatus:Register",
+    "modified" : "2004-06-09",
+    "wasAttributedTo" : {
+      "id" : "issnCenter:_7",
+      "type" : "schema:Organization"
+    }
+  }
+  
+}

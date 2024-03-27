@@ -174,6 +174,14 @@ nature exemple uses memberOf on classification information, but this is not in t
 
 Pointe vers les archives électroniques
 
+
+### Should the date of creation of the Record be published ?
+
+We have dct:modified on Records, but not dct:created ?
+
+### cancelledInFavorOf, mapped to 022$v
+
+
 ### Missing schema:holdingArchive in table
 
 ## Problem notice Nature

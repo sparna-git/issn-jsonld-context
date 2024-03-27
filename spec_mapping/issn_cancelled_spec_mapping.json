@@ -1,0 +1,41 @@
+{
+  "@context": {
+    "@import": "https://raw.githubusercontent.com/sparna-git/issn-jsonld-context/main/issn-jsonld-context.json",
+    // insérer l'ISSN
+    "@base": "http://issn.org/resource/ISSN/0205-6429"
+  },
+
+  // toujours vide
+  "id" : "",
+  // note : il n'y a pas de "type_dct" pour les cancelled
+  // note : on n'a pas de clé "type", ni de clé "identifier", ni "issn"
+  "identifiedBy" : {
+    // insérer l'ISSN
+    "id" : "resource:ISSN/0205-6429#ISSN",
+    // toujours la même valeur
+    "type" : "bf:Issn",
+    // valeur idStatus:Suppressed pour tous les ISSN suppressed
+    "status" : "idStatus:Cancelled",
+    // insérer l'ISSN
+    "value" : "0205-6429",
+    // lien vers le ou les ISSN valides
+    // 022$v
+    "cancelledInFavorOf" : [
+      "resource:ISSN/0206-5347#ISSN"
+    ]
+  },
+  "mainEntity_of" : {
+    "id" : "#Record",
+    "type" : "schema:CreativeWork",
+    // champs 699$8
+    "status" : "recordStatus:Cancelled",
+    // champs 005
+    "modified" : "2015-12-18",
+    // champs 022$2
+    "wasAttributedTo" : {
+      "id" : "issnCenter:76",
+      "type" : "schema:Organization"
+    }
+  }
+
+}
