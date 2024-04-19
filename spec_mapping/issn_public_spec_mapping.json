@@ -4,57 +4,80 @@
     "@base": "http://issn.org/resource/ISSN/0247-0624"
   },
 
-
+  // toujours vide
   "id" : "",
+  // toujours les 3 mêmes valeurs
   "type" : [ 
     "bf:Work",
     "bf:Instance",
     "schema:Periodical" 
   ],
   "identifiedBy" : {
+    // toujours ces 3 mêmes clés : #ISSN, #ISSN-L, #KeyTitle
+    "#ISSN" : {
+      // toujours la même valeur
+      "type" : "bf:Issn",
+      // le status sera toujours "Valid"
+      "status" : "idStatus:Valid",
+      // 022$a
+      "value" : "0247-0624",
+      // THOMAS : ajout pour l'exemple. Ne pas oublier le #ISSN final
+      // 022$z
+      "hasCancelledISSN" : "resource:ISSN/XXXX-YYYY#ISSN"
+    },
+    "#ISSN-L" : {
+      // toujours la même valeur
+      "type" : "bf:IssnL",
+      // le status sera toujours "Valid"
+      "status" : "idStatus:Valid",
+      // 022$l
+      "value" : "0247-0624"
+    },
     "#KeyTitle" : {
+      // toujours les mêmes 2 valeurs
       "type" : [ 
           "bf:Identifier",
           "bf:KeyTitle"
       ],
+      // 222$a + 222$b s'il est présent
       "value" : "Éffervescences lycéennes"
-    },
-    "#ISSN-L" : {
-      "type" : "bf:IssnL",
-      "status" : "idStatus:Valid",
-      "value" : "0247-0624"
-    },
-    "#ISSN" : {
-      "type" : "bf:Issn",
-      "status" : "idStatus:Valid",
-      "value" : "0247-0624"
     }
   },
-  
-  // ajout Thomas pour exemple
-  "hasIncorrectISSN" : "...",
-  "hasCancelledISSN-L" : "...",
-  "url": "...",
-  "subjectOf" : "...",
-  "spatial" : "",
 
+  // 245$a + $n + $p si présent
   "mainTitle" : "Éffervescences lycéennes.",
+  // toujours pareil
   "title" : "#KeyTitle",
+  // 007 :
+  // si commence par "t" = medium:Print
+  // si commence par "cr" = medium:Online
+  // si commence par "co" = medium:DigitalCarrier
+  // sinon = medium:Other
   "format" : "medium:Print",
+  // 022$a 
   "identifier" : "0247-0624",
+  // LDR/06 qui sera toujours "a"
   "type_dct" : "formofmaterial:a",
+  // 022$a 
   "issn_bibo" : "0247-0624",
+  // cette section contient l'ISSN-L
   "isPartOf" : {
+    // 022$l (= ISSN-L valide)
     "id" : "http://issn.org/resource/resource/ISSN-L/0247-0624",
     "identifiedBy" : {
       "#ISSN-L" : {
         "type" : "bf:IssnL",
+        // toujours Valid
         "status" : "idStatus:Valid",
+        // 022$l
         "value" : "0247-0624"
       }
     }
   },
+  // 022$a 
   "issn_schema" : "0247-0624",
+  // 245$a (avec point) et 222$a (sans point)
+  // sera toujours un tableau à 2 valeurs
   "name" : [ "Éffervescences lycéennes.", "Éffervescences lycéennes" ],
   "publication" : [
     // systématiquement, on créé un événement identifié par l'URI "#ReferencePublicationEvent"
@@ -64,29 +87,63 @@
       "type" : "schema:PublicationEvent",
       "location" : [
         // ISO Country URI
-        // 044
+        // 044$c
         {
-          "id" : "countries:fr",
+          // la génération de cette URL demande à avoir
+          // une table de correspondance entre le code 3 lettres du pays stocké en base,
+          // son code 2 lettres pour construire l'URL
+          // et son libellé
+          "id" : "https://www.iso.org/obp/ui/#iso:code:3166:FR",
           "label" : "France"
         },
         // MARC Country URI
-        // 008
+        // 008 position 15-17
         {
-          "id" : "...",
-          "label" : "..."
+          "id" : "countries:fr",
+          // repris depuis une liste des labels de id.loc.gov
+          // nécessite une table de correspondance additionnelle en plus des notices
+          "label" : "France"          
         }
       ]
     },
   ],
-  "mainEntity_of" : {
+  // contient les 2 mêmes URIs que celles dans "publication.location.id" : MARC et ISO
+  "spatial" : [
+    "https://www.iso.org/obp/ui/#iso:code:3166:FR",
+    "countries:fr"
+  ],
+  "mainEntityOf" : {
     "id" : "#Record",
-    "type" : "schema:CreativeWork",    
+    "type" : "schema:CreativeWork", 
+    // 699$8 - Les notices publiques sont forcément "Register"
     "status" : "recordStatus:Register",
     "modified" : "2004-06-09",
     "wasAttributedTo" : {
       "id" : "issnCenter:_7",
       "type" : "schema:Organization"
     }
-  }
+  },
+
+  // THOMAS : ci-dessous ajouts pour exemple
+  // 022$y (potentiellement répétable)
+  "hasIncorrectISSN" : [
+    "1234-5678"
+  ],
+  // 022$m (potentiellement répétable)
+  "hasCancelledISSN-L" : [
+    "1234-5678"
+  ],
+  // 856$u
+  "url": [
+    "http://..."
+  ],
+  // 246$a : parallel titles et variant titles
+  // note : parallel title = quand le 2ème indicateur est 1, et variant titles ce sont les autres indicateurs (0, 2, 3..., 8)
+  "alternateName" : [
+    "xxxx",
+    "aaaa"
+  ]
+  // seulement pour les notices Keepers - voir dans un autre exemple
+  // "subjectOf" : "...",
   
 }

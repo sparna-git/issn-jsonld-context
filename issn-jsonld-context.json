@@ -331,7 +331,7 @@
     },
 
 
-    "generated_by" : {
+    "generatedBy" : {
       "@reverse" : "prov:generated",
       "@type" : "@id"
     },
@@ -349,7 +349,7 @@
       "@id" : "dct:modified",
       "@type" : "xsd:date"
     },
-    "mainEntity_of" : {
+    "mainEntityOf" : {
       "@reverse" : "schema:mainEntity",
       "@type" : "@id"
     },

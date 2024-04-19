@@ -174,6 +174,8 @@ nature exemple uses memberOf on classification information, but this is not in t
 
 Pointe vers les archives électroniques
 
+### Mapping de mainTitle devrait être mis à jour avec "245$a + $n + $p si présent"
+
 
 ### Should the date of creation of the Record be published ?
 

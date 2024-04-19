@@ -19,7 +19,7 @@
     // insérer l'ISSN
     "value" : "0229-818X"
   },
-  "mainEntity_of" : {
+  "mainEntityOf" : {
     "id" : "#Record",
     "type" : "schema:CreativeWork",
     // champs 699$8

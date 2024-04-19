@@ -24,7 +24,7 @@
       "resource:ISSN/0206-5347#ISSN"
     ]
   },
-  "mainEntity_of" : {
+  "mainEntityOf" : {
     "id" : "#Record",
     "type" : "schema:CreativeWork",
     // champs 699$8
