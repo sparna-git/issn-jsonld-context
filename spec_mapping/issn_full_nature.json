@@ -1,0 +1,385 @@
+{
+  "@context": {
+    "@import": "https://raw.githubusercontent.com/sparna-git/issn-jsonld-context/main/issn-jsonld-context.json",
+    "@base": "http://issn.org/resource/ISSN/0028-0836"
+  },
+
+  "id" : "",
+  "regularity" : "http://marc21rdf.info/terms/continuingreg#r",
+  "absorbed" : [ 
+    "resource:ISSN/0300-8746",
+    "resource:ISSN/0090-0028"
+  ],
+  "classification" : [
+    {
+    "type" : "bf:ClassificationDdc",
+    "value" : "505"
+    }
+  ],
+  "identifier" : "0028-0836",
+  "identifiedBy" : {
+    "#KeyTitle" : {
+      "type" : [ 
+        "bf:Identifier",
+        "bf:KeyTitle"
+      ],
+      "value" : "Nature (London)"
+    },
+    "#CODEN" : {
+      "type" : "bf:Coden",
+      "value" : "NATUAS"
+    },
+    "#ISSN-L" : {
+      "type" : "bf:IssnL",
+      "status" : "idStatus:Valid",
+      "value" : "0028-0836"
+    },
+    "#ISSN" : {
+      "type" : "bf:Issn",
+      "status" : "idStatus:Valid",
+      "value" : "0028-0836"
+    },
+    "#AbbreviatedKeyTitle" : {
+      "type" : [ 
+        "bf:Identifier",
+        "bf:AbbreviatedTitle" 
+      ],
+      "value" : "Nature (Lond.)"
+    }
+  },
+  "mainTitle" : "Nature.",
+  "otherPhysicalFormat" : [
+    "resource:ISSN/1476-4687"
+  ],
+  "provisionActivityStatement" : [ 
+    "London Macmillan 1869-",
+    "London Springer Nature Limited",
+    "London Nature Publishing Group"
+  ],
+  "supplementTo" : [ 
+    "resource:ISSN/1746-4366",
+    "resource:ISSN/0266-6561"
+  ],
+  // Note : la clé title contient à la fois des références aux titres qui sont 
+  // dans la partie identifier, plus les VariantTitle et ParallelTitle
+  "title" : [ 
+    "#AbbreviatedKeyTitle",
+    "#KeyTitle",
+    {
+      "type" : "bf:VariantTitle",
+      "value" : "",
+      // seulement dans le cas des VariantTitle
+      // 246#$a, 2461$a, 2462$a, 2463$a, 2464$a, 2465$a, 2466$a, 2467$a, 2468$a
+      "variantType" : ""
+    },
+    {
+      "type" : "bf:ParallelTitle",
+      "value" : ""
+    }
+  ],
+  "hasCancelledISSN" : [
+    "resource:ISSN/0302-2889#ISSN"
+  ],
+  // 008/06
+  "M00806" : "http://marc21rdf.info/terms/alltyp#c",
+  // 008/22
+  "M008CR22" : "http://marc21rdf.info/terms/continuingori##",
+  // 008/23
+  "M008CR23" : "",
+  // 008/33
+  "M008CR33" : "http://marc21rdf.info/terms/continuingscr#23a",
+  // 3620$a
+  "M3620_a" : "",
+  // 3620$z
+  "M3620_z" : "",
+  // 3621$a
+  "M3621_a" : "",
+  // 3621$z
+  "M3621_z" : "",
+  "format" : [
+    "medium:Print"
+  ],
+  "relation" : [ 
+    "resource:ISSN/0266-6561",
+    "resource:ISSN/1072-8368",
+    "resource:ISSN/0090-0028",
+    "resource:ISSN/0300-8746",
+    "resource:ISSN/1746-4366"
+  ],
+  // 008/18
+  "accrualPeriodicity" : "http://purl.org/cld/freq/weekly",
+  "isFormatOf" : [
+    "resource:ISSN/1476-4687"
+  ],
+  // TODO : ajouter le pays ISO
+  "spatial" : [
+    {
+    "id" : "http://id.loc.gov/vocabulary/countries/enk",
+    "label" : "England"
+    }
+  ],
+  "type_dct" : "http://marc21rdf.info/terms/formofmaterial#a",
+  // 989$u
+  "about" : [
+    "http://udcdata.info/025403"
+  ],
+  "alternateName" : [
+    "Nature (Lond.)"
+  ],
+  // 008/11-14
+  "endDate" : "9999",
+  // 008/35-37, 041$a
+  "inLanguage" : [
+    "http://id.loc.gov/vocabulary/iso639-2/eng"
+  ],
+  // 022$l
+  "isPartOf" : {
+    "id" : "resource:ISSN-L/0028-0836",
+    "identifiedBy" : "#ISSN-L"
+  },
+  // 989$a
+  "keywords" : [
+    "MATHEMATICS. NATURAL SCIENCES"
+  ],
+  // 222$a, 245$a
+  "name" : [ 
+    "Nature.",
+    "Nature (London)"
+  ],
+  // 008/15-17,260#, 2602, 2603, 264#, 2642, 2643
+  "publication" : [ 
+    {
+      "id" : "#EarliestPublicationEvent",
+      "type" : "schema:PublicationEvent",
+      // 260$b, 264$b, 533$c
+      "publishedBy" : {
+        "id" : "#Publisher-Macmillan",
+        "type" : "schema:Organization",
+        "name" : "Macmillan"
+      },
+      // 260$c, 264$c, 533$d
+      "temporal" : "1869-",
+      "location" : {
+        "id" : "#PublicationPlace-London",
+        "type" : "schema:Place",
+        // 926, 953, 533$b
+        "geo" : {
+          "id" : "#PublicationPlace-London-Geocoordinates",
+          "type" : "schema:GeoCoordinates",
+          // 926$b, 953$b
+          "addressCountry" : "United Kingdom",
+          // 926$l, 953, 533$b
+          "latitude" : "51.50853",
+          // 926$o, 953, 533$b
+          "longitude" : "-0.12574"
+        },
+        // 260#$a, 2602$a, 2603$a, 264#$a, 2642$a, 2643$a,533$b
+        "label" : "London",
+        // 260#$a, 2602$a, 2603$a, 264#$a, 2642$a, 2643$a, 533$b (URI en 926$u)
+        // TODO : exemple de valeur
+        // TODO : un tableau ?
+        "sameAs" : [],
+      }
+    },
+    {
+      "id" : "#ReferencePublicationEvent",
+      "type" : "schema:PublicationEvent",
+      "location" : {
+        "id" : "http://id.loc.gov/vocabulary/countries/enk",
+        "label" : "England"
+      }
+    },
+    {
+      "id" : "#InterveningPublicationEvent[1]",
+      "type" : "schema:PublicationEvent",
+      "publishedBy" : {
+        "id" : "#Publisher-Nature_Publishing_Group",
+        "type" : "schema:Organization",
+        "name" : "Nature Publishing Group"
+      },
+      "location" : {
+        "id" : "#PublicationPlace-London",
+        "type" : "schema:Place",
+        "label" : "London",
+        "geo" : {
+          "id" : "#PublicationPlace-London-Geocoordinates",
+          "type" : "schema:GeoCoordinates",
+          "addressCountry" : "United Kingdom",
+          "latitude" : "51.50853",
+          "longitude" : "-0.12574"
+        }
+      }
+    },
+    {
+      "id" : "#LatestPublicationEvent",
+      "@type" : "schema:PublicationEvent",
+      "publishedBy" : {
+        "id" : "#Publisher-Springer_Nature_Limited",
+        "type" : "schema:Organization",
+        "name" : "Springer Nature Limited"
+      },
+      "location" : {
+        "id" : "#PublicationPlace-London",
+        "type" : "schema:Place",
+        "label" : "London",
+        "geo" : {
+          "id" : "#PublicationPlace-London-Geocoordinates",
+          "type" : "schema:GeoCoordinates",
+          "addressCountry" : "United Kingdom",
+          "latitude" : "51.50853",
+          "longitude" : "-0.12574"
+        }        
+      }
+    }
+  ],
+  // doit contenir les mêmes identifiants de publisher que dans le contenu de la clé
+  // "publication"
+  "publisher" : [ 
+    "#Publisher-Macmillan",
+    "#Publisher-Nature_Publishing_Group",
+    "#Publisher-Springer_Nature_Limited"
+  ],
+  // 008/07-10
+  "startDate" : "1869", 
+  "mainEntity_of" : {
+    "id" : "#Record",
+    "type" : "schema:CreativeWork",
+    "modified" : "2023-09-15",
+    "mainEntity" : "",
+    "wasAttributedTo" : {
+      "id" : "issnCenter:_2",
+      "type" : "schema:Organization"
+    },
+    // TODO : manquait le status dans la notice d'origine
+    "status" : "",
+    "generated_by" : {
+      "id" : "#RecordCreation",
+      "type" : "prov:Activity",
+      "generated" : [ 
+        "#AbbreviatedKeyTitle",
+        "#KeyTitle",
+        "#ISSN-L",
+        "#ISSN",
+        "#Record"
+      ],
+      "wasAssociatedWith" : "http://www.w3.org/ns/ISSNCentre#BO"
+    }
+  },
+  // **** AJOUT THOMAS
+  // 338$b
+  "carrier" : "",
+  // content type : http://id.loc.gov/vocabulary/contentTypes
+  // 336$b
+  "content" : "",
+  // 533 - blank node (voir dans le mapping)
+  "hasReproduction" : {
+    // note : aucun de ces champs n'est multivalué
+    // 533$c
+    "publisher" : "",
+    // 533$b
+    "spatial" : {
+      // TODO : a-t-on d'autres propriétés ici ?
+      "label" : ""
+    },
+    // 533
+    "location" : {
+      // TODO : construit-on un événement de publication complet ici ?
+    }
+  },
+  // media type - http://id.loc.gov/vocabulary/mediaTypes
+  // 337$b
+  "media" : "",
+  // 538$a, 588$a - range = bf:Note, cf tableau de mapping
+  "note" : {
+    // toujours la même valeur
+    "type" : "bf:Note",
+    // 538$a, 588$a
+    "noteType" : "",
+    // 538$a, 588$a
+    "value" : ""
+  },
+  // 533
+  "reproductionNote" : "",
+  // 710$a, 710$b, 711$a
+  "isb" : "",
+  // 022$m
+  "hasCancelledISSN-L" : "",
+  // 022$y
+  "hasIncorrectISSN" : "",
+  //710$a, 710$b, 711$a - une schema:Organization
+  "contributor" : "",
+  // 856$u
+  "url": "",
+  // 920
+  // voir l'autre exemple avec les métadonnées Keepers .
+  // est-ce qu'on le garde ici ?
+  "subjectOf" : "",
+
+  // *** début des liens ***
+
+  //  78005$x, 78006$x
+  "absorbed" : [],
+  // 78504$x, 78505$x
+  "absorbedBy" : [],
+  // 78500$x
+  "continuedBy" : [],
+  // 78501$x
+  "continuedInPartBy" : [],
+  // 78000$x
+  "continues" : [],
+  // 78001$x
+  "continuesInPart" : [],
+  // 762$x
+  "hasSubseries" : [],
+  // 777$x
+  "issuedWith" : [],
+  // 78507$x 
+  "mergedToForm" : [],
+  // 78004$x
+  "mergerOf" : [],
+  // 775$x
+  "otherEdition" : [],
+  // 776$x
+  "otherPhysicalFormat" : [],
+  // 7800#$x
+  "precededBy" : [],
+  // 78502$x, 78503$x
+  "replacedBy" : [],
+  // 78002$x, 78003$x
+  "replacementOf" : [],
+  // 78007$x
+  "separatedFrom" : [],
+  // 78506$x
+  "splitInto" : [],
+  // 760$x
+  "subseriesOf" : [],
+  // 772$x
+  "supplement" : [],
+  // 770$x
+  "supplementTo" : [],
+  // 767$x
+  "translation" : [],
+  // 765$x
+  "translationOf" : [],
+  // 765$x (duplication du champ 765$x dans 2 propriétés)
+  "translationOfWork" : [],
+  // 767$x (duplication du champ 767$x dans 2 propriétés)
+  "workTranslation" : [],
+  // 770$x, 772$x, 777$x, 787$x, 7800$x, 7850$x, 7870$x
+  "relation" : [],
+  // 776$x
+  "isFormatOf" : [],
+  // 775$x
+  "versionOf" : [],
+  // 510$x
+  "citation" : [],
+  // 762$x
+  "hasPart" : [],
+  // 760$x
+  // /!\ attention bug : isPartOf est utilisé à la fois pour le lien vers l'ISSN-L
+  // et pour cette relation - doit-on modifier le profil d'application ?
+  // si on ne le modifie pas il faut remonter ce lien dans la clé "isPartOf" avec l'ISSN-L
+  "isPartOf" : [],
+
+  // *** fin des liens ***
+}
