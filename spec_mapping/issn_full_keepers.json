@@ -1,0 +1,303 @@
+{
+  "@context": {
+    "@import": "https://raw.githubusercontent.com/sparna-git/issn-jsonld-context/main/issn-jsonld-context.json",
+    "@base": "http://issn.org/resource/ISSN/1476-4687"
+  },
+
+  "id" : "",
+  "regularity" : "http://marc21rdf.info/terms/continuingreg#r",
+  "absorbed" : [ 
+    "resource:ISSN/2058-1092",
+    "resource:ISSN/2058-1106"
+  ],
+  "classification" : [
+    {
+    "type" : "bf:ClassificationDdc",
+    "value" : "505"
+    }
+  ],
+  "identifier" : "1476-4687",
+  "identifiedBy" : { 
+    "#ISSN-L" : {
+      "type" : "bf:IssnL",
+      "status" : "idStatus:Valid",
+      "value" : "0028-0836"
+    },
+    "#KeyTitle" : {
+      "type" : [ 
+        "bf:Identifier",
+        "bf:KeyTitle"
+      ],
+      "value" : "Nature (London)"
+    },
+    "#AbbreviatedKeyTitle" : {
+      "type" : [ 
+        "bf:Identifier",
+        "bf:AbbreviatedTitle" 
+      ],
+      "value" : "Nature (Basingstoke, Online)"
+    }
+  },
+  "mainTitle" : "Nature",
+  "otherPhysicalFormat" : [ 
+      "resource:ISSN/0028-0836"
+  ],
+  "note" : [
+    {
+      "type" : "bf:Note",
+      "noteType" : "Source of the description note",
+      "value" : "Latest issue consulted: volume 514, number 7520 (2 October 2014) (viewed October 8, 2014)."
+    },
+    {
+      "type" : "bf:Note",
+      "noteType" : "System details note",
+      "value" : "Mode of access: World Wide Web."
+    },
+    {
+      "type" : "bf:Note",
+      "noteType" : "Source of the description note",
+      "value" : "Description based on: Vol. 385, no. 6612 (Jan. 9, 1997); title from journal homepage (publisher's Web site, viewed Sept. 28, 2005)."
+    }
+  ],
+
+  "publicationDesignation" : "Print began with v. 1 (Nov. 4, 1869).",
+  
+
+  "provisionActivityStatement" : [
+    "[London] Nature Pub. Group"
+   ],
+  "title" : [ 
+    "#AbbreviatedKeyTitle",
+    "#KeyTitle"
+  ],
+  "M00806" : "http://marc21rdf.info/terms/alltyp#c",
+  "M008CR22" : "http://marc21rdf.info/terms/continuingori#s",
+  "M008CR23" : "http://marc21rdf.info/terms/commonfor#o",
+  "M008CR33" : "http://marc21rdf.info/terms/continuingscr#23a",
+  "format" : [
+    "medium:Online"
+  ],
+  "relation" : [ 
+    "resource:ISSN/1546-1696",
+    "resource:ISSN/2058-1106",
+    "resource:ISSN/2058-1092"
+  ],
+  "accrualPeriodicity" : "http://purl.org/cld/freq/weekly",
+  "isFormatOf" : [
+    "resource:ISSN/0028-0836"
+  ],
+  "spatial" : [
+    {
+    "id" : "http://id.loc.gov/vocabulary/countries/enk",
+    "label" : "England"
+    }
+  ],
+  "type_dct" : "http://marc21rdf.info/terms/formofmaterial#a",
+  "about" : [
+    "http://udcdata.info/025403"
+  ],
+  "alternateName" : [
+    "Nature (Basingstoke, Online)"
+  ],
+  "endDate" : "9999",
+  "inLanguage" : [
+    "http://id.loc.gov/vocabulary/iso639-2/eng"
+  ],
+  "isPartOf" : {
+    "id" : "resource:ISSN-L/0028-0836",
+    "identifiedBy" : "resource:ISSN/1476-4687#ISSN-L"
+  },
+  "keywords" : [
+    "MATHEMATICS. NATURAL SCIENCES"
+  ],
+  "name" : [ 
+    "Nature (Basingstoke. Online)",
+    "Nature"
+  ],
+  "publication" : [ 
+    {
+      "id" : "#EarliestPublicationEvent",
+      "type" : "schema:PublicationEvent",
+      "publishedBy" : {
+        "id" : "#Publisher-Nature_Pub._Group",
+        "type" : "schema:Organization",
+        "name" : "Nature Pub. Group"
+      },
+      "location" : {
+        "id" : "#PublicationPlace-[London]",
+        "type" : "schema:Place",
+        "geo" : {
+          "id" : "#PublicationPlace-[London]-Geocoordinates",
+          "type" : "schema:GeoCoordinates"
+        },
+        "label" : "[London]"
+      }
+    },
+    {
+      "id" : "#ReferencePublicationEvent",
+      "type" : "schema:PublicationEvent",
+      "location" : {
+        "id" : "http://id.loc.gov/vocabulary/countries/enk",
+        "label" : "England"
+      }
+    }
+  ],
+  "publisher" : [
+    "#Publisher-Nature_Pub._Group"
+  ],
+  "startDate" : "1869",
+  // 920
+  "subjectOf" : [ 
+    {
+      // toujours la même valeur
+      "type" : "schema:ArchiveComponent",
+      // TODO : mapping
+      "abstract" : "1 to 588",
+      // This property contains one the possible string : "Archived", "In Progress" or "Triggered"
+      // TODO : comment déterminer cette valeur ?
+      "creativeWorkStatus" : "In Progress",
+      // TODO : mapping
+      "dateModified" : "2024-03-11",
+      // TODO : mapping
+      "description" : "1 to 588",
+      "holdingArchive" : {
+        "id" : "keepers:lockss",
+        "type" : "schema:ArchiveOrganization",
+        "identifier" : "lockss",
+        "name" : "LOCKSS Archive"
+      },
+      // TODO : mapping
+      "mainEntity" : {
+        "issn" : [ 
+            "1476-4687",
+            "0028-0836"
+        ],
+        "name" : "Nature",
+        "publisher" : "Springer"
+      },
+      // TODO : mapping
+      "temporalCoverage" : "1870/2020"
+    },
+    {
+      "type" : "schema:ArchiveComponent",
+      "abstract" : "551 to 626",
+      "creativeWorkStatus" : "Preserved",
+      "dateModified" : "2024-03-11",
+      "description" : "551 to 626",
+      "holdingArchive" : {
+        "id" : "keepers:clockss",
+        "type" : "schema:ArchiveOrganization",
+        "identifier" : "clockss",
+        "name" : "CLOCKSS Archive"
+      },
+      "mainEntity" : {
+        "issn" : [ "1476-4687", "0028-0836" ],
+        "name" : "Nature",
+        "publisher" : "Springer"
+      },
+      "temporalCoverage" : "2017/2024"
+    },
+    {
+      "@type" : "schema:ArchiveComponent",
+      "abstract" : "Preserved : 1876: 14, 1876: 15, 1877: 16, 1878: 18",
+      "creativeWorkStatus" : "Preserved",
+      "dateModified" : "2024-03-11",
+      "description" : "Preserved : 1876: 14(358, 361), 1876: 15(368-369), 1877: 16(403, 405), 1878: 18(448-451, 453)",
+      "holdingArchive" : {
+        "id" : "keepers:portico",
+        "type" : "schema:ArchiveOrganization",
+        "identifier" : "portico",
+        "name" : "Portico"
+      },
+      "mainEntity" : {
+        "issn" : [ "1476-4687", "0028-0836" ],
+        "name" : "Nature",
+        "publisher" : "Springer Nature"
+      },
+      "temporalCoverage" : "1876/1878"
+    },
+    {
+      "type" : "schema:ArchiveComponent",
+      "abstract" : "Preserved : , v447, 5, 6, 43 to 49, 51 to 59, 61 to 69, 427 to 429, 431 to 439, 441 to 449, 451 to 459, 461 to 469, 471 to 479, 481 to 489, 491 to 498, 511 to 519, 521, 523 to 529, 531 to 539, 541 to 549, 551 to 559, 561 to 569, 571 to 579, 581 to 589, 591 to 599, 611 to 619",
+      "creativeWorkStatus" : "Preserved",
+      "dateModified" : "2023-07-25",
+      "description" : "Preserved : ; v447; 5 (746, 7461 to 7464); 6 (789, 7887 to 7889); 43 (7, 71 to 73, 6995 to 6999); 44 (78, 79, 781 to 788); 45 (717, 7166 to 7169, 7171 to 7173); 46 (7251 to 7259); 47 (7332 to 7335); 48 (7375 to 7378); 49 (7421); 51 (753 to 756, 7465 to 7468); 52 (747, 7469, 7471 to 7473, 7545 to 7549); 53 (759, 7474 to 7477, 7588, 7589, 7591); 54 (748, 7478, 7631 to 7634); 55 (7481 to 7485, 7674 to 7677); 56 (772, 7486 to 7489, 7716 to 7719); 57 (749, 776, 7491 to 7493, 7759, 7761, 7762); 58 (781 to 785, 7494 to 7497); 59 (75, 751, 752, 755, 7498, 7499, 7844 to 7847); 61 (793, 7891 to 7894, 7931 to 7933); 62 (7895 to 7898); 63 (79, 791 to 793, 7899); 64 (794 to 797); 65 (791, 798, 799, 7911); 66 (7912 to 7916); 67 (792, 7917 to 7919); 68 (7921 to 7924); 69 (7925 to 7929); 427 (697, 6969, 6971 to 6977); 428 (698, 6978, 6979, 6981 to 6986); 429 (699, 6229, 6987 to 6989, 6991 to 6995); 431 (71, 74 to 79, 711, 712); 432 (72, 713 to 719); 433 (721 to 728, 733); 434 (73, 729, 731 to 737); 435 (74, 179, 738, 739, 741 to 746); 436 (75, 747 to 749, 751 to 754); 437 (76, 461, 751, 755 to 759, 761 to 763); 438 (77, 764 to 769, 771); 439 (772 to 779); 441 (79, 789, 791 to 797); 442 (71, 711 to 716, 798, 799); 443 (711, 717 to 719, 7111 to 7114); 444 (712, 7115 to 7119, 7121 to 7123); 445 (713, 7123 to 7129); 446 (7131 to 7139); 447 (714, 7141 to 7148); 448 (715, 7149, 7151 to 7157); 449 (716, 7158, 7159, 7161 to 7165); 451 (718, 7174 to 7179, 7181, 7182); 452 (719, 7183 to 7189); 453 (7191 to 7199); 454 (72, 721 to 728); 455 (721, 729, 7211 to 7217); 456 (n1s, 722, 7218, 7219, 7221 to 7224); 457 (723, 7225 to 7229, 7231 to 7233, 7239); 458 (724, 7234 to 7239, 7241, 7242); 459 (725, 7243 to 7249); 461 (726, 7261 to 7268); 462 (727, 7269, 7271 to 7276); 463 (728, 7277 to 7279, 7281 to 7284); 464 (729, 7285 to 7289, 7291 to 7293); 465 (n731_supp, 73, 731, 7294 to 7299); 466 (731 to 739); 467 (7311 to 7319); 468 (732, 7321 to 7327); 469 (733, 7328, 7329, 7331); 471 (734, 7336 to 7339); 472 (7341 to 7344); 473 (7345 to 7348); 474 (735_supp, 7349, 7351 to 7353); 475 (7354 to 7357); 476 (736, 7358, 7359, 7361); 477 (7362 to 7366); 478 (737, 7367 to 7369); 479 (7371 to 7374); 481 (738, 7379, 7381, 7382); 482 (7383 to 7386); 483 (739, 7387 to 7389, 7391); 484 (7392 to 7395); 485 (74, 7396 to 7399); 486 (741 to 744); 487 (745 to 748); 488 (741, 749, 7411 to 7413); 489 (7414 to 7417); 491 (7422 to 7426); 492 (7427 to 7429); 493 (743, 7431 to 7434); 494 (7435 to 7438); 495 (744, 7439, 7441, 7442); 496 (7443 to 7446); 497 (745, 7447 to 7449, 7451); 498 (7452 to 7455); 511 (751, 757 to 759, 7511); 512 (7512 to 7515); 513 (7516 to 7519); 514 (752, 7521 to 7524); 515 (7525 to 7528); 516 (753, 7529, 7531); 517 (7532 to 7536); 518 (754, 7537 to 7539); 519 (7541 to 7544); 521 (7551 to 7553); 523 (756, 7558, 7559, 7561, 7562); 524 (7563 to 7566); 525 (757, 7567 to 7569); 526 (7571 to 7575); 527 (7576 to 7579); 528 (758, 7581 to 7583); 529 (7584 to 7587); 531 (7592 to 7596); 532 (76, 7597 to 7599); 533 (761 to 764); 534 (761, 765 to 769); 535 (761, 7611, 7613); 536 (7614 to 7617); 537 (762, 7618, 7619, 7621, 7622); 538 (7623 to 7626); 539 (763, 7627 to 7629); 541 (7635 to 7638); 542 (764, 7639, 7641, 7642); 543 (7643 to 7647); 544 (765, 7648, 7649, 7651); 545 (7652 to 7655); 546 (766, 7656 to 7659); 547 (7661 to 7664); 548 (7665 to 7669); 549 (767, 7671 to 7673); 551 (768, 7678, 7679, 7681, 7682); 552 (7683 to 7685); 553 (7686 to 7689); 554 (769, 7691 to 7693); 555 (7694 to 7698); 556 (77, 771, 772, 7699); 557 (773 to 777); 558 (771, 778, 779, 7711); 559 (7712 to 7715); 561 (7596, 7721 to 7724); 562 (7725 to 7728); 563 (773, 7729, 7731 to 7733); 564 (7734 to 7736); 565 (774, 7737 to 7739, 7741); 566 (7742 to 7745); 567 (7746 to 7749); 568 (775, 7751 to 7753); 569 (7754 to 7758); 571 (7763 to 7766); 572 (777, 7767 to 7769, 7771); 573 (7772 to 7775); 574 (778, 7776 to 7779); 575 (7781 to 7784); 576 (7785 to 7787); 577 (779, 7788, 7789, 7791, 7792); 578 (7793 to 7796); 579 (78, 7797 to 7799); 581 (786 to 789); 582 (781, 7811 to 7813); 583 (7814 to 7818); 584 (782, 7819, 7821, 7822); 585 (7823 to 7826); 586 (783, 7827 to 7829, 7831); 587 (7832 to 7835); 588 (7836 to 7839); 589 (784, 7841 to 7843); 591 (785, 7848, 7849, 7851); 592 (7852 to 7856); 593 (786, 7857 to 7859); 594 (7861 to 7864); 595 (7865 to 7869); 596 (787, 7871 to 7873); 597 (7874 to 7878); 598 (788, 7879, 7881, 7882); 599 (7883 to 7886); 611 (7934 to 7937); 612 (794, 7938, 7939, 7941); 613 (7942 to 7945); 614 (7946 to 7949); 615 (795, 7951 to 7954); 616 (7955 to 7958); 617 (796, 7959, 7961, 7962); 618 (7963 to 7967); 619 (7968)",
+      "holdingArchive" : {
+        "id" : "keepers:ndpp",
+        "type" : "schema:ArchiveOrganization",
+        "identifier" : "ndpp",
+        "name" : "National Digital Preservation Program, China"
+      },
+      "mainEntity" : {
+        "issn" : "1476-4687",
+        "name" : "Nature",
+        "publisher" : "Springer Nature"
+      },
+      "temporalCoverage" : "0000/2023"
+    },
+    {
+      "type" : "schema:ArchiveComponent",
+      "abstract" : "451 to 534, 536, 537",
+      "creativeWorkStatus" : "Preserved",
+      "dateModified" : "2024-03-11",
+      "description" : "451 to 534, 536, 537",
+      "holdingArchive" : {
+        "id" : "keepers:clockss",
+        "type" : "schema:ArchiveOrganization",
+        "identifier" : "clockss",
+        "name" : "CLOCKSS Archive"
+      },
+      "mainEntity" : {
+        "issn" : [ "1476-4687", "0028-0836" ],
+        "name" : "Nature",
+        "publisher" : "Nature Publishing Group"
+      },
+      "temporalCoverage" : "2008/2016"
+    },
+    {
+      "type" : "schema:ArchiveComponent",
+      "abstract" : "1869-2005",
+      "creativeWorkStatus" : "Preserved",
+      "dateModified" : "2023-09-15",
+      "description" : "1 to 438",
+      "holdingArchive" : {
+        "id" : "keepers:internetarchive",
+        "type" : "schema:ArchiveOrganization",
+        "identifier" : "internetarchive",
+        "name" : "Internet Archive"
+      },
+      "mainEntity" : {
+        "issn" : "0028-0836",
+        "name" : "Nature 1869-2016",
+        "publisher" : "Nature Publishing Group"
+      },
+      "temporalCoverage" : "1869/2005",
+      // TODO : mapping
+      "url" : "https://archive.org/details/pub_nature-uk"
+    }
+  ],
+  "url" : "http://www.nature.com/nature/",
+  
+  "mainEntity_of" : {
+    "id" : "#Record",
+    "type" : "schema:CreativeWork",
+    "modified" : "2022-11-24",
+    "mainEntity" : "",
+    "wasAttributedTo" : {
+      "id" : "issnCenter:_2",
+      "type" : "schema:Organization"
+    },
+    "generated_by" : {
+      "id" : "#RecordCreation",
+      "type" : "prov:Activity",
+      "generated" : [ 
+        "#AbbreviatedKeyTitle",
+        "#KeyTitle",
+        "#ISSN-L",
+        "#ISSN",
+        "#Record"
+      ],
+      "wasAssociatedWith" : "issnCenter:_2"
+    }
+  }
+}
