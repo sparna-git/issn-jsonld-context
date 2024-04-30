@@ -5,15 +5,18 @@
   },
 
   "id" : "",
-  "regularity" : "http://marc21rdf.info/terms/continuingreg#r",
-  "absorbed" : [ 
-    "resource:ISSN/0300-8746",
-    "resource:ISSN/0090-0028"
-  ],
+  // 008/19
+  // on construit l'URI en mettant le code à la fin
+  "regularity" : "http://marc21rdf.info/terms/continuingreg#r",  
+  // 082$a
   "classification" : [
     {
-    "type" : "bf:ClassificationDdc",
-    "value" : "505"
+      "type" : "bf:ClassificationDdc",
+      "value" : "505"
+    },
+    {
+      "type" : "bf:ClassificationUdc",
+      "value" : "..."
     }
   ],
   "identifier" : "0028-0836",
@@ -48,18 +51,14 @@
     }
   },
   "mainTitle" : "Nature.",
-  "otherPhysicalFormat" : [
-    "resource:ISSN/1476-4687"
-  ],
+  // 260#, 2602, 2603, 264#, 2642, 2643 
+  // les éditeurs
+  // on reprend le contenu de la zone en enlevant les sous-zones 
   "provisionActivityStatement" : [ 
     "London Macmillan 1869-",
     "London Springer Nature Limited",
     "London Nature Publishing Group"
-  ],
-  "supplementTo" : [ 
-    "resource:ISSN/1746-4366",
-    "resource:ISSN/0266-6561"
-  ],
+  ],  
   // Note : la clé title contient à la fois des références aux titres qui sont 
   // dans la partie identifier, plus les VariantTitle et ParallelTitle
   "title" : [ 
@@ -70,9 +69,13 @@
       "value" : "",
       // seulement dans le cas des VariantTitle
       // 246#$a, 2461$a, 2462$a, 2463$a, 2464$a, 2465$a, 2466$a, 2467$a, 2468$a
-      "variantType" : ""
+      // 2ème indicateur, c'est le contenu de l'indicateur
+      // qui peut être vide ou rempli - on met ce qu'on trouve
+      "variantType" : "..."
     },
     {
+      // ce sont les variant title qui ont le 2ème indicateur = 1
+      // c'est un type de variant title qu'on sépare des autres
       "type" : "bf:ParallelTitle",
       "value" : ""
     }
@@ -80,55 +83,84 @@
   "hasCancelledISSN" : [
     "resource:ISSN/0302-2889#ISSN"
   ],
+
+  // pour tous ces champs, il s'agit de construire la bonne URI
+  // a priori en concaténant le code du champ derrière une URI de base
   // 008/06
+  // voir la table m21terms:alltyp
   "M00806" : "http://marc21rdf.info/terms/alltyp#c",
   // 008/22
+  // voir la table m21terms:continuingori
   "M008CR22" : "http://marc21rdf.info/terms/continuingori##",
   // 008/23
+  // voir la table m21terms:commonfor
   "M008CR23" : "",
   // 008/33
+  // voir la table m21terms:continuingscr
   "M008CR33" : "http://marc21rdf.info/terms/continuingscr#23a",
   // 3620$a
+  // chaine de caractères
   "M3620_a" : "",
   // 3620$z
+  // chaine de caractères
   "M3620_z" : "",
   // 3621$a
+  // chaine de caractères
   "M3621_a" : "",
   // 3621$z
+  // chaine de caractères
   "M3621_z" : "",
   "format" : [
     "medium:Print"
   ],
-  "relation" : [ 
-    "resource:ISSN/0266-6561",
-    "resource:ISSN/1072-8368",
-    "resource:ISSN/0090-0028",
-    "resource:ISSN/0300-8746",
-    "resource:ISSN/1746-4366"
-  ],
   // 008/18
+  // code de périodicité qu'il faut transformer en URI
+  // voir tableau de mapping Excel pour la correspondance entre
+  // code et URI
   "accrualPeriodicity" : "http://purl.org/cld/freq/weekly",
-  "isFormatOf" : [
-    "resource:ISSN/1476-4687"
-  ],
-  // TODO : ajouter le pays ISO
   "spatial" : [
+    // pays MARC
     {
-    "id" : "http://id.loc.gov/vocabulary/countries/enk",
-    "label" : "England"
-    }
+      "id" : "http://id.loc.gov/vocabulary/countries/enk",
+      "label" : "England"
+    },
+    // pays ISO
+    {
+      // la génération de cette URL demande à avoir
+      // une table de correspondance entre le code 3 lettres du pays stocké en base,
+      // son code 2 lettres pour construire l'URL
+      // et son libellé
+      "id" : "https://www.iso.org/obp/ui/#iso:code:3166:UK",
+      "label" : "..."
+    },
   ],
+  // LDR/06
   "type_dct" : "http://marc21rdf.info/terms/formofmaterial#a",
-  // 989$u
+  // 981$u, 982$u, 983$u, 984$u, 985$u, 986$u, 987$u
+  // CDU simplifiée
+  // ces zones stockent l'information de hiérarchie de la CDU simplifiée
+  // 981 donne la catégorie la plus générique, 982 celle de 2ème niveau, etc.
+  // jusqu'à 987.
+  // il faut descendre jusqu'à la zone la plus précise possible
+  // et récupérer le code, qu'il faut concaténer au début de l'URI "http://udcdata.info/"
+  // Tout cela est répétable, avec des indicateurs 01, 02, 03
+  // pour marquer la répétition 
   "about" : [
     "http://udcdata.info/025403"
+  ],
+  // pour keywords, c'est la même logique mais avec le sous-champ $a
+  // on prend le plus précis qu'on trouve dans la hiérarchie de champs
+  "keywords" : [
+    "MATHEMATICS. NATURAL SCIENCES"
   ],
   "alternateName" : [
     "Nature (Lond.)"
   ],
   // 008/11-14
   "endDate" : "9999",
-  // 008/35-37, 041$a
+  // 008/35-37 (seulement un code), 041$a (répétable)
+  // Prendre les valeurs de 008/35-37 + 041$a, dédoublonner ces valeurs
+  // et convertir en URI de langues
   "inLanguage" : [
     "http://id.loc.gov/vocabulary/iso639-2/eng"
   ],
@@ -136,51 +168,16 @@
   "isPartOf" : {
     "id" : "resource:ISSN-L/0028-0836",
     "identifiedBy" : "#ISSN-L"
-  },
-  // 989$a
-  "keywords" : [
-    "MATHEMATICS. NATURAL SCIENCES"
-  ],
+  },  
   // 222$a, 245$a
   "name" : [ 
     "Nature.",
     "Nature (London)"
   ],
-  // 008/15-17,260#, 2602, 2603, 264#, 2642, 2643
+  
   "publication" : [ 
-    {
-      "id" : "#EarliestPublicationEvent",
-      "type" : "schema:PublicationEvent",
-      // 260$b, 264$b, 533$c
-      "publishedBy" : {
-        "id" : "#Publisher-Macmillan",
-        "type" : "schema:Organization",
-        "name" : "Macmillan"
-      },
-      // 260$c, 264$c, 533$d
-      "temporal" : "1869-",
-      "location" : {
-        "id" : "#PublicationPlace-London",
-        "type" : "schema:Place",
-        // 926, 953, 533$b
-        "geo" : {
-          "id" : "#PublicationPlace-London-Geocoordinates",
-          "type" : "schema:GeoCoordinates",
-          // 926$b, 953$b
-          "addressCountry" : "United Kingdom",
-          // 926$l, 953, 533$b
-          "latitude" : "51.50853",
-          // 926$o, 953, 533$b
-          "longitude" : "-0.12574"
-        },
-        // 260#$a, 2602$a, 2603$a, 264#$a, 2642$a, 2643$a,533$b
-        "label" : "London",
-        // 260#$a, 2602$a, 2603$a, 264#$a, 2642$a, 2643$a, 533$b (URI en 926$u)
-        // TODO : exemple de valeur
-        // TODO : un tableau ?
-        "sameAs" : [],
-      }
-    },
+    // 008/15-17 : alimente le ReferencePublicationEvent
+    // mettre le ReferencePublicationEvent au début
     {
       "id" : "#ReferencePublicationEvent",
       "type" : "schema:PublicationEvent",
@@ -189,6 +186,59 @@
         "label" : "England"
       }
     },
+    // toutes les zones éditeur
+    // se reporter au tableau Excel de mapping pour voir le détail
+    // exact du mapping
+    // 260#, 2602, 2603, 264#, 2642, 2643
+    // les zones 260 et 264 sont équivalentes et doivent être
+    // traitées de la même façon
+    {
+      "id" : "#EarliestPublicationEvent",
+      "type" : "schema:PublicationEvent",
+      // 260$b, 264$b
+      "publishedBy" : {
+        // URI = #Publisher + '-' + contenu du $b escapé pour faire une URI
+        "id" : "#Publisher-Macmillan",
+        "type" : "schema:Organization",
+        "name" : "Macmillan"
+      },
+      // 260$c, 264$c
+      "temporal" : "1869-",
+      // 260$a, 264$a
+      "location" : {
+        "id" : "#PublicationPlace-London",
+        "type" : "schema:Place",
+        // 926, 953
+        "geo" : {
+          "id" : "#PublicationPlace-London-Geocoordinates",
+          "type" : "schema:GeoCoordinates",
+          // 926$b, 953$b
+          "addressCountry" : "United Kingdom",
+          // 926$l, 953
+          "latitude" : "51.50853",
+          // 926$o, 953
+          "longitude" : "-0.12574"
+        },
+        // 260#$a, 2602$a, 2603$a, 264#$a, 2642$a, 2643$a
+        "label" : "London",
+        // URI en 962$u
+        // il faut faire la jointure sur le texte entre le 962$a
+        // qui contient exactement la même chaine de caractère que
+        // le 260$a ou 264$a
+        // tout cela est répétable
+        // on peut avoir les 260$a et 264$a répétés plusieurs fois
+        // pour la même valeur (ici "London"), mais cette valeur
+        // sera indiquée une seule fois en 962$a
+        "sameAs" : [
+          "http://sws.geonames.org/123456"
+        ],
+      }
+    },
+    // on se base sur les indicateurs pour créer le "Earliest"
+    // si l'indicateur est " " = earliest
+    // si l'indicateur est 2 = intervening
+    // si l'indicateur est 3 = latest
+    // fonctionnement identique en 260 et 264
     {
       "id" : "#InterveningPublicationEvent[1]",
       "type" : "schema:PublicationEvent",
@@ -210,6 +260,7 @@
         }
       }
     },
+    // si l'indicateur est 3 = latest
     {
       "id" : "#LatestPublicationEvent",
       "@type" : "schema:PublicationEvent",
@@ -233,7 +284,7 @@
     }
   ],
   // doit contenir les mêmes identifiants de publisher que dans le contenu de la clé
-  // "publication"
+  // "publication.publishedBy.id"
   "publisher" : [ 
     "#Publisher-Macmillan",
     "#Publisher-Nature_Publishing_Group",
@@ -246,11 +297,15 @@
     "type" : "schema:CreativeWork",
     "modified" : "2023-09-15",
     "mainEntity" : "",
+    // centre responsable du record, qui peut être le même
+    // que le record qui a créé la notice, ou différent
     "wasAttributedTo" : {
       "id" : "issnCenter:_2",
       "type" : "schema:Organization"
     },
-    // TODO : manquait le status dans la notice d'origine
+    // catégorie de la notice 
+    // 699$8
+    // on trouve le tableau de correspondance dans le tableau Excel de mapping
     "status" : "",
     "generated_by" : {
       "id" : "#RecordCreation",
@@ -262,7 +317,9 @@
         "#ISSN",
         "#Record"
       ],
-      "wasAssociatedWith" : "http://www.w3.org/ns/ISSNCentre#BO"
+      // 699$v
+      // centre qui a créé le record à l'origine
+      "wasAssociatedWith" : "issnCenter:BO"
     }
   },
   // **** AJOUT THOMAS
@@ -271,7 +328,8 @@
   // content type : http://id.loc.gov/vocabulary/contentTypes
   // 336$b
   "content" : "",
-  // 533 - blank node (voir dans le mapping)
+  // 533 - blank node (voir dans le tableau Excel de mapping 
+  // tout le détail de la structure)
   "hasReproduction" : {
     // note : aucun de ces champs n'est multivalué
     // 533$c
@@ -318,7 +376,10 @@
   // *** début des liens ***
 
   //  78005$x, 78006$x
-  "absorbed" : [],
+  "absorbed" : [ 
+    "resource:ISSN/0300-8746",
+    "resource:ISSN/0090-0028"
+  ],
   // 78504$x, 78505$x
   "absorbedBy" : [],
   // 78500$x
@@ -340,7 +401,9 @@
   // 775$x
   "otherEdition" : [],
   // 776$x
-  "otherPhysicalFormat" : [],
+  "otherPhysicalFormat" : [
+    "resource:ISSN/1476-4687"
+  ],
   // 7800#$x
   "precededBy" : [],
   // 78502$x, 78503$x
@@ -356,7 +419,10 @@
   // 772$x
   "supplement" : [],
   // 770$x
-  "supplementTo" : [],
+  "supplementTo" : [ 
+    "resource:ISSN/1746-4366",
+    "resource:ISSN/0266-6561"
+  ],
   // 767$x
   "translation" : [],
   // 765$x
@@ -366,9 +432,19 @@
   // 767$x (duplication du champ 767$x dans 2 propriétés)
   "workTranslation" : [],
   // 770$x, 772$x, 777$x, 787$x, 7800$x, 7850$x, 7870$x
-  "relation" : [],
+  // Note : ces zones comme 770$x donnent *aussi* d'autre propriétés
+  // comme 'supplementTo'. Elles sont dupliquées.
+  "relation" : [ 
+    "resource:ISSN/0266-6561",
+    "resource:ISSN/1072-8368",
+    "resource:ISSN/0090-0028",
+    "resource:ISSN/0300-8746",
+    "resource:ISSN/1746-4366"
+  ],
   // 776$x
-  "isFormatOf" : [],
+  "isFormatOf" : [
+    "resource:ISSN/1476-4687"
+  ],
   // 775$x
   "versionOf" : [],
   // 510$x
