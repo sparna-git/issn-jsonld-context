@@ -435,7 +435,7 @@
 
     "parentOrganization" : {
       "@id" : "schema:parentOrganization",
-      "@type" : "xsd:string"
+      "@type" : "@id"
     },
     "logo" : {
       "@id" : "schema:logo",

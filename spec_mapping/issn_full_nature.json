@@ -322,50 +322,135 @@
       "wasAssociatedWith" : "issnCenter:BO"
     }
   },
+
   // **** AJOUT THOMAS
+  // sauf certains "liens" qui ont été redescendus ici pour les regrouper avec les autres
+  
   // 338$b
-  "carrier" : "",
-  // content type : http://id.loc.gov/vocabulary/contentTypes
+  // vocabulaire contrôlé http://id.loc.gov/vocabulary/carriers
+  // voir le tableau de mapping Excel détaillé
+  // la valeur est une URI, on concatène le code avec le début de l'URI
+  // exemple http://id.loc.gov/vocabulary/carriers/sd
+  "carrier" : [
+    ""
+  ],
   // 336$b
-  "content" : "",
+  // content type
+  // vocabulaire contrôlé http://id.loc.gov/vocabulary/contentTypes
+  // voir le tableau de mapping Excel détaillé
+  // la valeur est une URI, on concatène le code avec le début de l'URI
+  // exemple http://id.loc.gov/vocabulary/contentTypes/sti
+  "content" : [
+    ""
+  ],
   // 533 - blank node (voir dans le tableau Excel de mapping 
   // tout le détail de la structure)
-  "hasReproduction" : {
-    // note : aucun de ces champs n'est multivalué
-    // 533$c
-    "publisher" : "",
-    // 533$b
-    "spatial" : {
-      // TODO : a-t-on d'autres propriétés ici ?
-      "label" : ""
-    },
-    // 533
-    "location" : {
-      // TODO : construit-on un événement de publication complet ici ?
+  "hasReproduction" : [
+    {
+      // toujours la même valeur
+      "type" : "schema:CreativeWork",
+      // note : aucun de ces champs n'est multivalué
+      // 533$c - toujours présent
+      "publisher" : {
+        // l'URI à construire est http://issn.org/resource/ISSN/[ISSN]#ReproductionAgency-[$c]
+        "id" : "",
+        // $c
+        "name" : "",
+        // toujours la même valeur
+        "type" : "schema:Organization"
+      },
+      // 533$b - si présent
+      "spatial" : {
+        // l'URI du lieu de reproduction
+        // construite selon la règle http://issn.org/resource/ISSN/[ISSN]#ReproductionPlace-[$b]
+        "id" : "",
+        // champ $b
+        "label" : "",
+        // toujours la même valeur
+        "type" : "schema:Place"
+      },
+      "publication" : {
+        "type" : "schema:PublicationEvent",
+        // Même URI à construire que pour spatial au-dessus
+        // http://issn.org/resource/ISSN/[ISSN]#ReproductionPlace-[$b]
+        "location" : "",
+        // Même URI à constuire que pour publisher au-dessus
+        // http://issn.org/resource/ISSN/[ISSN]#ReproductionAgency-[$c]
+        "publishedBy" : "",
+        // Contenu du 533$d - si présent
+        "temporal" : ""
+      }
     }
-  },
-  // media type - http://id.loc.gov/vocabulary/mediaTypes
+  ],
   // 337$b
-  "media" : "",
-  // 538$a, 588$a - range = bf:Note, cf tableau de mapping
-  "note" : {
-    // toujours la même valeur
-    "type" : "bf:Note",
-    // 538$a, 588$a
-    "noteType" : "",
-    // 538$a, 588$a
-    "value" : ""
-  },
+  // media type
+  // vocabulaire contrôlé http://id.loc.gov/vocabulary/mediaTypes
+  // concaténer le code avec la racine d'URI
+  // exemple http://id.loc.gov/vocabulary/mediaTypes/h
+  "media" : [
+    ""
+  ],
+  // 588$a - range = bf:Note, cf tableau de mapping
+  // /!\ on ne prend plus les 538
+  "note" : [
+    {
+      // toujours la même valeur
+      "type" :  "bf:Note",
+      // 588$a
+      // pour les 538, on met la valeur "System details note"
+      "noteType" : "Source of the description note",
+      // 588$a
+      // valeur littérale, contenu de la note
+      "value" : ""
+    },
+  ],
   // 533
-  "reproductionNote" : "",
+  // On concatène tous les sous-champs en une seule chaine de caractère
+  "reproductionNote" : [
+    ""
+  ],
   // 710$a, 710$b, 711$a
-  "isb" : "",
+  // on va aussi prendre le champ 720
+  // la différence est que dans le champ 720 on n'aura jamais de $b
+  // et plus rarement des ISNI
+  "isb" : [
+    // $a
+    {
+      // toujours la même valeur
+      "type" : "schema:Organization",
+      // URI à générer suivant la règle http://issn.org/resource/ISSN/[ISSN]#IssuingBody-[ContenuDu$a]
+      "id" : "",
+      // sous-champ $a
+      "name" : "",
+      // sous-champ 0, contient l'ISNI
+      // URI à construire avec la règle https://isni.org/isni/{sous-champs 0}
+      "sameAs" : ""
+    },
+    // si on a un sous-champs $b, on fait une 2ème valeur
+    {
+      // toujours la même valeur
+      "type" : "schema:Organization",
+      // URI à générer suivant la règle http://issn.org/resource/ISSN/[ISSN]#IssuingBody-[ContenuDu$b]
+      "id" : "",
+      // sous-champ $b
+      "name" : "",
+      // ici, mettre la même URI que celle construite pour le $a
+      // http://issn.org/resource/ISSN/[ISSN]#IssuingBody-[ContenuDu$a]
+      "parentOrganization" : ""
+    }
+  ],
   // 022$m
   "hasCancelledISSN-L" : "",
   // 022$y
   "hasIncorrectISSN" : "",
-  //710$a, 710$b, 711$a - une schema:Organization
-  "contributor" : "",
+  // 710$a, 710$b, 711$a - une schema:Organization
+  // on va aussi prendre le champ 720
+  // on recopie ici les URIs générées pour la propriété "isb"
+  // http://issn.org/resource/ISSN/[ISSN]#IssuingBody-[ContenuDu$a]
+  // http://issn.org/resource/ISSN/[ISSN]#IssuingBody-[ContenuDu$b]
+  "contributor" : [
+    ""
+  ],
   // 856$u
   "url": "",
   // 920

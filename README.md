@@ -163,6 +163,11 @@ nature exemple uses memberOf on classification information, but this is not in t
 
 --> remove from the examples and from the mapping
 
+### Supprimer le champs 538$a des notes
+
+### Ajouter 720 au mapping du champs "isb"
+
+
 
 ### Check dcam namespace: missing a final /
 
