@@ -460,6 +460,26 @@
 
   // *** début des liens ***
 
+  /*
+    Notes générales : 
+
+    - se reporter au tableau de mapping dans le profil d'application page 41 "ISSN resource links"
+    - Tous les liens sont des propriétés BibFrame, et pour certains il sont recopiés *en plus* dans d'autres propriétés :
+      - dc:relation
+      - dct:isFormatOf
+      - dct:versionOf
+      - schema:hasPart
+      - schema:isPartOf
+    - donc pour ces champs les valeurs seront recopiées dans 2 propriétés
+    - Par contre, schema:citation qui vient du champ 510 est spécifique
+    - On ne traite pas les zones de lien qui ne contiennent qu'un titre puisque ces propriétés doivent être des références à une ressource ISSN.
+    - Toutes ces propriétés de relation en RDF sont répétables, et donc toutes ces clés JSON ont pour valeur des tableaux contenant plusieurs valeurs
+    - Pour le lien mergedToForm, il ne faut tenir compte que de la dernière occurrence du champs qui est la résultante de la fusion des périodiques.
+      - Le lien inverse mergerOf donnera la liste de tous les périodiques qui ont fusionné dans le nouveau périodique
+
+  */
+
+
   //  78005$x, 78006$x
   "absorbed" : [ 
     "resource:ISSN/0300-8746",
@@ -532,8 +552,19 @@
   ],
   // 775$x
   "versionOf" : [],
-  // 510$x
-  "citation" : [],
+  // 510$a + $u
+  // On traite seulement les cas où on a un $a, un $u, ET un indicateur $9 = "facet"
+  // On exclut les autres cas
+  "indexedIn" : [
+    {
+      "id" : "#IndexingService-$a",
+      // toujours la même valeur
+      "type" : "bf:Work",
+      "name" : "$a",
+      "electronicLocator" : "$u"
+    }
+  ],
+
   // 762$x
   "hasPart" : [],
   // 760$x

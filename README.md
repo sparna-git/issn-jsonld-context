@@ -188,6 +188,8 @@ We have dct:modified on Records, but not dct:created ?
 
 ### cancelledInFavorOf, mapped to 022$v
 
+### Modifier le mappind de 760 et 762 pour utiliser bf:hasSeries / bf:hasSubseries à la place de schema:hasPart / isParOf
+
 
 ### Missing schema:holdingArchive in table
 

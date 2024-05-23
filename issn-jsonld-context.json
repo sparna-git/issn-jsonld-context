@@ -6,6 +6,7 @@
 
     "bf":"http://id.loc.gov/ontologies/bibframe/",
     "bfrel":"http://id.loc.gov/vocabulary/relators/",
+    "bflc":"http://id.loc.gov/ontologies/bflc/",
     "bfmarc":"http://bibfra.me/vocab/marc/",
     "bibo":"http://purl.org/ontology/bibo/",
     "dc":"http://purl.org/dc/elements/1.1/",
@@ -313,11 +314,23 @@
       "@id" : "dct:isFormatOf",
       "@type" : "@id"
     },
-    "isVersionOf" : {
-      "@id" : "dct:isVersionOf",
+    "versionOf" : {
+      "@id" : "dct:versionOf",
+      "@type" : "@id"
+    },
+    "hasSeries" : {
+      "@id" : "bf:hasSeries",
+      "@type" : "@id"
+    },
+    "hasSubseries" : {
+      "@id" : "bf:hasSubseries",
       "@type" : "@id"
     },
     "citation" : {
+      "@id" : "schema:citation",
+      "@type" : "@id"
+    },
+    "citation_text" : {
       "@id" : "schema:citation",
       "@type" : "@id"
     },
@@ -522,6 +535,15 @@
     },
     "mainEntity" : {
       "@id" : "schema:mainEntity",
+      "@type" : "@id"
+    },
+
+    "indexedIn" : {
+      "@id" : "bflc:indexedIn",
+      "@type" : "@id"
+    },
+    "electronicLocator" : {
+      "@id" : "bf:electronicLocator",
       "@type" : "@id"
     }
   }
