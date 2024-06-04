@@ -132,6 +132,8 @@ Is it using URIs ?
 
 ### Update the use of bibschema in the application profile
 
+status:DONE
+
 bibschema namespace is outdated. Properties have been integrated directly in schema.org
 
 - bibschema:translationOfWork exists as schema:translationOfWork
@@ -141,57 +143,76 @@ bibschema namespace is outdated. Properties have been integrated directly in sch
 
 I have set the corresponding mapping to schema URI instead of bibschema URIs
 
+
+
 ### update versionOf in AP
+status:DONE
 
 dct:versionOf does not exist. It should be dct:isVersionOf.
 
 ### reference to dcterms namespace
+status:DONE
 
 At least one reference subsist to dcterms: namespace, should be replaced by dct:
 
 ### xsd:number is wrong
+status:DONE
 
 xsd:number is wrong and should be replaced by xsd:decimal
 
 ### reference to issn: namespace
+status:DONE
 
 issn: namespace should be replaced by issnprop: namespace
 
 ### memberOf is not in the application profile
+status:NOTHING
 
 nature exemple uses memberOf on classification information, but this is not in the AP table, not in the diagrams. The mapping table contains it, but with visible errors in the URIs. Should it be added to the AP ?
 
 --> remove from the examples and from the mapping
 
 ### Supprimer le champs 538$a des notes
+status:DONE
+
 
 ### Ajouter 720 au mapping du champs "isb"
-
+status:DONE
 
 
 ### Check dcam namespace: missing a final /
+status:DONE
 
 ### Check bfmarc namespace: missing a final /
+status:DONE
 
 ### Check namespace consistence m2100X vs m2100x : should use capital X
+status:DONE
 
 ### Nouvelle zone 857
+status:PENDING (waiting for validation from Pierre)
 
 Pointe vers les archives électroniques
 
 ### Mapping de mainTitle devrait être mis à jour avec "245$a + $n + $p si présent"
-
+status:DONE
 
 ### Should the date of creation of the Record be published ?
+status:PENDING (waiting for validation from Pierre)
 
 We have dct:modified on Records, but not dct:created ?
 
 ### cancelledInFavorOf, mapped to 022$v
+status:DONE
 
 ### Modifier le mappind de 760 et 762 pour utiliser bf:hasSeries / bf:hasSubseries à la place de schema:hasPart / isParOf
-
+status:PENDING (waiting for validation from Pierre)
 
 ### Missing schema:holdingArchive in table
+status:DONE
+
+### Ajout de la zone 510
+status:PENDING 
 
 ## Problem notice Nature
 
