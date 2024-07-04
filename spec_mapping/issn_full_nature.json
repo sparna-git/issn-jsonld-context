@@ -1,3 +1,11 @@
+// QUESTION sur les Organizations : utilise-t-on un code de langue
+// sur les names de **toutes** les organisations ? ou seulement les isb ?
+
+// QUESTION : est-ce que les titres translitérés sont dans le niveau gratuit ?
+
+// QUESTION : notre règle sur les noms d'organisation est différente de celle des titres
+// car le nom latin peut se retrouver en name ou alternateName. Est-ce qu'on ne devrait
+// pas être cohérent avec ce qu'on fait pour les titres ?
 {
   "@context": {
     "@import": "https://raw.githubusercontent.com/sparna-git/issn-jsonld-context/main/issn-jsonld-context.json",
@@ -26,7 +34,31 @@
         "bf:Identifier",
         "bf:KeyTitle"
       ],
-      "value" : "Nature (London)"
+      // QUESTION : la valeur du KeyTitle est répétée à la fois
+      // en "value" comme valeur d'identifiant
+      // et en mainTitle comme valeur de titre
+      "value" : "Nature (London)",
+      // toutes les valeurs de KeyTitle auront @value et @language
+      "mainTitle" : {
+        "@value" : "Nature (London)",
+        // si ce titre n'est pas une translitération, on indique seulement
+        // "und-Latn" qui veut dire que la langue est indéfinie, en script Latin
+        "@language" : "und-Latn",
+        // si ce titre est une translitération, on indique "und-Latn-t-und-cyrl"
+        // qui veut dire que la langue est indéfinie, en script latin, traduite
+        // depuir une langue indéfinie, en script Cyrilic (ou un autre code de script)
+        // "@language" : "und-Latn-t-und-Cyrl"
+      },
+      // si ce KeyTitle est une translitération d'un autre titre, on donne cet
+      // autre titre dans son script d'origine par un "translationOf"
+      // le "@language" sera "und-XXXX" avec "XXXX" étant le code du script
+      "translationOf" : {
+        "type" : "bf:Title",
+        "mainTitle" : {
+          "@value" : "xxxxxx",
+          "@language" : "und-Cyrl"
+        }
+      }
     },
     "#CODEN" : {
       "type" : "bf:Coden",
@@ -47,10 +79,19 @@
         "bf:Identifier",
         "bf:AbbreviatedTitle" 
       ],
-      "value" : "Nature (Lond.)"
+      // QUESTION : la valeur du AbbreviatedKeyTitle
+      // est répétée en value comme identifiant et en mainTitle comme titre
+      "value" : "Nature (Lond.)",
+      "mainTitle" : {
+        "@value" : "Nature (Lond.)",
+        "@language" : "und-Latn"
+      }
     }
   },
+  // le title proper est répété dans la propriété mainTitle
+  // QUESTION : sans indication du code de langue
   "mainTitle" : "Nature.",
+
   // 260#, 2602, 2603, 264#, 2642, 2643 
   // les éditeurs
   // on reprend le contenu de la zone en enlevant les sous-zones 
@@ -59,14 +100,66 @@
     "London Springer Nature Limited",
     "London Nature Publishing Group"
   ],  
+
+
   // Note : la clé title contient à la fois des références aux titres qui sont 
   // dans la partie identifier, plus les VariantTitle et ParallelTitle
   "title" : [ 
     "#AbbreviatedKeyTitle",
     "#KeyTitle",
+    
+    // le Title Proper est indiqué comme titre
+    {
+      "type" : "bf:Title",
+      // les value des Titles ont toujours @value et @language
+      // sans indication sur la langue, on met toujours a minima "und-Latn"
+      // car on est sûr que le script est latin
+      "value": {
+        "@value" : "Pravda. (le Title Proper)",
+        // si ce titre n'est pas une translitération, on indique seulement
+        // "und-Latn" qui veut dire que la langue est indéfinie, en script Latin
+        "@language" : "und-Latn"
+        // si ce titre est une translitération, on indique "und-Latn-t-und-cyrl"
+        // qui veut dire que la langue est indéfinie, en script latin, traduite
+        // depuis une langue indéfinie, en script Cyrilic (ou un autre code de script)
+        // "@language" : "und-Latn-t-und-Cyrl"
+      },
+      // si ce titre est une translitération d'un autre titre, on donne cet
+      // autre titre dans son script d'origine par un "translationOf"
+      // le "@language" sera "und-XXXX" avec "XXXX" étant le code du script
+      "translationOf" : {
+        "type" : "bf:Title",
+        "mainTitle" : {
+          // zone 880$6 avec le code script
+          "@value" : "Правда.",
+          // si on n'arrive pas à déterminer la langue, on utilise le code "und" associé
+          // au code de script
+          // Si on arrive à determiner la langue, on remplace "und" par le code de langue,
+          // exemple "ru-Cyrl"
+
+          // cela s'appliquer au main title, à tous les autres titres,
+          // tous les noms d'éditeur, les collectivités éditrices
+          "@language" : "und-Cyrl"
+        }
+      }
+    },
+
     {
       "type" : "bf:VariantTitle",
-      "value" : "",
+      "value" : {
+        "@value" : "...",
+        // und-Latn si pas de translitération, sinon "und-Latn-t-und-Cyrl"
+        // voir explications sur le title proper ci-dessus
+        "@language" : "und-Latn"
+      },
+      // seulement en cas de translitération, voir commentaire sur le title proper
+      "translationOf" : {
+        "type" : "bf:Title",
+        "mainTitle" : {
+          "@value" : "Правда.",
+          "@language" : "und-Cyrl"  
+        }        
+      },
       // seulement dans le cas des VariantTitle
       // 246#$a, 2461$a, 2462$a, 2463$a, 2464$a, 2465$a, 2466$a, 2467$a, 2468$a
       // 2ème indicateur, c'est le contenu de l'indicateur
@@ -77,8 +170,22 @@
       // ce sont les variant title qui ont le 2ème indicateur = 1
       // c'est un type de variant title qu'on sépare des autres
       "type" : "bf:ParallelTitle",
-      "value" : ""
+      "value" : {
+        "@value" : "...",
+        // und-Latn si pas de translitération, sinon "und-Latn-t-und-Cyrl"
+        // voir explications sur le title proper ci-dessus
+        "@language" : "und-Latn"
+      },
+      // seulement en cas de translitération, voir commentaire sur le title proper
+      "translationOf" : {
+        "type" : "bf:Title",
+        "mainTitle" : {
+          "@value" : "Правда.",
+          "@language" : "und-Cyrl"  
+        }
+      }
     }
+
   ],
   "hasCancelledISSN" : [
     "resource:ISSN/0302-2889#ISSN"
@@ -153,6 +260,7 @@
   "keywords" : [
     "MATHEMATICS. NATURAL SCIENCES"
   ],
+  // QUESTION : sans le code de langue ici ?
   "alternateName" : [
     "Nature (Lond.)"
   ],
@@ -170,6 +278,9 @@
     "identifiedBy" : "#ISSN-L"
   },  
   // 222$a, 245$a
+  // QUESTION : on pourrait dire que ici, dans schema:name et dans rdfs:label
+  // on ne met pas les codes de langue "und-Latn" qui n'apparaitront que dans
+  // les objets Title. Cela simplifierait la lecture des données
   "name" : [ 
     "Nature.",
     "Nature (London)"
@@ -317,6 +428,9 @@
         "#ISSN",
         "#Record"
       ],
+      // date de création du Record, 039$v
+      // prende la plus ancienne si il y en a plusieurs
+      "created" : "YYYY-MM-DD",
       // 699$v
       // centre qui a créé le record à l'origine
       "wasAssociatedWith" : "issnCenter:BO"
@@ -421,7 +535,28 @@
       // URI à générer suivant la règle http://issn.org/resource/ISSN/[ISSN]#IssuingBody-[ContenuDu$a]
       "id" : "",
       // sous-champ $a
-      "name" : "",
+
+      // Cas 1 : quand il y a un nom dans le script d'origine (zone 880), celui-ci
+      // sera mis dans la propriété name, et la valeur translitérée (zone 710$a) sera mise
+      // dans alternateName
+      "name" : {
+        "@value" : "880 : nom dans la langue d'origine",
+        // code du script dans la langue d'origine
+        // si on arrive à déterminer la langue, on remplace "und" par le code de langue
+        "@language" : "und-Cyrl"
+      },
+      "alternateName" : {
+        "@value" : "710$a : nom translitéré",
+        "@language" : "und-Latn-t-und-cyrl"
+      },
+
+      // Cas 2 : à l'inverse, quand il n'y a pas de script d'origine dans la zone 880,
+      // alors la valeur du champs 710$a est mise directement dans name
+      "name" : {
+        "@value" : "710$a : nom en script latin, pas translitéré",
+        "@language" : "und-Latn"
+      },
+
       // sous-champ 0, contient l'ISNI
       // URI à construire avec la règle https://isni.org/isni/{sous-champs 0}
       "sameAs" : ""
@@ -433,7 +568,30 @@
       // URI à générer suivant la règle http://issn.org/resource/ISSN/[ISSN]#IssuingBody-[ContenuDu$b]
       "id" : "",
       // sous-champ $b
-      "name" : "",
+
+      // mêmes règles que au-dessus mais avec 710$b
+
+      // Cas 1 : quand il y a un nom dans le script d'origine (zone 880), celui-ci
+      // sera mis dans la propriété name, et la valeur translitérée (zone 710$a) sera mise
+      // dans alternateName
+      "name" : {
+        "@value" : "880 : nom dans la langue d'origine",
+        // code du script dans la langue d'origine
+        // si on arrive à déterminer la langue, on remplace "und" par le code de langue
+        "@language" : "und-Cyrl"
+      },
+      "alternateName" : {
+        "@value" : "710$a : nom translitéré",
+        "@language" : "und-Latn-t-und-cyrl"
+      },
+
+      // Cas 2 : à l'inverse, quand il n'y a pas de script d'origine dans la zone 880,
+      // alors la valeur du champs 710$a est mise directement dans name
+      "name" : {
+        "@value" : "710$a : nom en script latin, pas translitéré",
+        "@language" : "und-Latn"
+      },
+
       // ici, mettre la même URI que celle construite pour le $a
       // http://issn.org/resource/ISSN/[ISSN]#IssuingBody-[ContenuDu$a]
       "parentOrganization" : ""
@@ -566,12 +724,9 @@
   ],
 
   // 762$x
-  "hasPart" : [],
+  "hasSubseries" : [],
   // 760$x
-  // /!\ attention bug : isPartOf est utilisé à la fois pour le lien vers l'ISSN-L
-  // et pour cette relation - doit-on modifier le profil d'application ?
-  // si on ne le modifie pas il faut remonter ce lien dans la clé "isPartOf" avec l'ISSN-L
-  "isPartOf" : [],
+  "hasSeries" : [],
 
   // *** fin des liens ***
 }

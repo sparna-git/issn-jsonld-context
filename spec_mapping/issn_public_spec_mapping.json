@@ -40,14 +40,30 @@
           "bf:KeyTitle"
       ],
       // 222$a + 222$b s'il est présent
-      "value" : "Éffervescences lycéennes"
+      "value" : "Éffervescences lycéennes",
+      "mainTitle" : {
+        "@value" : "Éffervescences lycéennes",
+        // voir les règles pour les translitération dans l'exemple "full_nature"
+        "@language" : "und-Latn"
+      }
     }
   },
 
   // 245$a + $n + $p si présent
   "mainTitle" : "Éffervescences lycéennes.",
   // toujours pareil
-  "title" : "#KeyTitle",
+  "title" : [
+    "#KeyTitle",
+    // title proper répété ici
+    {
+      "type" : "bf:Title",
+      "mainTitle" : {
+        "@value" : "Éffervescences lycéennes.",
+        // voir les règles pour les translitération dans l'exemple "full_nature"
+        "@language" : "und-Latn"
+      }
+    }
+  ],
   // 007 :
   // si commence par "t" = medium:Print
   // si commence par "cr" = medium:Online

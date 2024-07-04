@@ -28,7 +28,19 @@
         "bf:Identifier",
         "bf:KeyTitle"
       ],
-      "value" : "Nature (London)"
+      "value" : {
+        "@value" : "Nature (London)",
+        // voir les règles pour les translitération dans l'exemple "full_nature"
+        "@language" : "und-Latn"
+      },
+      // voir les règles pour les translitération dans l'exemple "full_nature"
+      "translationOf" : {
+        "type" : "bf:Title",
+        "mainTitle": {
+          "@value" : "...",
+          "@language" : "..."
+        }
+      }
     },
     "#AbbreviatedKeyTitle" : {
       "type" : [ 
@@ -68,7 +80,24 @@
    ],
   "title" : [ 
     "#AbbreviatedKeyTitle",
-    "#KeyTitle"
+    "#KeyTitle",
+    // le title proper
+    {
+      "type" : "bf:Title",
+      "value" : {
+        "@value" : "Nature",
+        // voir les règles pour les translitération dans l'exemple "full_nature"
+        "@language" : "und-Latn"
+      },
+      // voir les règles pour les translitération dans l'exemple "full_nature"
+      "translationOf" : {
+        "type" : "bf:Title",
+        "mainTitle" : {
+          "@value" : "",
+          "@language" : ""  
+        }        
+      }
+    }
   ],
   "M00806" : "http://marc21rdf.info/terms/alltyp#c",
   "M008CR22" : "http://marc21rdf.info/terms/continuingori#s",
@@ -146,37 +175,55 @@
     "#Publisher-Nature_Pub._Group"
   ],
   "startDate" : "1869",
+  
+
+
   // 920
   "subjectOf" : [ 
     {
       // toujours la même valeur
       "type" : "schema:ArchiveComponent",
-      // TODO : mapping
+      // 920$j
       "abstract" : "1 to 588",
       // This property contains one the possible string : "Archived", "In Progress" or "Triggered"
-      // TODO : comment déterminer cette valeur ?
+      // 920$i
       "creativeWorkStatus" : "In Progress",
-      // TODO : mapping
+      // 920$l
       "dateModified" : "2024-03-11",
-      // TODO : mapping
+      // 920$k
       "description" : "1 to 588",
       "holdingArchive" : {
+        // Build URI from code in 920$h
         "id" : "keepers:lockss",
+        // always the same value
         "type" : "schema:ArchiveOrganization",
+        // 920$h
         "identifier" : "lockss",
+        // 920 $g
         "name" : "LOCKSS Archive"
       },
-      // TODO : mapping
       "mainEntity" : {
+        // 920$a
         "issn" : [ 
             "1476-4687",
             "0028-0836"
         ],
+        // 920$c
         "name" : "Nature",
+        // 920$d
         "publisher" : "Springer"
       },
-      // TODO : mapping
-      "temporalCoverage" : "1870/2020"
+      // 920$e + 920$f
+      "temporalCoverage" : "1870/2020",
+      "isPartOf": {
+        // 857$c : create a URI http://issn.org/archive#{archiveName} by encoding the archive name
+        "id" : "archive:The_LOCKSS_archive",
+        "type" : "schema:ArchiveComponent",
+        // 857$c
+        "name": "The LOCKSS archive",
+        // use the same URI as in holdingArchive.id
+        "holdingArchive" : "keepers:lockss"
+      }
     },
     {
       "type" : "schema:ArchiveComponent",
@@ -272,7 +319,7 @@
         "publisher" : "Nature Publishing Group"
       },
       "temporalCoverage" : "1869/2005",
-      // TODO : mapping
+      // 920$m
       "url" : "https://archive.org/details/pub_nature-uk"
     }
   ],
