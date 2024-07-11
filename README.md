@@ -179,7 +179,6 @@ status:DONE
 ### Ajouter 720 au mapping du champs "isb"
 status:DONE
 
-
 ### Check dcam namespace: missing a final /
 status:DONE
 
@@ -190,7 +189,7 @@ status:DONE
 status:DONE
 
 ### Nouvelle zone 857
-status:PENDING (waiting for validation from Pierre)
+status:DONE
 
 Pointe vers les archives électroniques
 
@@ -198,15 +197,13 @@ Pointe vers les archives électroniques
 status:DONE
 
 ### Should the date of creation of the Record be published ?
-status:PENDING (waiting for validation from Pierre)
-
-We have dct:modified on Records, but not dct:created ?
+status:DONE (on the Activity)
 
 ### cancelledInFavorOf, mapped to 022$v
 status:DONE
 
 ### Modifier le mappind de 760 et 762 pour utiliser bf:hasSeries / bf:hasSubseries à la place de schema:hasPart / isParOf
-status:PENDING (waiting for validation from Pierre)
+status:WILL NOT DO
 
 ### Missing schema:holdingArchive in table
 status:DONE
@@ -228,27 +225,6 @@ status:PENDING
 - missing issn
 - Missing the country from ISO 044 ?
 
-
-## Problems notice Nature online
-
-- "type":"note" is wrong, should be "type":"Note"
-- "publicationDesignation" does not exists in the application profile
-- is the ISSN-L identifier correct ?
-
-```
-"isPartOf" : {
-    "id" : "resource:ISSN-L/0028-0836",
-    "identifiedBy" : "resource:ISSN/1476-4687#ISSN-L"
-  }
-```
-
-
-
-## Actions
-
-- Thomas propose une documentation du mapping dans le tableau Excel
-- Thomas fait un exemple JSON-LD de l'ISSN-L
-- On l'explique en premier aux développeurs
 - Ajouter un exemple pour les métadonnées Keepers (dans les notices publiques)
 - Ajouter la zone 857 dans le profil d'application
 - Autre notice effervescence lycéenne full à faire en exemple
