@@ -1,0 +1,350 @@
+@base          <http://issn.org/> .
+<organization/ISSNCenter#_2>
+        a       <http://schema.org/Organization> .
+
+<organization/keepers#ndpp>
+        a                               <http://schema.org/ArchiveOrganization> ;
+        <http://schema.org/identifier>  "ndpp" ;
+        <http://schema.org/name>        "National Digital Preservation Program, China" .
+
+<organization/keepers#hathi>
+        a                               <http://schema.org/ArchiveOrganization> ;
+        <http://schema.org/identifier>  "hathi" ;
+        <http://schema.org/name>        "HathiTrust" .
+
+<resource/ISSN/1476-4687#KeyTitle>
+        a       <http://id.loc.gov/ontologies/bibframe/Identifier> , <http://id.loc.gov/ontologies/bibframe/KeyTitle> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "Nature (Basingstoke. Online)" .
+
+<http://id.loc.gov/vocabulary/countries/enk>
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "England" .
+
+<resource/ISSN/1476-4687#ReferencePublicationEvent>
+        a                             <http://schema.org/PublicationEvent> ;
+        <http://schema.org/location>  <http://id.loc.gov/vocabulary/countries/enk> .
+
+<resource/ISSN-L/0028-0836>
+        <http://id.loc.gov/ontologies/bibframe/identifiedBy>
+                <resource/ISSN/1476-4687#ISSN-L> .
+
+<resource/ISSN/1476-4687#Record>
+        a                               <http://schema.org/CreativeWork> ;
+        <http://purl.org/dc/terms/modified>
+                "20221124123358.370217"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://schema.org/mainEntity>  <resource/ISSN/1476-4687> ;
+        <http://www.w3.org/ns/prov#wasAttributedTo>
+                <organization/ISSNCenter#_2> .
+
+<organization/keepers#lockss>
+        a                               <http://schema.org/ArchiveOrganization> ;
+        <http://schema.org/identifier>  "lockss" ;
+        <http://schema.org/name>        "LOCKSS Archive" .
+
+<organization/keepers#loc>
+        a                               <http://schema.org/ArchiveOrganization> ;
+        <http://schema.org/identifier>  "loc" ;
+        <http://schema.org/name>        "Library of Congress" .
+
+<organization/keepers#internetarchive>
+        a                               <http://schema.org/ArchiveOrganization> ;
+        <http://schema.org/identifier>  "internetarchive" ;
+        <http://schema.org/name>        "Internet Archive" .
+
+<organization/keepers#clockss>
+        a                               <http://schema.org/ArchiveOrganization> ;
+        <http://schema.org/identifier>  "clockss" ;
+        <http://schema.org/name>        "CLOCKSS Archive" .
+
+<resource/ISSN/1476-4687>
+        <http://id.loc.gov/ontologies/bibframe/identifiedBy>
+                <resource/ISSN/1476-4687#KeyTitle> , <resource/ISSN/1476-4687#ISSN-L> ;
+        <http://id.loc.gov/ontologies/bibframe/mainTitle>
+                "Nature" ;
+        <http://id.loc.gov/ontologies/bibframe/otherPhysicalFormat>
+                <resource/ISSN/0028-0836> ;
+        <http://id.loc.gov/ontologies/bibframe/title>
+                <resource/ISSN/1476-4687#KeyTitle> ;
+        <http://purl.org/dc/elements/1.1/format>
+                <vocabularies/medium#Online> ;
+        <http://purl.org/dc/terms/isFormatOf>
+                <resource/ISSN/0028-0836> ;
+        <http://purl.org/dc/terms/type>
+                <http://marc21rdf.info/terms/formofmaterial#a> ;
+        <http://schema.org/isPartOf>   <resource/ISSN-L/0028-0836> ;
+        <http://schema.org/name>       "Nature" , "Nature (Basingstoke. Online)" ;
+        <http://schema.org/publication>
+                <resource/ISSN/1476-4687#ReferencePublicationEvent> ;
+        <http://schema.org/subjectOf>  [ a                               <http://schema.org/ArchiveComponent> ;
+                                         <http://schema.org/abstract>    "Preserved : 1876: 14, 1876: 15, 1877: 16, 1878: 18" ;
+                                         <http://schema.org/creativeWorkStatus>
+                                                 "Preserved" ;
+                                         <http://schema.org/dateModified>
+                                                 "2024-04-28"^^<http://www.w3.org/2001/XMLSchema#date> ;
+                                         <http://schema.org/description>
+                                                 "Preserved : 1876: 14(358, 361), 1876: 15(368-369), 1877: 16(403, 405), 1878: 18(448-451, 453)" ;
+                                         <http://schema.org/holdingArchive>
+                                                 <organization/keepers#portico> ;
+                                         <http://schema.org/mainEntity>  [ <http://schema.org/issn>       "1476-4687" , "0028-0836" ;
+                                                                           <http://schema.org/name>       "Nature" ;
+                                                                           <http://schema.org/publisher>  "Springer Nature"
+                                                                         ] ;
+                                         <http://schema.org/temporalCoverage>
+                                                 "1876/1878"
+                                       ] ;
+        <http://schema.org/subjectOf>  [ a                               <http://schema.org/ArchiveComponent> ;
+                                         <http://schema.org/abstract>    "1869-2005" ;
+                                         <http://schema.org/creativeWorkStatus>
+                                                 "Preserved" ;
+                                         <http://schema.org/dateModified>
+                                                 "2024-04-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
+                                         <http://schema.org/description>
+                                                 "1 to 438" ;
+                                         <http://schema.org/holdingArchive>
+                                                 <organization/keepers#internetarchive> ;
+                                         <http://schema.org/mainEntity>  [ <http://schema.org/issn>       "0028-0836" ;
+                                                                           <http://schema.org/name>       "Nature 1869-2016" ;
+                                                                           <http://schema.org/publisher>  "Nature Publishing Group"
+                                                                         ] ;
+                                         <http://schema.org/temporalCoverage>
+                                                 "1869/2005" ;
+                                         <http://schema.org/url>         "https://archive.org/details/pub_nature-uk"
+                                       ] ;
+        <http://schema.org/subjectOf>  [ a                               <http://schema.org/ArchiveComponent> ;
+                                         <http://schema.org/abstract>    "1869-2013" ;
+                                         <http://schema.org/creativeWorkStatus>
+                                                 "Preserved" ;
+                                         <http://schema.org/dateModified>
+                                                 "2024-04-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
+                                         <http://schema.org/description>
+                                                 "1 to 504" ;
+                                         <http://schema.org/holdingArchive>
+                                                 <organization/keepers#internetarchive> ;
+                                         <http://schema.org/mainEntity>  [ <http://schema.org/issn>       "0028-0836" ;
+                                                                           <http://schema.org/name>       "Nature 1869-2016" ;
+                                                                           <http://schema.org/publisher>  "Nature Publishing Group"
+                                                                         ] ;
+                                         <http://schema.org/temporalCoverage>
+                                                 "1869/2013" ;
+                                         <http://schema.org/url>         "https://archive.org/details/pub_nature-uk"
+                                       ] ;
+        <http://schema.org/subjectOf>  [ a                               <http://schema.org/ArchiveComponent> ;
+                                         <http://schema.org/abstract>    "Preserved : 1888: 37" ;
+                                         <http://schema.org/creativeWorkStatus>
+                                                 "Preserved" ;
+                                         <http://schema.org/dateModified>
+                                                 "2024-04-28"^^<http://www.w3.org/2001/XMLSchema#date> ;
+                                         <http://schema.org/description>
+                                                 "Preserved : 1888: 37(953, 956, 958)" ;
+                                         <http://schema.org/holdingArchive>
+                                                 <organization/keepers#portico> ;
+                                         <http://schema.org/mainEntity>  [ <http://schema.org/issn>       "1476-4687" , "0028-0836" ;
+                                                                           <http://schema.org/name>       "Nature" ;
+                                                                           <http://schema.org/publisher>  "Springer Nature"
+                                                                         ] ;
+                                         <http://schema.org/temporalCoverage>
+                                                 "1888/1888"
+                                       ] ;
+        <http://schema.org/subjectOf>  [ a                               <http://schema.org/ArchiveComponent> ;
+                                         <http://schema.org/abstract>    "Preserved : 1880: 21, 1881: 23, 1881: 24, 1882: 26, 1882/1883: 27, 1883: 29" ;
+                                         <http://schema.org/creativeWorkStatus>
+                                                 "Preserved" ;
+                                         <http://schema.org/dateModified>
+                                                 "2024-04-28"^^<http://www.w3.org/2001/XMLSchema#date> ;
+                                         <http://schema.org/description>
+                                                 "Preserved : 1880: 21(532, 534, 544), 1881: 23(592), 1881: 24(605, 622-623), 1882: 26(674), 1882/1883: 27(680, 683, 691-693), 1883: 29(733)" ;
+                                         <http://schema.org/holdingArchive>
+                                                 <organization/keepers#portico> ;
+                                         <http://schema.org/mainEntity>  [ <http://schema.org/issn>       "1476-4687" , "0028-0836" ;
+                                                                           <http://schema.org/name>       "Nature" ;
+                                                                           <http://schema.org/publisher>  "Springer Nature"
+                                                                         ] ;
+                                         <http://schema.org/temporalCoverage>
+                                                 "1880/1883"
+                                       ] ;
+        <http://schema.org/subjectOf>  [ a                               <http://schema.org/ArchiveComponent> ;
+                                         <http://schema.org/abstract>    "535, 538 to 540" ;
+                                         <http://schema.org/creativeWorkStatus>
+                                                 "In Progress" ;
+                                         <http://schema.org/dateModified>
+                                                 "2024-08-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+                                         <http://schema.org/description>
+                                                 "535, 538 to 540" ;
+                                         <http://schema.org/holdingArchive>
+                                                 <organization/keepers#clockss> ;
+                                         <http://schema.org/mainEntity>  [ <http://schema.org/issn>       "1476-4687" , "0028-0836" ;
+                                                                           <http://schema.org/name>       "Nature" ;
+                                                                           <http://schema.org/publisher>  "Nature Publishing Group"
+                                                                         ] ;
+                                         <http://schema.org/temporalCoverage>
+                                                 "2016/2016"
+                                       ] ;
+        <http://schema.org/subjectOf>  [ a                               <http://schema.org/ArchiveComponent> ;
+                                         <http://schema.org/abstract>    "1 to 588" ;
+                                         <http://schema.org/creativeWorkStatus>
+                                                 "In Progress" ;
+                                         <http://schema.org/dateModified>
+                                                 "2024-08-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+                                         <http://schema.org/description>
+                                                 "1 to 588" ;
+                                         <http://schema.org/holdingArchive>
+                                                 <organization/keepers#lockss> ;
+                                         <http://schema.org/mainEntity>  [ <http://schema.org/issn>       "1476-4687" , "0028-0836" ;
+                                                                           <http://schema.org/name>       "Nature" ;
+                                                                           <http://schema.org/publisher>  "Springer"
+                                                                         ] ;
+                                         <http://schema.org/temporalCoverage>
+                                                 "1870/2020"
+                                       ] ;
+        <http://schema.org/subjectOf>  [ a                               <http://schema.org/ArchiveComponent> ;
+                                         <http://schema.org/abstract>    "551 to 631" ;
+                                         <http://schema.org/creativeWorkStatus>
+                                                 "Preserved" ;
+                                         <http://schema.org/dateModified>
+                                                 "2024-08-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+                                         <http://schema.org/description>
+                                                 "551 to 631" ;
+                                         <http://schema.org/holdingArchive>
+                                                 <organization/keepers#clockss> ;
+                                         <http://schema.org/mainEntity>  [ <http://schema.org/issn>       "1476-4687" , "0028-0836" ;
+                                                                           <http://schema.org/name>       "Nature" ;
+                                                                           <http://schema.org/publisher>  "Springer"
+                                                                         ] ;
+                                         <http://schema.org/temporalCoverage>
+                                                 "2017/2024"
+                                       ] ;
+        <http://schema.org/subjectOf>  [ a                               <http://schema.org/ArchiveComponent> ;
+                                         <http://schema.org/abstract>    "451 to 534, 536, 537" ;
+                                         <http://schema.org/creativeWorkStatus>
+                                                 "Preserved" ;
+                                         <http://schema.org/dateModified>
+                                                 "2024-08-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+                                         <http://schema.org/description>
+                                                 "451 to 534, 536, 537" ;
+                                         <http://schema.org/holdingArchive>
+                                                 <organization/keepers#clockss> ;
+                                         <http://schema.org/mainEntity>  [ <http://schema.org/issn>       "1476-4687" , "0028-0836" ;
+                                                                           <http://schema.org/name>       "Nature" ;
+                                                                           <http://schema.org/publisher>  "Nature Publishing Group"
+                                                                         ] ;
+                                         <http://schema.org/temporalCoverage>
+                                                 "2008/2016"
+                                       ] ;
+        <http://schema.org/subjectOf>  [ a                               <http://schema.org/ArchiveComponent> ;
+                                         <http://schema.org/abstract>    "v.5 (1871-72); v.22 (1880); v.31 (1884-85); v.33 (1885-86); v.34 (1886); v.35 (1886-87); v.39 (1888-89); v.40 (1889); v.41 (1889-90); v.42 (1890); v.47... [shortened]" ;
+                                         <http://schema.org/creativeWorkStatus>
+                                                 "Preserved" ;
+                                         <http://schema.org/dateModified>
+                                                 "2024-08-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+                                         <http://schema.org/description>
+                                                 "v.5 (1871-72); v.22 (1880); v.31 (1884-85); v.33 (1885-86); v.34 (1886); v.35 (1886-87); v.39 (1888-89); v.40 (1889); v.41 (1889-90); v.42 (1890); v.47 (1892-93); v.2 1870:May-Nov.; v.26 1882:May-Oct.; v.3 1870:Nov./1871:Apr.; v.7 1872:Nov./1873:Apr.; v.15 1876:Nov./1877:Apr.; v.27 1882:Naov./1883:Apr.; v.4 1871:May-Nov.; v.1 1869:Nov./1870:Apr.; v.5 1871:Nov./1872:Apr.; v.13 1875:Nov./1876:Apr.; v.25 1881:Nov./1882:Apr.; v.35 1886:Nov./1887:Apr.; v.39 1888:Nov./1889:Apr.; v.43 1890:Nov./1891:Apr.; v.47 1892:Nov./1893:Apr.; v.51 1894:Nov./1895:Apr.; v.55 1896:Nov./1897:Apr.; v.37 1887:Nov./1888:Apr.; v.41 1889:Nov./1890:Apr.; v.45 1891:Nov./1892:Apr.; v.53 1895:Nov./1896:Apr.; v.57 1897:Nov./1898:Apr.; v.11 1874/1875:Nov.-Apr.; v.49 1893/94; v.29 1883:Nov./1884:Apr.; v.3 c.2 1870-71; v.6 c.2 1872; v.8 c.2 1873; v.9 c.2 1873-74; v.16 c.2 1877; v.48 (1893); v.50 (1894); v.44 (1891); v.57 (1897-98); v.56 (1897); v.55 (1896-97); v.45 (1891-92); v.53 (1895-96); v.58 (1898); v.51 (1894-95); v.43 (1890-91); v.42 (1890); v.27 (1882-83); v.57 (1897); v.37 (1887-88); v.41 (1889-90); v.35 (1886-87); v.59 (1898); v.40 (1889); v.34 (1886); v.38 (1888); v.31 (1884-85); v.39 (1888-89); v.17 (1877-78); v.33 (1885-86); v.29 (1883-84); v.54 (1896); v.47 (1892-93); v.25 (1881-82); v.22 (1880); v.13 (1875-76); v.11 (1874-75); v.7 (1872-73); v.5 (1871-72); v.4 (1871); v.10 (1874); v.30 May-Oct. 1884; v.15 Nov.-Apr. 1876/1877; v.13 Nov.-Apr. 1875/1876; v.11 Nov.-Apr. 1874/1875; v.19 Nov.7-Apr. 24 1878-79; v.23 Nov.-Dec. 1880; v.23-24 Jan. 6-Oct. 27 1881; v.25-26 Nov.3-Oct. 26 1881-82; v.33 Nov.1885-Apr. 1886; v.34 May-Oct. 1886; v.47 Nov.1892-Apr. 1893; Nov.4-Apr. 28 1869-70; v.8 May-Oct. 1873; v.8 May 1-Oct. 30 1873; v.10 May 7-Oct 29 1874; v.12 May 6-Oct 28 1875; v.13 Nov4-Apr 27 1875-76; v.15 Nov.2-Apr. 26 1876-77; v.17 Nov.1-Apr. 25 1877-78; v.18 May 2-Oct. 31 1878; v.21 Nov 6-Apr 29 1879-80; v.22 May 6-Oct. 28 1880; v.27 Nov.2-Apr. 26 1882-83; v.28 May 3-Oct. 25 1883; v.29 Nov.1-Apr. 24 1883-84; v.30 May 1-Oct. 30 1884; v.31 Nov.6-Apr. 30 1884-85; v.35 Nov.1886-Apr. 1887; v.39 Nov.1888-Apr. 1889; v.41 Nov.1889-Apr. 1890; v.42 May-Oct. 1890; v.16 May 3-Oct. 25 1877; v.29(1883:Nov.-1884:Apr.); v.53(1895:Nov.-1896:Apr.); v.7(1872:Nov.-1873:Apr.); v.3 (Nov 1870-Apr 1871); v.18 (1878); v.13(1875:Nov.-1876:Apr.); v.22(1880:May-Oct.); v.6(1872:May-Oct.); v.8(1873:May-Oct.); v.37 Nov.1887-Apr. 1888; v.51 Nov.1894-Apr. 1895; v.31(1884:Nov.-1885:Apr.); v.33(1885:Nov.-1886:Apr.); v.35(1886:Nov.-1887:Apr.); v.43(1890:Nov.-1891:Apr.); v.25(1881:Nov.-1882:Apr.); v.45(1891:Nov.-1892:Apr.); v.47(1892:Nov.-1893:Apr.); v.49(1893:Nov.-1894:Apr.); v.12(1875:May-Oct.); v.16(1877:May-Oct.); v.17(1877:Nov.-1878:Apr.); v.5(1871:Nov.-1872:Apr.); v.39(1888:Nov.-1889:Apr.); v.2 (1870:May-Oct.); v.54 (1896:May-Oct.); v.39 (1888-89); v.3 (1870-71); v.52 (1895); v.46 (1892); v.32 (1885); v.2 (1870); v.5 (1871-72); v.6 (1872); v.9 (1873-74); v.15 (1876-77); v.17 (1877-78); v.16 (1877); v.25 (1881-82); v.27 (1882-83); v.26 (1882); v.36 (1887); v.38 (1888); v.35 (1886-87); v.29 (1883-84); v.31 (1884-85); v.34 (1886); v.44 (1891); v.45 (1891-92); v.41 (1889-90); v.42 (1890); v.43 (1890-91); v.52 (1895); v.50 (1894); v.49 (1893-94); v.54 (1896); v.58 (1898); v.5 (1871-1872); v.8 (1873); v.9 (1873-74); v.12 (1875); v.16 (1877); v.19 (1878-79); v.24 (1881); v.23 (1880-81); v.22 (1880); v.21 (1879-80); v.20 (1879); v.18 (1878); v.17 (1877-78); v.15 (1876-77); v.14 (1876); v.25 (1881-82); v.27 (1882-83); v.30 (1884); v.32 (1885); v.34 (1886); v.37 (1887-88); v.39 (1888-89); v.40 (1889); v.41 (1889-90); v.26 (1882); v.28 (1883); v.29 (1883-84); v.31 (1884-85); v.33 (1885-86); v.35 (1886-87); v.36 (1887); v.38 (1888); v.42 (1890); v.44 (1891); v.28 (1883); v.44 (1891); v.41 (1889-1890); v.40 (1889); v.38 (1888); v.37 (1887-1888); v.42 (1890); v.43 (1890-1891); v.39 (1888-1889); v.55 (1896-1897); v.57 (1897-1898); v.54 (1896); v.53 (1895-1896); v.52 (1895); v.50 (1894); v.51 (1894-1895); v.48 (1893); v.45 (1891-1892); v.46 (1892); v.56 (1897); v.49 (1893-1894); v.23 (1880-1881); v.31 (1884-1885); v.32 (1885); v.30 (1884); v.17 (1877-1878); v.16 (1877); v.14 (1876); v.20 (1879); v.35 (1886-1887); v.34 (1886); v.19 (1878-1879); v.36 (1887); v.11 (1874-1875); v.58 (1898); v.57 (1897-98); v.56 (1897); v.55 (1896-97); v.54 (1896); v.51 (1894-95); v.50 (1894); v.49 (1893-94); v.47 (1892-93); v.46 (1892); v.45 (1891-92); v.48 (1893); v.43 (1890-91); v.4 (1871); v.7 (1872-1873); v.9 (1873-1874); v.10 (1874); v.11 (1874-1875); v.15 (1876-1877); v.23 (1880-1881); v.24 (1881); v.25 (1881-1882); v.26 (1882); v.27 (1882-1883); v.28 (1883); v.29 (1883-1884); v.30 (1884); v.31 (1884-1885); v.32 (1885); v.33 (1885-1886); v.34 (1886); v.35 (1886-1887); v.36 (1887); v.45 (1891-1892); v.44 (1891); v.43 (1890-1891); v.42 (1890); v.40 (1889); v.39 (1888-1889); v.41 (1889-1890); v.38 (1888); v.37 (1887-1888); v.57 (1897-1898); v.54 (1896); v.48 (1893); v.47 (1892-1893); v.58 (1898); v.53 (1895-96); v.55 (1896-97); v.47 (1892-93); v.48 (1893); v.56 (1897); v.57 (1897-98); v.1:no.1 (1869:Nov); v.47 (1892-1893); v.58 (1898); v.53 (1895-96); v.46 (1892); v.49 (1893-1894); v.55 (1896-1897); v.53 (1895-1896); v.52 (1895); v.51 (1894-1895); v.50 (1894); v.11 (1874:Nov.-1875:Apr.); v.1 1869-1870 Nov-Apr; v.2 1870 May-Oct; v.3 1870-1871 Nov-Apr; v.4 1871 Apr-Oct; v.5 1871-1872 Nov-Apr; v.6 1872 May-Oct; v.7 1872-1873 Nov-Apr; v.8 1873 May-Oct; v.9 1873-1874 Nov-Apr; v.10 1874 May-Oct; v.11 1874-1875 Nov-Apr; v.12 1875 May-Oct; v.13 1875-1876 Nov-Apr; v.14 1876 May-Oct; v.15 1876-1877 Nov-Apr; v.17 1877-1878 Nov-Apr; v.16 1877 May-Oct; v.19 1878-1879 Nov-Apr; v.21 1880; v.22 1880; v.23 1881; v.24 1881 May-Oct; v.25 Nov.1881- Apr 1882; v.26 1882 May-Oct; v.27 Nov.1882-Apr 1883; v.28 1883 May-Oct; v.29 1883-1884 Nov-Apr; v.30 1884; v.31 1884-1885 Nov-Apr; v.32 1885 May-Oct; v.33 1885-1886 Nov.-Apr.; v.34 1886 May-Oct; v.35 1886-1887 Nov-Apr; v.36 May-Oct 1887; v.37 1887-1888 Nov-Apr; v.38 May-Oct 1888; v.39 1888-1889 Nov-Apr; v.40 1889 May-Oct; v.41 1889-1890 Nov-Apr; v.43 1890-1891 Nov-Apr; v.44 1891 May-Oct; v.45 1891-1892 Nov-Apr; v.46 1892 May-Oct; v.47 1892-1893 Nov-Apr; v.48 1893 May-Oct; v.49 1893-1894 Nov-Apr; v.50 1894 May-Oct; v.51 1894-1895 Nov-Apr; v.52 1895 May-Oct; v.53 1895-1896 Nov-Apr; v.54 1896 May-Oct; v.55 1896-1897 Nov-Apr; v.56 1897 May-Oct; v.57 1897-1898 Nov-Apr; v.58 1898 May-Oct; v.2 1870; v.4 1874; v.5 1871/72; v.6 1872; v.14 1876; v.16 1877; v.17 1877/78; v.24 May-Oct.1881; v.29 Nov.1883-Apr.1884; v.30 May-Oct.1884; v.31 Nov.1884-Apr.1885; v.32 May-Oct.1885; v.34 May-Oct.1886; v.35 Nov.1886-Apr.1887; v.36 May-Oct.1887; v.37 Nov.1887-Apr.1888; v.38 May-Oct.1888; v.39 Nov.1888-Apr.1889; v.40 May-Oct.1889; v.41 Nov.1889-Apr.1890; v.42 May-Oct.1890; v.44 May-Oct.1891; v.45 Nov.1891-Apr.1892; v.46 May-Oct.1892; v.47 Nov.1892-Apr.1893; v.48 May-Oct.1893; v.50 May-Oct.1894; v.53 Nov.1895-Apr.1896; v.55 Nov.1896-Apr.1897; v.56 May-Oct.1897; v.58 May-Oct.1898; v.43 Nov.1890-Apr.1891; v.49 Nov.1893-Apr.1894; v.52 May-Oct.1895; v.54 1896; v.57 Nov.1897-Apr.1898; v.3 1870/71; v.17 (1877-78); v.58 May-Oct. 1898; v.57 Nov.1897-Apr. 1898; v.56 May-Oct. 1897; v.55 Nov.1896-Apr. 1897; v.54 May-Oct. 1896; v.53 Nov.1895-Apr. 1896; v.52 May-Oct. 1895; v.51 Nov.1894-Apr. 1895; v.50 May-Oct. 1894; v.49 Nov.1893-Apr. 1894; v.48 May-Oct. 1893; v.45 Nov.1891-Apr. 1892; v.42 May-Oct. 1890; v.40 May-Oct. 1889; v.38 May-Oct. 1888; v.36 May-Oct. 1887; v.27 Nov.1882-Apr. 1883; v.26 May-Oct. 1883; v.22 May-Oct. 1880; v.18 May-Oct. 1878; v.17 Nov.1877-Apr. 1878; v.16 May-Oct. 1877; v.15 Nov.1876-Apr. 1877; v.14 May-Oct. 1876; v.13 Nov.1875-Apr. 1876; v.12 May-Oct. 1875; v.11 Nov.1874-Apr. 1875; v.10 May-Oct. 1874; v.9 Nov.1873-Apr.1874; v.6 May-Oct. 1872; v.5 Nov.1871-Apr. 1872; v.3 Nov.1870-Apr. 1871; v.1 c.2 1869-70; v.4 c.2 1871; v.5 c.2 1871-72; v.7 c.2 1872-73; v.10 c.2 1874; v.11 c.2 1874-75; v.13 c.2 1875-76; v.21 c.2 1879-80; v.22 c.2 1880; v.23 c.2 1880-81; v.24 c.2 1881; v.25 c.2 1881-82; v.26 c.2 1882; v.27 c.2 1882-83; v.29 c.2 1883-84; v.31 c.2 1884-85; v.33 c.2 1885-86; v.34 c.2 1886; v.35 c.2 1886-87; v.37 c.2 1887-88; v.38 c.2 1888; v.39 c.2 1888-89; v.40 c.2 1889; v.41 c.2 1889-90; v.42 c.2 1890; v.43 c.2 1890-91; v.44 c.2 1891; v.45 c.2 1891-92; v.47 c.2 1892-93; v.48 c.2 1893; v.49 c.2 1893-94; v.50 c.2 1894; v.51 c.2 1894-95; v.52 c.2 1895; v.53 c.2 1895-96; v.54 c.2 1896; v.55 c.2 1896-97; v.56 c.2 1897; v.57 c.2 1897-98; v.58 c.2 1898; v.31 (1884); v.39 (1888); v.41 (1889); v.49 (1893)" ;
+                                         <http://schema.org/holdingArchive>
+                                                 <organization/keepers#hathi> ;
+                                         <http://schema.org/mainEntity>  [ <http://schema.org/issn>       "0028-0836" ;
+                                                                           <http://schema.org/name>       "Nature [v.1-v.399]" ;
+                                                                           <http://schema.org/publisher>  "Macmillan Journals ltd.]"
+                                                                         ] ;
+                                         <http://schema.org/temporalCoverage>
+                                                 "1869/1898" ;
+                                         <http://schema.org/url>         "https://catalog.hathitrust.org/Record/000637680"
+                                       ] ;
+        <http://schema.org/subjectOf>  [ a                               <http://schema.org/ArchiveComponent> ;
+                                         <http://schema.org/abstract>    "Preserved : , v447, 4 to 6, 32 to 39, 41 to 49, 51 to 59, 61 to 69, 319, 321 to 329, 331 to 339, 341 to 349, 351 to 359, 361 to 369, 371 to 379, 381 to 389, 391 to 399, 411 to 419, 421 to 429, 431 to 439, 441 to 449, 451 to 459, 461 to 469, 471 to 479, 481 to 489, 491 to 499, 511 to 519, 521 to 529, 531 to 539, 541 to 549, 551 to 559, 561 to 569, 571 to 579, 581 to 589, 591 to 599, 611 to 619, 621 to 629" ;
+                                         <http://schema.org/creativeWorkStatus>
+                                                 "Preserved" ;
+                                         <http://schema.org/dateModified>
+                                                 "2024-07-17"^^<http://www.w3.org/2001/XMLSchema#date> ;
+                                         <http://schema.org/description>
+                                                 "Preserved : ; v447; 4 (674, 6739, 6741 to 6747); 5 (746, 7461 to 7464); 6 (789, 7887 to 7889); 32 (66, 657 to 659, 661 to 664); 33 (615, 6143 to 6149); 34 (623, 6228, 6229, 6231 to 6236); 35 (632, 6313 to 6319); 36 (64, 641 to 646, 6399); 37 (649, 6484 to 6489, 6491); 38 (657, 6569, 6571 to 6576); 39 (666, 6655 to 6659, 6661); 41 (675, 683, 6748, 6749, 6751 to 6756, 6824 to 6829, 6831, 6832); 42 (Suppl 676, 676, 6757 to 6759, 6761 to 6764, 6911 to 6917); 43 (7, 71 to 73, 677, 6765 to 6769, 6771, 6772, 6995 to 6999); 44 (78, 79, 678, 781 to 788, 6773 to 6779, 6781); 45 (679, 717, 6782 to 6789, 7166 to 7169, 7171 to 7173); 46 (6791 to 6799, 7251 to 7259); 47 (68, 681 to 687, 7332 to 7335); 48 (681, 688, 689, 6811 to 6815, 7375 to 7378); 49 (682, 742, 6816 to 6819, 6821 to 6823, 7418, 7419, 7421); 51 (753 to 756, 7465 to 7468); 52 (747, 7469, 7471 to 7473, 7545 to 7549); 53 (759, 7474 to 7477, 7588, 7589, 7591); 54 (748, 7478, 7479, 7631 to 7634); 55 (7481 to 7485, 7674 to 7677); 56 (772, 7486 to 7489, 7716 to 7719); 57 (749, 776, 7491 to 7493, 7759, 7761, 7762); 58 (781 to 785, 7494 to 7497); 59 (75, 751, 752, 755, 7498, 7499, 7844 to 7847); 61 (793, 7891 to 7894, 7931 to 7933); 62 (7895 to 7898, 7972 to 7976); 63 (79, 791 to 793, 815, 7899); 64 (794 to 797); 65 (791, 798, 799, 7911); 66 (7912 to 7916); 67 (792, 7917 to 7919); 68 (7921 to 7924); 69 (7925 to 7929); 319 (65, 648, 649, 651 to 656); 321 (Suppl 667, 67, 665 to 669, 671 to 673); 322 (68, 674 to 679, 681, 682); 323 (69, 683 to 689, 691); 324 (692 to 698); 325 (61, 611 to 617, 699); 326 (611, 618, 619, 6111 to 6116); 327 (612, 6117 to 6119, 6121 to 6124); 328 (613, 6125 to 6129, 6131 to 6133); 329 (614, 6134 to 6139, 6141, 6142); 331 (6151 to 6158); 332 (616, 6159, 6161 to 6167); 333 (617, 6168, 6169, 6171 to 6176); 334 (618, 6177 to 6179, 6181 to 6184); 335 (619, 6185 to 6189, 6191 to 6193); 336 (62, 621, 6194 to 6199); 337 (622 to 629); 338 (621, 6211 to 6218); 339 (622, 6219, 6221 to 6227); 341 (624, 6237 to 6239, 6241 to 6244); 342 (625, 6245 to 6249, 6251, 6252); 343 (626, 6253 to 6259); 344 (6261 to 6269); 345 (627, 6271 to 6278); 346 (628, 6279, 6281 to 6287); 347 (629, 6288, 6289, 6291 to 6295); 348 (63, 631 to 633, 6296 to 6299); 349 (631, 634 to 639, 6311, 6312); 351 (6321 to 6329); 352 (633, 6331 to 6338); 353 (634, 6339, 6341 to 6347); 354 (635, 6348, 6349, 6351 to 6354); 355 (636, 6355 to 6359, 6361 to 6363); 356 (637, 6364 to 6369, 6371, 6372); 357 (638, 6373 to 6379); 358 (6381 to 6389); 359 (639, 6391 to 6398); 361 (641, 647 to 649, 6411 to 6414); 362 (642, 6415 to 6419, 6421 to 6423); 363 (643, 6424 to 6429, 6431); 364 (644, 6432 to 6439); 365 (6441 to 6449); 366 (645, 6451 to 6457); 367 (646, 6458, 6459, 6461 to 6465); 368 (647, 6466 to 6469, 6471 to 6474); 369 (648, 6475 to 6479, 6481 to 6483); 371 (65, 6492 to 6499); 372 (651 to 658); 373 (651, 659, 6511 to 6516); 374 (652, 6517 to 6519, 6521 to 6525); 375 (653, 6526 to 6529, 6531 to 6534); 376 (654, 6535 to 6539, 6541 to 6543); 377 (655, 6544 to 6549, 6551); 378 (6552 to 6559); 379 (656, 6561 to 6568); 381 (658, 6577 to 6579, 6581 to 6585); 382 (659, 6586 to 6589, 6591 to 6594); 383 (66, 661 to 663, 6595 to 6599); 384 (661, 664 to 669); 385 (6611 to 6619); 386 (662, 6621 to 6627); 387 (Suppl 6632, 663, 6628, 6629, 6631 to 6636); 388 (664, 6637 to 6639, 6641 to 6645); 389 (665, 6646 to 6649, 6651 to 6654); 391 (667, 6662 to 6669); 392 (6671 to 6679); 393 (668, 6681 to 6687); 394 (669, 6688, 6689, 6691 to 6696); 395 (67, 671 to 675, 6697 to 6699); 396 (671, 676 to 679, 6711 to 6713); 397 (672, 6714 to 6719, 6721); 398 (Suppl 6726, 673, 6722 to 6729); 399 (6731 to 6738); 411 (684, 6833 to 6839, 6841); 412 (685, 6842 to 6849); 413 (6851 to 6858); 414 (686, 6859, 6861 to 6866); 415 (687, 6867 to 6869, 6871 to 6875); 416 (688, 6876 to 6879, 6881 to 6883); 417 (689, 6884 to 6889, 6891, 6892); 418 (69, 691, 6893 to 6899); 419 (691 to 699); 421 (692, 6918, 6919, 6921 to 6926); 422 (693, 6927 to 6929, 6931 to 6934); 423 (694, 6935 to 6939, 6941 to 6943); 424 (695, 6944 to 6949, 6951, 6952); 425 (696, 6953 to 6959, 6961); 426 (6962 to 6968); 427 (697, 6969, 6971 to 6977); 428 (698, 6978, 6979, 6981 to 6986); 429 (699, 6229, 6987 to 6989, 6991 to 6995); 431 (71, 74 to 79, 711, 712); 432 (72, 713 to 719); 433 (721 to 728, 733); 434 (73, 729, 731 to 737); 435 (74, 179, 738, 739, 741 to 746); 436 (75, 747 to 749, 751 to 754); 437 (76, 461, 751, 755 to 759, 761 to 763); 438 (77, 764 to 769, 771); 439 (772 to 779); 441 (79, 789, 791 to 797); 442 (71, 711 to 716, 798, 799); 443 (711, 717 to 719, 7111 to 7114); 444 (712, 7115 to 7119, 7121 to 7123); 445 (713, 7123 to 7129); 446 (7131 to 7139); 447 (714, 7141 to 7148); 448 (715, 7149, 7151 to 7157); 449 (716, 7158, 7159, 7161 to 7165); 451 (718, 7174 to 7179, 7181, 7182); 452 (719, 7183 to 7189); 453 (7191 to 7199); 454 (72, 721 to 728); 455 (721, 729, 7211 to 7217); 456 (n1s, 722, 7218, 7219, 7221 to 7224); 457 (723, 7225 to 7229, 7231 to 7233, 7239); 458 (724, 7234 to 7239, 7241, 7242); 459 (725, 7243 to 7249); 461 (726, 7261 to 7268); 462 (727, 7269, 7271 to 7276); 463 (728, 7277 to 7279, 7281 to 7284); 464 (729, 7285 to 7289, 7291 to 7293); 465 (n731_supp, 73, 731, 7294 to 7299); 466 (731 to 739); 467 (7311 to 7319); 468 (732, 7321 to 7327); 469 (733, 7328, 7329, 7331); 471 (734, 7336 to 7339); 472 (7341 to 7344); 473 (7345 to 7348); 474 (735_supp, 7349, 7351 to 7353); 475 (7354 to 7357); 476 (736, 7358, 7359, 7361); 477 (7362 to 7366); 478 (737, 7367 to 7369); 479 (7371 to 7374); 481 (738, 7379, 7381, 7382); 482 (7383 to 7386); 483 (739, 7387 to 7389, 7391); 484 (7392 to 7395); 485 (74, 7396 to 7399); 486 (741 to 744); 487 (745 to 748); 488 (741, 749, 7411 to 7413); 489 (7414 to 7417); 491 (7422 to 7426); 492 (7427 to 7429); 493 (743, 7431 to 7434); 494 (7435 to 7438); 495 (744, 7439, 7441, 7442); 496 (7443 to 7446); 497 (745, 7447 to 7449, 7451); 498 (7452 to 7455); 499 (7456 to 7459); 511 (751, 757 to 759, 7511); 512 (7512 to 7515); 513 (7516 to 7519); 514 (752, 7521 to 7524); 515 (7525 to 7528); 516 (753, 7529, 7531); 517 (7532 to 7536); 518 (754, 7537 to 7539); 519 (7541 to 7544); 521 (755, 7551 to 7553); 522 (7554 to 7557); 523 (756, 7558, 7559, 7561, 7562); 524 (7563 to 7566); 525 (757, 7567 to 7569); 526 (7571 to 7575); 527 (7576 to 7579); 528 (758, 7581 to 7583); 529 (7584 to 7587); 531 (7592 to 7596); 532 (76, 7597 to 7599); 533 (761 to 764); 534 (761, 765 to 769); 535 (761, 7611 to 7613); 536 (7614 to 7617); 537 (762, 7618, 7619, 7621, 7622); 538 (7623 to 7626); 539 (763, 7627 to 7629); 541 (7635 to 7638); 542 (764, 7639, 7641, 7642); 543 (7643 to 7647); 544 (765, 7648, 7649, 7651); 545 (7652 to 7655); 546 (766, 7656 to 7659); 547 (7661 to 7664); 548 (7665 to 7669); 549 (767, 7671 to 7673); 551 (768, 7678, 7679, 7681, 7682); 552 (7683 to 7685); 553 (7686 to 7689); 554 (769, 7691 to 7693); 555 (7694 to 7698); 556 (77, 771, 772, 7699); 557 (773 to 777); 558 (771, 778, 779, 7711); 559 (7712 to 7715); 561 (7596, 7721 to 7724); 562 (7725 to 7728); 563 (773, 7729, 7731 to 7733); 564 (7734 to 7736); 565 (774, 7737 to 7739, 7741); 566 (7742 to 7745); 567 (7746 to 7749); 568 (775, 7751 to 7753); 569 (7754 to 7758); 571 (7763 to 7766); 572 (777, 7767 to 7769, 7771); 573 (7772 to 7775); 574 (778, 7776 to 7779); 575 (7781 to 7784); 576 (7785 to 7787); 577 (779, 7788, 7789, 7791, 7792); 578 (7793 to 7796); 579 (78, 7797 to 7799); 581 (786 to 789); 582 (781, 7811 to 7813); 583 (7814 to 7818); 584 (782, 7819, 7821, 7822); 585 (7823 to 7826); 586 (783, 7827 to 7829, 7831); 587 (7832 to 7835); 588 (7836 to 7839); 589 (784, 7841 to 7843); 591 (785, 7848, 7849, 7851); 592 (7852 to 7856); 593 (786, 7857 to 7859); 594 (7861 to 7864); 595 (7865 to 7869); 596 (787, 7871 to 7873); 597 (7874 to 7878); 598 (788, 7879, 7881, 7882); 599 (7883 to 7886); 611 (7934 to 7937); 612 (794, 7938, 7939, 7941); 613 (7942 to 7945); 614 (7946 to 7949); 615 (795, 7951 to 7954); 616 (7955 to 7958); 617 (796, 7959, 7961, 7962); 618 (7963 to 7967); 619 (797, 7968, 7969, 7971); 621 (798, 7977 to 7979); 622 (7981 to 7984); 623 (7985 to 7989); 624 (799, 7991, 7992); 625 (7993 to 7996); 626 (8, 81, 7997 to 7999); 627 (82 to 85); 628 (86 to 89); 629 (81, 811 to 814)" ;
+                                         <http://schema.org/holdingArchive>
+                                                 <organization/keepers#ndpp> ;
+                                         <http://schema.org/mainEntity>  [ <http://schema.org/issn>       "1476-4687" ;
+                                                                           <http://schema.org/name>       "Nature" ;
+                                                                           <http://schema.org/publisher>  "Springer Nature"
+                                                                         ] ;
+                                         <http://schema.org/temporalCoverage>
+                                                 "0000/2024"
+                                       ] ;
+        <http://schema.org/subjectOf>  [ a                               <http://schema.org/ArchiveComponent> ;
+                                         <http://schema.org/abstract>    "529 to 600, 602 to 629" ;
+                                         <http://schema.org/creativeWorkStatus>
+                                                 "Preserved" ;
+                                         <http://schema.org/dateModified>
+                                                 "2024-08-02"^^<http://www.w3.org/2001/XMLSchema#date> ;
+                                         <http://schema.org/description>
+                                                 "529 (7585, 7587); 530 (7588, 7590); 531 (7592 to 7596); 532 (7597 to 7599); 533 (7601 to 7604); 534 (7605 to 7609); 535 (7610 to 7613); 536 (7614 to 7617); 537 (7618 to 7622); 538 (7623, 7624, 7626); 539 (7627 to 7630); 540 (7631 to 7634); 541 (7635); 542 (7639 to 7642); 543 (7645 to 7647); 544 (7648 to 7651); 545 (7652 to 7655); 546 (7656 to 7660); 547 (7661 to 7664); 548 (7665 to 7669); 549 (7670 to 7673); 550 (7674 to 7677); 551 (7678 to 7682); 552 (7683 to 7685); 553 (7686 to 7689); 554 (7690 to 7693); 555 (7694 to 7698); 556 (7699 to 7702); 557 (7703 to 7707); 558 (7708 to 7711); 559 (7712 to 7715); 560 (7716 to 7720); 561 (7721 to 7724); 562 (7725 to 7728); 563 (7729 to 7733); 564 (7734 to 7736); 565 (7737 to 7741); 566 (7742 to 7745); 567 (7746 to 7749); 568 (7750 to 7753); 569 (7754 to 7758); 570 (7759 to 7762); 571 (7763 to 7766); 572 (7767 to 7771); 573 (7772 to 7775); 574 (7776 to 7780); 575 (7781 to 7784); 576 (7785 to 7787); 577 (7788 to 7792); 578 (7793 to 7796); 579 (7797 to 7800); 580 (7801 to 7805); 581 (7806 to 7809); 582 (7810 to 7813); 583 (7814 to 7818); 584 (7819 to 7822); 585 (7823 to 7826); 586 (7827 to 7831); 587 (7832 to 7835); 588 (7836 to 7839); 589 (7840 to 7843); 590 (7844 to 7847); 591 (7848 to 7851); 592 (7852 to 7856); 593 (7857 to 7860); 594 (7861 to 7864); 595 (7865 to 7869); 596 (7870 to 7873); 597 (7874 to 7878); 598 (7879 to 7882); 599 (7883 to 7886); 600 (7887, 7889, 7890); 602 (7895, 7898); 603 (7901 to 7903); 604 (7904); 605 (7909); 606 (7912 to 7915); 607 (7917, 7920); 608 (7921, 7922); 609 (7925 to 7928); 610 (7930, 7931, 7933); 611 (7934, 7937); 612 (7938, 7939, 7941); 613 (7942 to 7945); 614 (7946 to 7949); 615 (7950 to 7954); 616 (7955 to 7958); 617 (7959 to 7962); 618 (7963 to 7967); 619 (7968 to 7971); 620 (7972 to 7976); 621 (7977 to 7980); 622 (7981 to 7984); 623 (7985 to 7989); 624 (7990 to 7992); 625 (7993 to 7996); 626 (7997); 627 (8002 to 8005); 628 (8006 to 8009); 629 (8010 to 8014)" ;
+                                         <http://schema.org/holdingArchive>
+                                                 <organization/keepers#loc> ;
+                                         <http://schema.org/mainEntity>  [ <http://schema.org/issn>       "1476-4687" ;
+                                                                           <http://schema.org/name>       "Nature" ;
+                                                                           <http://schema.org/publisher>  "Springer"
+                                                                         ] ;
+                                         <http://schema.org/temporalCoverage>
+                                                 "2016/2024"
+                                       ] ;
+        <http://schema.org/subjectOf>  [ a                               <http://schema.org/ArchiveComponent> ;
+                                         <http://schema.org/abstract>    "v.1 (Mar. -Apr. 1870); v.11 (Nov.1871-Apr. 1875); v.19 (Nov.1878-Apr. 1879); v.35 (Nov.1886-Apr. 1887)" ;
+                                         <http://schema.org/creativeWorkStatus>
+                                                 "Preserved" ;
+                                         <http://schema.org/dateModified>
+                                                 "2024-08-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+                                         <http://schema.org/description>
+                                                 "v.1 (Mar. -Apr. 1870); v.11 (Nov.1871-Apr. 1875); v.19 (Nov.1878-Apr. 1879); v.35 (Nov.1886-Apr. 1887)" ;
+                                         <http://schema.org/holdingArchive>
+                                                 <organization/keepers#hathi> ;
+                                         <http://schema.org/mainEntity>  [ <http://schema.org/issn>       "0028-0836" ;
+                                                                           <http://schema.org/name>       "Nature." ;
+                                                                           <http://schema.org/publisher>  "Macmillan Journals ltd.]"
+                                                                         ] ;
+                                         <http://schema.org/temporalCoverage>
+                                                 "1870/1887" ;
+                                         <http://schema.org/url>         "https://catalog.hathitrust.org/Record/101703357"
+                                       ] ;
+        <http://schema.org/subjectOf>  [ a                               <http://schema.org/ArchiveComponent> ;
+                                         <http://schema.org/abstract>    "Preserved : 1870: 1, 1870: 2, 1871: 4, 1871/1872: 5" ;
+                                         <http://schema.org/creativeWorkStatus>
+                                                 "Preserved" ;
+                                         <http://schema.org/dateModified>
+                                                 "2024-04-28"^^<http://www.w3.org/2001/XMLSchema#date> ;
+                                         <http://schema.org/description>
+                                                 "Preserved : 1870: 1(10, 13, 20-23, 25-26), 1870: 2(27, 31-32, 36, 38-42, 46-49, 52), 1871: 4(79-80, 87-88, 96-97), 1871/1872: 5(109-110, 117-118, 122-125, 130)" ;
+                                         <http://schema.org/holdingArchive>
+                                                 <organization/keepers#portico> ;
+                                         <http://schema.org/mainEntity>  [ <http://schema.org/issn>       "1476-4687" , "0028-0836" ;
+                                                                           <http://schema.org/name>       "Nature" ;
+                                                                           <http://schema.org/publisher>  "Springer Nature"
+                                                                         ] ;
+                                         <http://schema.org/temporalCoverage>
+                                                 "1870/1872"
+                                       ] ;
+        <http://schema.org/subjectOf>  [ a                               <http://schema.org/ArchiveComponent> ;
+                                         <http://schema.org/abstract>    "Preserved : v447, , 4 to 6, 39, 41 to 49, 51 to 59, 61 to 69, 385 to 389, 391 to 399, 411 to 419, 421 to 429, 431 to 439, 441 to 449, 451 to 459, 461 to 469, 471 to 479, 481 to 489, 491 to 499, 511 to 519, 521 to 529, 531 to 539, 541 to 549, 551 to 559, 561 to 569, 571 to 579, 581 to 589, 591 to 599, 611 to 619, 621 to 627" ;
+                                         <http://schema.org/creativeWorkStatus>
+                                                 "Preserved" ;
+                                         <http://schema.org/dateModified>
+                                                 "2024-04-09"^^<http://www.w3.org/2001/XMLSchema#date> ;
+                                         <http://schema.org/description>
+                                                 "Preserved : v447 (n7148); ; 4 (674, 6739, 6741 to 6747); 5 (746, 7461 to 7464); 6 (789, 7887 to 7889); 39 (666, 6655 to 6659, 6661); 41 (675, 683, 6748, 6749, 6751 to 6756, 6824 to 6829, 6831, 6832); 42 (Suppl 676, 676, 6757 to 6759, 6761 to 6764, 6911 to 6917); 43 (7, 71 to 73, 677, 6765 to 6769, 6771, 6772, 6995 to 6999); 44 (78, 79, 678, 781 to 788, 6773 to 6779, 6781); 45 (679, 717, 6782 to 6789, 7166 to 7169, 7171 to 7173); 46 (6791 to 6799, 7251 to 7259); 47 (68, 681 to 687, 7332 to 7335); 48 (681, 688, 689, 6811 to 6815, 7375 to 7378); 49 (682, 742, 6816 to 6819, 6821 to 6823, 7418, 7419, 7421); 51 (753 to 756, 7465 to 7468); 52 (747, 7469, 7471 to 7473, 7545 to 7549); 53 (759, 7474 to 7477, 7588, 7589, 7591); 54 (748, 7478, 7479, 7631 to 7634); 55 (7481 to 7485, 7674 to 7677); 56 (772, 7486 to 7489, 7716 to 7719); 57 (749, 776, 7491 to 7493, 7759, 7761, 7762); 58 (781 to 785, 7494 to 7497); 59 (75, 751, 752, 755, 7498, 7499, 7844 to 7847); 61 (793, 7891 to 7894, 7931 to 7933); 62 (7895 to 7898, 7972 to 7976); 63 (79, 791 to 793, 7899); 64 (794 to 797); 65 (791, 798, 799, 7911); 66 (7912 to 7916); 67 (792, 7917 to 7919); 68 (7921 to 7924); 69 (7925 to 7929); 385 (6611 to 6619); 386 (662, 6621 to 6627); 387 (Suppl 6632, 663, 6628, 6629, 6631 to 6636); 388 (664, 6637 to 6639, 6641 to 6645); 389 (665, 6646 to 6649, 6651 to 6654); 391 (667, 6662 to 6669); 392 (6671 to 6679); 393 (668, 6681 to 6687); 394 (669, 6688, 6689, 6691 to 6696); 395 (67, 671 to 675, 6697 to 6699); 396 (671, 676 to 679, 6711 to 6713); 397 (672, 6714 to 6719, 6721); 398 (Suppl 6726, 673, 6722 to 6729); 399 (6731 to 6738); 411 (684, 6833 to 6839, 6841); 412 (685, 6842 to 6849); 413 (6851 to 6858); 414 (686, 6859, 6861 to 6866); 415 (687, 6867 to 6869, 6871 to 6875); 416 (688, 6876 to 6879, 6881 to 6883); 417 (689, 6884 to 6889, 6891, 6892); 418 (69, 691, 6893 to 6899); 419 (691 to 699); 421 (692, 6918, 6919, 6921 to 6926); 422 (693, 6927 to 6929, 6931 to 6934); 423 (694, 6935 to 6939, 6941 to 6943); 424 (695, 6944 to 6949, 6951, 6952); 425 (696, 6953 to 6959, 6961); 426 (6962 to 6968); 427 (697, 6969, 6971 to 6977); 428 (698, 6978, 6979, 6981 to 6986); 429 (699, 6229, 6987 to 6989, 6991 to 6995); 431 (71, 74 to 79, 711, 712); 432 (72, 713 to 719); 433 (721 to 728, 733); 434 (73, 729, 731 to 737); 435 (74, 179, 738, 739, 741 to 746); 436 (75, 747 to 749, 751 to 754); 437 (76, 461, 751, 755 to 759, 761 to 763); 438 (77, 764 to 769, 771); 439 (772 to 779); 441 (79, 789, 791 to 797); 442 (71, 711 to 716, 798, 799); 443 (711, 717 to 719, 7111 to 7114); 444 (712, 7115 to 7119, 7121 to 7123); 445 (713, 7123 to 7129); 446 (7131 to 7139); 447 (714, 7141 to 7148); 448 (715, 7149, 7151 to 7157); 449 (716, 7158, 7159, 7161 to 7165); 451 (718, 7174 to 7179, 7181, 7182); 452 (719, 7183 to 7189); 453 (7191 to 7199); 454 (72, 721 to 728); 455 (721, 729, 7211 to 7217); 456 (n1s, 722, 7218, 7219, 7221 to 7224); 457 (723, 7225 to 7229, 7231 to 7233, 7239); 458 (724, 7234 to 7239, 7241, 7242); 459 (725, 7243 to 7249); 461 (726, 7261 to 7268); 462 (727, 7269, 7271 to 7276); 463 (728, 7277 to 7279, 7281 to 7284); 464 (729, 7285 to 7289, 7291 to 7293); 465 (n731_supp, 73, 731, 7294 to 7299); 466 (731 to 739); 467 (7311 to 7319); 468 (732, 7321 to 7327); 469 (733, 7328, 7329, 7331); 471 (734, 7336 to 7339); 472 (7341 to 7344); 473 (7345 to 7348); 474 (735_supp, 7349, 7351 to 7353); 475 (7354 to 7357); 476 (736, 7358, 7359, 7361); 477 (7362 to 7366); 478 (737, 7367 to 7369); 479 (7371 to 7374); 481 (738, 7379, 7381, 7382); 482 (7383 to 7386); 483 (739, 7387 to 7389, 7391); 484 (7392 to 7395); 485 (74, 7396 to 7399); 486 (741 to 744); 487 (745 to 748); 488 (741, 749, 7411 to 7413); 489 (7414 to 7417); 491 (7422 to 7426); 492 (7427 to 7429); 493 (743, 7431 to 7434); 494 (7435 to 7438); 495 (744, 7439, 7441, 7442); 496 (7443 to 7446); 497 (745, 7447 to 7449, 7451); 498 (7452 to 7455); 499 (7456 to 7459); 511 (751, 757 to 759, 7511); 512 (7512 to 7515); 513 (7516 to 7519); 514 (752, 7521 to 7524); 515 (7525 to 7528); 516 (753, 7529, 7531); 517 (7532 to 7536); 518 (754, 7537 to 7539); 519 (7541 to 7544); 521 (755, 7551 to 7553); 522 (7554 to 7557); 523 (756, 7558, 7559, 7561, 7562); 524 (7563 to 7566); 525 (757, 7567 to 7569); 526 (7571 to 7575); 527 (7576 to 7579); 528 (758, 7581 to 7583); 529 (7584 to 7587); 531 (7592 to 7596); 532 (76, 7597 to 7599); 533 (761 to 764); 534 (761, 765 to 769); 535 (761, 7611 to 7613); 536 (7614 to 7617); 537 (762, 7618, 7619, 7621, 7622); 538 (7623 to 7626); 539 (763, 7627 to 7629); 541 (7635 to 7638); 542 (764, 7639, 7641, 7642); 543 (7643 to 7647); 544 (765, 7648, 7649, 7651); 545 (7652 to 7655); 546 (766, 7656 to 7659); 547 (7661 to 7664); 548 (7665 to 7669); 549 (767, 7671 to 7673); 551 (768, 7678, 7679, 7681, 7682); 552 (7683 to 7685); 553 (7686 to 7689); 554 (769, 7691 to 7693); 555 (7694 to 7698); 556 (77, 771, 772, 7699); 557 (773 to 777); 558 (771, 778, 779, 7711); 559 (7712 to 7715); 561 (7596, 7721 to 7724); 562 (7725 to 7728); 563 (773, 7729, 7731 to 7733); 564 (7734 to 7736); 565 (774, 7737 to 7739, 7741); 566 (7742 to 7745); 567 (7746 to 7749); 568 (775, 7751 to 7753); 569 (7754 to 7758); 571 (7763 to 7766); 572 (777, 7767 to 7769, 7771); 573 (7772 to 7775); 574 (778, 7776 to 7779); 575 (7781 to 7784); 576 (7785 to 7787); 577 (779, 7788, 7789, 7791, 7792); 578 (7793 to 7796); 579 (78, 7797 to 7799); 581 (786 to 789); 582 (781, 7811 to 7813); 583 (7814 to 7818); 584 (782, 7819, 7821, 7822); 585 (7823 to 7826); 586 (783, 7827 to 7829, 7831); 587 (7832 to 7835); 588 (7836 to 7839); 589 (784, 7841 to 7843); 591 (785, 7848, 7849, 7851); 592 (7852 to 7856); 593 (786, 7857 to 7859); 594 (7861 to 7864); 595 (7865 to 7869); 596 (787, 7871 to 7873); 597 (7874 to 7878); 598 (788, 7879, 7881, 7882); 599 (7883 to 7886); 611 (7934 to 7937); 612 (794, 7938, 7939, 7941); 613 (7942 to 7945); 614 (7946 to 7949); 615 (795, 7951 to 7954); 616 (7955 to 7958); 617 (796, 7959, 7961, 7962); 618 (7963 to 7967); 619 (797, 7968, 7969, 7971); 621 (798, 7977 to 7979); 622 (7981 to 7984); 623 (7985 to 7989); 624 (799, 7991, 7992); 625 (7993 to 7996); 626 (8, 81, 7997 to 7999); 627 (82)" ;
+                                         <http://schema.org/holdingArchive>
+                                                 <organization/keepers#ndpp> ;
+                                         <http://schema.org/mainEntity>  [ <http://schema.org/issn>       "1476-4687" ;
+                                                                           <http://schema.org/name>       "Nature" ;
+                                                                           <http://schema.org/publisher>  "Springer Nature"
+                                                                         ] ;
+                                         <http://schema.org/temporalCoverage>
+                                                 "0000/2024"
+                                       ] ;
+        <http://schema.org/url>        "http://www.nature.com/nature/" .
+
+<organization/keepers#portico>
+        a                               <http://schema.org/ArchiveOrganization> ;
+        <http://schema.org/identifier>  "portico" ;
+        <http://schema.org/name>        "Portico" .
+
+<resource/ISSN/1476-4687#ISSN-L>
+        a       <http://id.loc.gov/ontologies/bibframe/IssnL> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "0028-0836" ;
+        <http://id.loc.gov/ontologies/bibframe/status>
+                <vocabularies/IdentifierStatus#Valid> .

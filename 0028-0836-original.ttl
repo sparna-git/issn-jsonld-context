@@ -1,0 +1,57 @@
+@base          <http://issn.org/> .
+<resource/ISSN/0028-0836#ISSN-L>
+        a       <http://id.loc.gov/ontologies/bibframe/IssnL> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "0028-0836" ;
+        <http://id.loc.gov/ontologies/bibframe/status>
+                <vocabularies/IdentifierStatus#Valid> .
+
+<resource/ISSN/0028-0836#Record>
+        a                               <http://schema.org/CreativeWork> ;
+        <http://purl.org/dc/terms/modified>
+                "20240606130935.030273"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://schema.org/mainEntity>  <resource/ISSN/0028-0836> ;
+        <http://www.w3.org/ns/prov#wasAttributedTo>
+                <organization/ISSNCenter#_2> .
+
+<http://id.loc.gov/vocabulary/countries/enk>
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "England" .
+
+<resource/ISSN/0028-0836>
+        <http://id.loc.gov/ontologies/bibframe/identifiedBy>
+                <resource/ISSN/0028-0836#KeyTitle> , <resource/ISSN/0028-0836#ISSN-L> ;
+        <http://id.loc.gov/ontologies/bibframe/mainTitle>
+                "Nature." ;
+        <http://id.loc.gov/ontologies/bibframe/otherPhysicalFormat>
+                <resource/ISSN/1476-4687> ;
+        <http://id.loc.gov/ontologies/bibframe/title>
+                <resource/ISSN/0028-0836#KeyTitle> ;
+        <vocabularies/properties/hasCancelledISSN>
+                "0302-2889#ISSN" ;
+        <http://purl.org/dc/elements/1.1/format>
+                <vocabularies/medium#Print> ;
+        <http://purl.org/dc/terms/isFormatOf>
+                <resource/ISSN/1476-4687> ;
+        <http://purl.org/dc/terms/type>
+                <http://marc21rdf.info/terms/formofmaterial#a> ;
+        <http://schema.org/isPartOf>  <resource/ISSN-L/0028-0836> ;
+        <http://schema.org/name>      "Nature." , "Nature (London)" ;
+        <http://schema.org/publication>
+                <resource/ISSN/0028-0836#ReferencePublicationEvent> .
+
+<resource/ISSN/0028-0836#ReferencePublicationEvent>
+        a                             <http://schema.org/PublicationEvent> ;
+        <http://schema.org/location>  <http://id.loc.gov/vocabulary/countries/enk> .
+
+<organization/ISSNCenter#_2>
+        a       <http://schema.org/Organization> .
+
+<resource/ISSN-L/0028-0836>
+        <http://id.loc.gov/ontologies/bibframe/identifiedBy>
+                <resource/ISSN/0028-0836#ISSN-L> .
+
+<resource/ISSN/0028-0836#KeyTitle>
+        a       <http://id.loc.gov/ontologies/bibframe/Identifier> , <http://id.loc.gov/ontologies/bibframe/KeyTitle> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "Nature (London)" .
