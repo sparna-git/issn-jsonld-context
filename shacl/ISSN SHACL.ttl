@@ -48,6 +48,7 @@ issnshapes:ISSNResource a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:order "14"^^xsd:integer;
   sh:pattern "^http://issn.org/resource/ISSN/[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9]$";
+  shacl-play:background-color "F5E4E3";
   sh:property issnshapes:P9, issnshapes:P10, issnshapes:P11, issnshapes:P12, issnshapes:P13,
     issnshapes:P14, issnshapes:P15, issnshapes:P16, issnshapes:P17, issnshapes:P18, issnshapes:P19,
     issnshapes:P20, issnshapes:P21, issnshapes:P22, issnshapes:P23, issnshapes:P24, issnshapes:P25,
@@ -293,19 +294,25 @@ issnshapes:Medium a sh:NodeShape;
   sh:order "59"^^xsd:integer;
   sh:property issnshapes:P219 .
 
+issnshapes:Freq a sh:NodeShape;
+  rdfs:label "Vocab : Frequence"@en;
+  sh:nodeKind sh:IRI;
+  sh:order "60"^^xsd:integer;
+  sh:property issnshapes:P220 .
+
 issnshapes:P9 sh:path rdf:type;
   sh:name "type"@en;
   sh:minCount "1"^^xsd:integer;
   sh:maxCount "1"^^xsd:integer;
-  sh:in _:17d00ff6071d48b4a355f4284ed63c331333 .
+  sh:in _:17d00ff6071d48b4a355f4284ed63c331457 .
 
-_:17d00ff6071d48b4a355f4284ed63c331333 rdf:first schema:Periodical;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331334 .
+_:17d00ff6071d48b4a355f4284ed63c331457 rdf:first schema:Periodical;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331458 .
 
-_:17d00ff6071d48b4a355f4284ed63c331334 rdf:first bf:Work;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331335 .
+_:17d00ff6071d48b4a355f4284ed63c331458 rdf:first bf:Work;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331459 .
 
-_:17d00ff6071d48b4a355f4284ed63c331335 rdf:first bf:Instance;
+_:17d00ff6071d48b4a355f4284ed63c331459 rdf:first bf:Instance;
   rdf:rest rdf:nil .
 
 issnshapes:P10 sh:path bf:carrier;
@@ -419,20 +426,20 @@ issnshapes:P24 sh:path dc:format;
   sh:description "Special information about the physical characteristics of the resource. They are often related to information in other parts of the MARC record especially from field 300 (Physical Description) or one of the 5XX note field"@en;
   sh:minCount "1"^^xsd:integer;
   sh:node issnshapes:Medium;
-  sh:in _:17d00ff6071d48b4a355f4284ed63c331336;
+  sh:in _:17d00ff6071d48b4a355f4284ed63c331460;
   sh:group issnshapes:controlledVocs;
   dct:source "007" .
 
-_:17d00ff6071d48b4a355f4284ed63c331336 rdf:first media:Print;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331337 .
+_:17d00ff6071d48b4a355f4284ed63c331460 rdf:first media:Print;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331461 .
 
-_:17d00ff6071d48b4a355f4284ed63c331337 rdf:first media:Online;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331338 .
+_:17d00ff6071d48b4a355f4284ed63c331461 rdf:first media:Online;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331462 .
 
-_:17d00ff6071d48b4a355f4284ed63c331338 rdf:first media:DigitalCarrier;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331339 .
+_:17d00ff6071d48b4a355f4284ed63c331462 rdf:first media:DigitalCarrier;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331463 .
 
-_:17d00ff6071d48b4a355f4284ed63c331339 rdf:first media:Other;
+_:17d00ff6071d48b4a355f4284ed63c331463 rdf:first media:Other;
   rdf:rest rdf:nil .
 
 issnshapes:P25 sh:path dc:identifier;
@@ -449,26 +456,43 @@ issnshapes:P26 sh:path dct:accrualPeriodicity;
   sh:description "This property contains the publication frequency of the continuing resource, from the Dublin Core Collection Description Frequency Namespace, or as the literal values \"unknown\" or \"other\"."@en;
   sh:minCount "1"^^xsd:integer;
   sh:maxCount "1"^^xsd:integer;
+  sh:or _:17d00ff6071d48b4a355f4284ed63c331464;
   dct:source "'008/18" .
+
+_:17d00ff6071d48b4a355f4284ed63c331464 rdf:first _:17d00ff6071d48b4a355f4284ed63c331465;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331466 .
+
+_:17d00ff6071d48b4a355f4284ed63c331465 sh:node issnshapes:Freq .
+
+_:17d00ff6071d48b4a355f4284ed63c331466 rdf:first _:17d00ff6071d48b4a355f4284ed63c331467;
+  rdf:rest rdf:nil .
+
+_:17d00ff6071d48b4a355f4284ed63c331467 sh:in _:17d00ff6071d48b4a355f4284ed63c331468 .
+
+_:17d00ff6071d48b4a355f4284ed63c331468 rdf:first "unknown";
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331469 .
+
+_:17d00ff6071d48b4a355f4284ed63c331469 rdf:first "other";
+  rdf:rest rdf:nil .
 
 issnshapes:P27 sh:path dct:spatial;
   sh:name "spatial"@en;
   sh:description "This property links the resource to the reference country of its publisher, which is generally used to decide what National Centre is responsible for ISSN assignment"@en;
   sh:minCount "2"^^xsd:integer;
   sh:maxCount "2"^^xsd:integer;
-  sh:or _:17d00ff6071d48b4a355f4284ed63c331340;
+  sh:or _:17d00ff6071d48b4a355f4284ed63c331470;
   sh:group issnshapes:controlledVocs;
   dct:source "'008/15-17, 044$c" .
 
-_:17d00ff6071d48b4a355f4284ed63c331340 rdf:first _:17d00ff6071d48b4a355f4284ed63c331341;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331342 .
+_:17d00ff6071d48b4a355f4284ed63c331470 rdf:first _:17d00ff6071d48b4a355f4284ed63c331471;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331472 .
 
-_:17d00ff6071d48b4a355f4284ed63c331341 sh:node issnshapes:MARCCountry .
+_:17d00ff6071d48b4a355f4284ed63c331471 sh:node issnshapes:MARCCountry .
 
-_:17d00ff6071d48b4a355f4284ed63c331342 rdf:first _:17d00ff6071d48b4a355f4284ed63c331343;
+_:17d00ff6071d48b4a355f4284ed63c331472 rdf:first _:17d00ff6071d48b4a355f4284ed63c331473;
   rdf:rest rdf:nil .
 
-_:17d00ff6071d48b4a355f4284ed63c331343 sh:node issnshapes:ISOCountry .
+_:17d00ff6071d48b4a355f4284ed63c331473 sh:node issnshapes:ISOCountry .
 
 issnshapes:P28 sh:path dct:type;
   sh:name "type"@en;
@@ -563,37 +587,37 @@ issnshapes:P38 sh:path m213XX:M3621_z;
 issnshapes:P39 sh:path rdf:type;
   sh:name "additionnal type"@en;
   sh:description "An additionnal rdf:type statement may be expressed on the resource depending on its characteristics."@en;
-  sh:in _:17d00ff6071d48b4a355f4284ed63c331344;
+  sh:in _:17d00ff6071d48b4a355f4284ed63c331474;
   dct:source "'007, 008/21" .
 
-_:17d00ff6071d48b4a355f4284ed63c331344 rdf:first schema:Dataset;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331345 .
+_:17d00ff6071d48b4a355f4284ed63c331474 rdf:first schema:Dataset;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331475 .
 
-_:17d00ff6071d48b4a355f4284ed63c331345 rdf:first schema:BookSeries;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331346 .
+_:17d00ff6071d48b4a355f4284ed63c331475 rdf:first schema:BookSeries;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331476 .
 
-_:17d00ff6071d48b4a355f4284ed63c331346 rdf:first schema:WebSite;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331347 .
+_:17d00ff6071d48b4a355f4284ed63c331476 rdf:first schema:WebSite;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331477 .
 
-_:17d00ff6071d48b4a355f4284ed63c331347 rdf:first schema:Atlas;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331348 .
+_:17d00ff6071d48b4a355f4284ed63c331477 rdf:first schema:Atlas;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331478 .
 
-_:17d00ff6071d48b4a355f4284ed63c331348 rdf:first schema:Map;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331349 .
+_:17d00ff6071d48b4a355f4284ed63c331478 rdf:first schema:Map;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331479 .
 
-_:17d00ff6071d48b4a355f4284ed63c331349 rdf:first schema:AudioObject;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331350 .
+_:17d00ff6071d48b4a355f4284ed63c331479 rdf:first schema:AudioObject;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331480 .
 
-_:17d00ff6071d48b4a355f4284ed63c331350 rdf:first schema:VideoObject;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331351 .
+_:17d00ff6071d48b4a355f4284ed63c331480 rdf:first schema:VideoObject;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331481 .
 
-_:17d00ff6071d48b4a355f4284ed63c331351 rdf:first schema:Newspaper;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331352 .
+_:17d00ff6071d48b4a355f4284ed63c331481 rdf:first schema:Newspaper;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331482 .
 
-_:17d00ff6071d48b4a355f4284ed63c331352 rdf:first bf:Tactile;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331353 .
+_:17d00ff6071d48b4a355f4284ed63c331482 rdf:first bf:Tactile;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331483 .
 
-_:17d00ff6071d48b4a355f4284ed63c331353 rdf:first dctype:Text;
+_:17d00ff6071d48b4a355f4284ed63c331483 rdf:first dctype:Text;
   rdf:rest rdf:nil .
 
 issnshapes:P40 sh:path schema:about;
@@ -935,18 +959,18 @@ issnshapes:P89 sh:path prov:generated;
   sh:description "This property refers to the entities that the Activity generated : the ISSN Record (http://issn.org/resource/ISSN/{ISSN}#Record) and the identifiers ISSN, ISSN-L, Key title and Abbreviated key title (http://issn.org/resource/ISSN/{ISSN}#ISSN, http://issn.org/resource/ISSN/{ISSN}#ISSN-L, http://issn.org/resource/ISSN/{ISSN}#KeyTitle, http://issn.org/resource/ISSN/{ISSN}#AbbreviatedKeyTitle)"@en;
   sh:minCount "1"^^xsd:integer;
   sh:nodeKind sh:IRI;
-  sh:or _:17d00ff6071d48b4a355f4284ed63c331354;
+  sh:or _:17d00ff6071d48b4a355f4284ed63c331484;
   dct:source "'699$v" .
 
-_:17d00ff6071d48b4a355f4284ed63c331354 rdf:first _:17d00ff6071d48b4a355f4284ed63c331355;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331356 .
+_:17d00ff6071d48b4a355f4284ed63c331484 rdf:first _:17d00ff6071d48b4a355f4284ed63c331485;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331486 .
 
-_:17d00ff6071d48b4a355f4284ed63c331355 sh:node issnshapes:ISSNRecord .
+_:17d00ff6071d48b4a355f4284ed63c331485 sh:node issnshapes:ISSNRecord .
 
-_:17d00ff6071d48b4a355f4284ed63c331356 rdf:first _:17d00ff6071d48b4a355f4284ed63c331357;
+_:17d00ff6071d48b4a355f4284ed63c331486 rdf:first _:17d00ff6071d48b4a355f4284ed63c331487;
   rdf:rest rdf:nil .
 
-_:17d00ff6071d48b4a355f4284ed63c331357 sh:node issnshapes:ISSNID .
+_:17d00ff6071d48b4a355f4284ed63c331487 sh:node issnshapes:ISSNID .
 
 issnshapes:P90 sh:path prov:wasAssociatedWith;
   sh:name "was associated with"@en;
@@ -961,7 +985,6 @@ issnshapes:P92 sh:path rdf:type;
   sh:name "type"@en;
   sh:minCount "1"^^xsd:integer;
   sh:maxCount "1"^^xsd:integer;
-  sh:class schema:CreativeWork;
   sh:hasValue schema:CreativeWork .
 
 issnshapes:P93 sh:path bf:identifiedBy;
@@ -1021,8 +1044,27 @@ issnshapes:P100 sh:path bf:status;
   sh:maxCount "1"^^xsd:integer;
   sh:nodeKind sh:IRI;
   sh:node issnshapes:Status;
+  sh:in _:17d00ff6071d48b4a355f4284ed63c331488;
   sh:group issnshapes:controlledVocs;
   dct:source "'699$8" .
+
+_:17d00ff6071d48b4a355f4284ed63c331488 rdf:first recordStatus:Register;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331489 .
+
+_:17d00ff6071d48b4a355f4284ed63c331489 rdf:first recordStatus:Unreported;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331490 .
+
+_:17d00ff6071d48b4a355f4284ed63c331490 rdf:first recordStatus:Provisional;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331491 .
+
+_:17d00ff6071d48b4a355f4284ed63c331491 rdf:first recordStatus:Legacy;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331492 .
+
+_:17d00ff6071d48b4a355f4284ed63c331492 rdf:first recordStatus:Cancelled;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331493 .
+
+_:17d00ff6071d48b4a355f4284ed63c331493 rdf:first recordStatus:Suppressed;
+  rdf:rest rdf:nil .
 
 issnshapes:P103 sh:path rdf:type;
   sh:name "type"@en;
@@ -1036,7 +1078,23 @@ issnshapes:P104 sh:path schema:location;
   sh:minCount "1"^^xsd:integer;
   sh:maxCount "1"^^xsd:integer;
   sh:nodeKind sh:IRI;
+  sh:or _:17d00ff6071d48b4a355f4284ed63c331494;
   dct:source "#ReferencePublicationEvent : 008/15-17, 044$cOther events : 260$a, 264$a, 533$b" .
+
+_:17d00ff6071d48b4a355f4284ed63c331494 rdf:first _:17d00ff6071d48b4a355f4284ed63c331495;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331496 .
+
+_:17d00ff6071d48b4a355f4284ed63c331495 sh:node issnshapes:MARCCountry .
+
+_:17d00ff6071d48b4a355f4284ed63c331496 rdf:first _:17d00ff6071d48b4a355f4284ed63c331497;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331498 .
+
+_:17d00ff6071d48b4a355f4284ed63c331497 sh:node issnshapes:ISOCountry .
+
+_:17d00ff6071d48b4a355f4284ed63c331498 rdf:first _:17d00ff6071d48b4a355f4284ed63c331499;
+  rdf:rest rdf:nil .
+
+_:17d00ff6071d48b4a355f4284ed63c331499 sh:node issnshapes:ISSNPlaces .
 
 issnshapes:P105 sh:path schema:publishedBy;
   sh:name "published by"@en;
@@ -1075,6 +1133,7 @@ issnshapes:P110 sh:path schema:sameAs;
   sh:description "This property refers to an equivalent entry for this place in the Geonames database (i.e. the Geonames URI)"@en;
   sh:maxCount "1"^^xsd:integer;
   sh:nodeKind sh:IRI;
+  sh:pattern "^https://sws.geonames.org/.*$";
   dct:source "260#$a, 2602$a, 2603$a, 264#$a, 2642$a, 2643$a, 533$b (URI en 926$u)" .
 
 issnshapes:P111 sh:path schema:geo;
@@ -1171,8 +1230,18 @@ issnshapes:P125 sh:path bf:status;
   sh:description "This property refers to the status of the ISSN (valid, incorrect or cancelled). This property is used on the ISSN and the ISSN-L identifier."@en;
   sh:maxCount "1"^^xsd:integer;
   sh:node issnshapes:IDStatus;
+  sh:in _:17d00ff6071d48b4a355f4284ed63c331500;
   sh:group issnshapes:controlledVocs;
   dct:source "022$a, 022$l, 022$m, 022$y, 022$z, 210$a, 222$a" .
+
+_:17d00ff6071d48b4a355f4284ed63c331500 rdf:first idStatus:Valid;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331501 .
+
+_:17d00ff6071d48b4a355f4284ed63c331501 rdf:first idStatus:Incorrect;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331502 .
+
+_:17d00ff6071d48b4a355f4284ed63c331502 rdf:first idStatus:Cancelled;
+  rdf:rest rdf:nil .
 
 issnshapes:P126 sh:path issnprop:hasCancelledISSN;
   sh:name "has cancelled ISSN"@en;
@@ -1230,18 +1299,18 @@ issnshapes:P135 sh:path schema:name;
   sh:minCount "1"^^xsd:integer;
   sh:maxCount "1"^^xsd:integer;
   sh:nodeKind sh:Literal;
-  sh:or _:17d00ff6071d48b4a355f4284ed63c331358;
+  sh:or _:17d00ff6071d48b4a355f4284ed63c331503;
   dct:source "2601$b, 2602$b, 2603$b, 533$c. For ISSN Centre label, this is not from the MARC21 file." .
 
-_:17d00ff6071d48b4a355f4284ed63c331358 rdf:first _:17d00ff6071d48b4a355f4284ed63c331359;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331360 .
+_:17d00ff6071d48b4a355f4284ed63c331503 rdf:first _:17d00ff6071d48b4a355f4284ed63c331504;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331505 .
 
-_:17d00ff6071d48b4a355f4284ed63c331359 sh:datatype xsd:string .
+_:17d00ff6071d48b4a355f4284ed63c331504 sh:datatype xsd:string .
 
-_:17d00ff6071d48b4a355f4284ed63c331360 rdf:first _:17d00ff6071d48b4a355f4284ed63c331361;
+_:17d00ff6071d48b4a355f4284ed63c331505 rdf:first _:17d00ff6071d48b4a355f4284ed63c331506;
   rdf:rest rdf:nil .
 
-_:17d00ff6071d48b4a355f4284ed63c331361 sh:datatype rdf:langString .
+_:17d00ff6071d48b4a355f4284ed63c331506 sh:datatype rdf:langString .
 
 issnshapes:P136 sh:path schema:alternateName;
   sh:name "alternate name"@en;
@@ -1411,12 +1480,12 @@ issnshapes:P161 sh:path rdf:type;
   sh:name "type"@en;
   sh:minCount "1"^^xsd:integer;
   sh:maxCount "1"^^xsd:integer;
-  sh:in _:17d00ff6071d48b4a355f4284ed63c331362 .
+  sh:in _:17d00ff6071d48b4a355f4284ed63c331507 .
 
-_:17d00ff6071d48b4a355f4284ed63c331362 rdf:first bf:ClassificationUdc;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331363 .
+_:17d00ff6071d48b4a355f4284ed63c331507 rdf:first bf:ClassificationUdc;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331508 .
 
-_:17d00ff6071d48b4a355f4284ed63c331363 rdf:first bf:ClassificationDdc;
+_:17d00ff6071d48b4a355f4284ed63c331508 rdf:first bf:ClassificationDdc;
   rdf:rest rdf:nil .
 
 issnshapes:P162 sh:path rdf:value;
@@ -1608,68 +1677,72 @@ issnshapes:P196 sh:path schema:holdingArchive;
   sh:node issnshapes:ISSNArchiveOrganization .
 
 issnshapes:P203 sh:path skos:inScheme;
-  sh:name "skos:inScheme"@en;
+  sh:name "in scheme"@en;
   sh:hasValue <http://id.loc.gov/vocabulary/carriers> .
 
 issnshapes:P204 sh:path skos:inScheme;
-  sh:name "skos:inScheme"@en;
+  sh:name "in scheme"@en;
   sh:hasValue <http://id.loc.gov/vocabulary/contentTypes> .
 
 issnshapes:P205 sh:path skos:inScheme;
-  sh:name "skos:inScheme"@en;
+  sh:name "in scheme"@en;
   sh:hasValue <http://id.loc.gov/vocabulary/mediaTypes> .
 
 issnshapes:P206 sh:path skos:inScheme;
-  sh:name "skos:inScheme"@en;
+  sh:name "in scheme"@en;
   sh:hasValue m21terms:continuingreg .
 
 issnshapes:P207 sh:path skos:inScheme;
-  sh:name "skos:inScheme"@en;
+  sh:name "in scheme"@en;
   sh:hasValue m21terms:formofmaterial .
 
 issnshapes:P208 sh:path skos:inScheme;
-  sh:name "skos:inScheme"@en;
+  sh:name "in scheme"@en;
   sh:hasValue <http://id.loc.gov/vocabulary/countries> .
 
 issnshapes:P209 sh:path skos:inScheme;
-  sh:name "skos:inScheme"@en;
+  sh:name "in scheme"@en;
   sh:hasValue m21terms:formofmaterial .
 
 issnshapes:P210 sh:path skos:inScheme;
-  sh:name "skos:inScheme"@en;
+  sh:name "in scheme"@en;
   sh:hasValue m21terms:alltyp .
 
 issnshapes:P211 sh:path skos:inScheme;
-  sh:name "skos:inScheme"@en;
+  sh:name "in scheme"@en;
   sh:hasValue m21terms:continuingori .
 
 issnshapes:P212 sh:path skos:inScheme;
-  sh:name "skos:inScheme"@en;
+  sh:name "in scheme"@en;
   sh:hasValue m21terms:commonfor .
 
 issnshapes:P213 sh:path skos:inScheme;
-  sh:name "skos:inScheme"@en;
+  sh:name "in scheme"@en;
   sh:hasValue m21terms:continuingscr .
 
 issnshapes:P214 sh:path skos:inScheme;
-  sh:name "skos:inScheme"@en;
+  sh:name "in scheme"@en;
   sh:hasValue <http://udcdata.info/udc-schema> .
 
 issnshapes:P215 sh:path skos:inScheme;
-  sh:name "skos:inScheme"@en;
+  sh:name "in scheme"@en;
   sh:hasValue <http://id.loc.gov/vocabulary/languages> .
 
 issnshapes:P216 sh:path skos:inScheme;
-  sh:name "skos:inScheme"@en;
+  sh:name "in scheme"@en;
   sh:hasValue <http://issn.org/vocabularies/RecordStatus> .
 
 issnshapes:P217 sh:path skos:inScheme;
-  sh:name "skos:inScheme"@en;
+  sh:name "in scheme"@en;
   sh:hasValue <http://issn.org/vocabularies/IdStatus> .
 
 issnshapes:P219 sh:path skos:inScheme;
-  sh:name "skos:inScheme"@en;
+  sh:name "in scheme"@en;
   sh:hasValue <http://issn.org/vocabularies/Medium> .
+
+issnshapes:P220 sh:path skos:inScheme;
+  sh:name "in scheme"@en;
+  sh:hasValue <http://purl.org/cld/freq/> .
 
 issnshapes:controlledVocs a sh:PropertyGroup;
   rdfs:label "controlled vocs."@en .
