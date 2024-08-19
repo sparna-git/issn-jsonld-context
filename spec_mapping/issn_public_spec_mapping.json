@@ -79,7 +79,7 @@
   // cette section contient l'ISSN-L
   "isPartOf" : {
     // 022$l (= ISSN-L valide)
-    "id" : "http://issn.org/resource/resource/ISSN-L/0247-0624",
+    "id" : "http://issn.org/resource/ISSN-L/0247-0624",
     "identifiedBy" : {
       "#ISSN-L" : {
         "type" : "bf:IssnL",
@@ -138,7 +138,7 @@
       "id" : "issnCenter:_7",
       "type" : "schema:Organization"
     },
-    "generated_by" : {
+    "generatedBy" : {
       "id" : "#RecordCreation",
       "type" : "prov:Activity",
       "generated" : [ 

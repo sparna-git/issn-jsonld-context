@@ -418,7 +418,7 @@
     // 699$8
     // on trouve le tableau de correspondance dans le tableau Excel de mapping
     "status" : "",
-    "generated_by" : {
+    "generatedBy" : {
       "id" : "#RecordCreation",
       "type" : "prov:Activity",
       "generated" : [ 

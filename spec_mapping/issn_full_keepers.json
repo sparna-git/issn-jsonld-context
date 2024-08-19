@@ -325,7 +325,7 @@
   ],
   "url" : "http://www.nature.com/nature/",
   
-  "mainEntity_of" : {
+  "mainEntityOf" : {
     "id" : "#Record",
     "type" : "schema:CreativeWork",
     "modified" : "2022-11-24",
@@ -334,7 +334,7 @@
       "id" : "issnCenter:_2",
       "type" : "schema:Organization"
     },
-    "generated_by" : {
+    "generatedBy" : {
       "id" : "#RecordCreation",
       "type" : "prov:Activity",
       "generated" : [ 
