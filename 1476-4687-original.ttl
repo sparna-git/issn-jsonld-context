@@ -29,6 +29,13 @@
         <http://id.loc.gov/ontologies/bibframe/identifiedBy>
                 <resource/ISSN/1476-4687#ISSN-L> .
 
+<resource/ISSN/1476-4687#ISSN>
+        a       <http://id.loc.gov/ontologies/bibframe/Issn> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "0028-0836" ;
+        <http://id.loc.gov/ontologies/bibframe/status>
+                <vocabularies/IdentifierStatus#Valid> .
+
 <resource/ISSN/1476-4687#Record>
         a                               <http://schema.org/CreativeWork> ;
         <http://purl.org/dc/terms/modified>
@@ -59,7 +66,7 @@
 
 <resource/ISSN/1476-4687>
         <http://id.loc.gov/ontologies/bibframe/identifiedBy>
-                <resource/ISSN/1476-4687#KeyTitle> , <resource/ISSN/1476-4687#ISSN-L> ;
+                <resource/ISSN/1476-4687#KeyTitle> , <resource/ISSN/1476-4687#ISSN-L>, <resource/ISSN/1476-4687#ISSN> ;
         <http://id.loc.gov/ontologies/bibframe/mainTitle>
                 "Nature" ;
         <http://id.loc.gov/ontologies/bibframe/otherPhysicalFormat>

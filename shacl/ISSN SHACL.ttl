@@ -44,10 +44,10 @@
 
 issnshapes:ISSNResource a sh:NodeShape;
   rdfs:label "ISSN resource"@en;
-  sh:targetClass schema:Periodical;
+  sh:target issnshapes:ISSNResource-target;
   sh:nodeKind sh:IRI;
   sh:order "14"^^xsd:integer;
-  sh:pattern "^http://issn.org/resource/ISSN/[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9]$";
+  sh:pattern "^http://issn.org/resource/ISSN/[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][X0-9]$";
   shacl-play:background-color "F5E4E3";
   sh:property issnshapes:P9, issnshapes:P10, issnshapes:P11, issnshapes:P12, issnshapes:P13,
     issnshapes:P14, issnshapes:P15, issnshapes:P16, issnshapes:P17, issnshapes:P18, issnshapes:P19,
@@ -56,20 +56,36 @@ issnshapes:ISSNResource a sh:NodeShape;
     issnshapes:P32, issnshapes:P33, issnshapes:P34, issnshapes:P35, issnshapes:P36, issnshapes:P37,
     issnshapes:P38, issnshapes:P39, issnshapes:P40, issnshapes:P41, issnshapes:P42, issnshapes:P43,
     issnshapes:P44, issnshapes:P45, issnshapes:P46, issnshapes:P47, issnshapes:P48, issnshapes:P49,
-    issnshapes:P50, issnshapes:P51, issnshapes:P52, issnshapes:P53, issnshapes:P56, issnshapes:P57,
-    issnshapes:P58, issnshapes:P59, issnshapes:P60, issnshapes:P61, issnshapes:P62, issnshapes:P63,
-    issnshapes:P64, issnshapes:P65, issnshapes:P66, issnshapes:P67, issnshapes:P68, issnshapes:P69,
-    issnshapes:P70, issnshapes:P71, issnshapes:P72, issnshapes:P73, issnshapes:P74, issnshapes:P75,
-    issnshapes:P76, issnshapes:P77, issnshapes:P78, issnshapes:P79, issnshapes:P80, issnshapes:P81,
-    issnshapes:P82, issnshapes:P83, issnshapes:P84, issnshapes:P85 .
+    issnshapes:P50, issnshapes:P51, issnshapes:P52, issnshapes:P53, issnshapes:P54, issnshapes:P56,
+    issnshapes:P57, issnshapes:P58, issnshapes:P59, issnshapes:P60, issnshapes:P61, issnshapes:P62,
+    issnshapes:P63, issnshapes:P64, issnshapes:P65, issnshapes:P66, issnshapes:P67, issnshapes:P68,
+    issnshapes:P69, issnshapes:P70, issnshapes:P71, issnshapes:P72, issnshapes:P73, issnshapes:P74,
+    issnshapes:P75, issnshapes:P76, issnshapes:P77, issnshapes:P78, issnshapes:P79, issnshapes:P80,
+    issnshapes:P81, issnshapes:P82, issnshapes:P83, issnshapes:P84, issnshapes:P85 .
+
+issnshapes:ISSNResource-target sh:select """# An ISSN is defined as a resource identified by an
+# identifier of type bf:Issn
+PREFIX bf: <http://id.loc.gov/ontologies/bibframe/>
+SELECT ?this
+WHERE {
+ ?this bf:identifiedBy ?identifier .
+ ?identifier a bf:Issn .
+}""" .
 
 issnshapes:ISSN-L a sh:NodeShape;
   rdfs:label "ISSN-L"@en;
-  sh:targetClass schema:CreativeWork;
+  sh:target issnshapes:ISSN-L-target;
   sh:nodeKind sh:IRI;
   sh:order "15"^^xsd:integer;
   sh:pattern "^http://issn.org/resource/ISSN-L/[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9]$";
   sh:property issnshapes:P92, issnshapes:P93, issnshapes:P94 .
+
+issnshapes:ISSN-L-target sh:select """# an ISSN-L is defined as any resource with a URI starting with \".../ISSN-L\"
+SELECT ?this
+WHERE {
+ ?this ?p ?o .
+ FILTER(STRSTARTS(STR(?this), \"http://issn.org/resource/ISSN-L/\"))
+}""" .
 
 issnshapes:ISSNRecordCreation a sh:NodeShape;
   rdfs:label "Record Creation Activity"@en;
@@ -83,7 +99,8 @@ issnshapes:ISSNRecord a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:order "17"^^xsd:integer;
   sh:pattern "^http://issn.org/resource/ISSN/[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9]#Record";
-  sh:property issnshapes:P96, issnshapes:P97, issnshapes:P98, issnshapes:P99, issnshapes:P100 .
+  sh:property issnshapes:P96, issnshapes:P97, issnshapes:P98, issnshapes:P99, issnshapes:P100,
+    issnshapes:P101 .
 
 issnshapes:ISSNPublicationEvent a sh:NodeShape;
   rdfs:label "ISSN Publication Event"@en;
@@ -101,14 +118,14 @@ issnshapes:ISSNPlaces a sh:NodeShape;
 
 issnshapes:ISSNGeocoordinates a sh:NodeShape;
   rdfs:label "Geocordinates"@en;
-  sh:nodeKind sh:BlankNode;
+  sh:nodeKind sh:IRI;
   sh:order "20"^^xsd:integer;
   sh:pattern "^http://issn.org/resource/ISSN/[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9](#PublicationPlace-.*-GeoCoordinates|#ReproductionPlace-.*-Geocoordinates$";
   sh:property issnshapes:P113, issnshapes:P114, issnshapes:P115, issnshapes:P116 .
 
 issnshapes:ISSNReproductions a sh:NodeShape;
   rdfs:label "Reproductions"@en;
-  sh:nodeKind sh:IRI;
+  sh:nodeKind sh:BlankNode;
   sh:order "21"^^xsd:integer;
   sh:property issnshapes:P118, issnshapes:P119, issnshapes:P120, issnshapes:P121 .
 
@@ -304,15 +321,15 @@ issnshapes:P9 sh:path rdf:type;
   sh:name "type"@en;
   sh:minCount "1"^^xsd:integer;
   sh:maxCount "1"^^xsd:integer;
-  sh:in _:17d00ff6071d48b4a355f4284ed63c331457 .
+  sh:in _:17d00ff6071d48b4a355f4284ed63c331785 .
 
-_:17d00ff6071d48b4a355f4284ed63c331457 rdf:first schema:Periodical;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331458 .
+_:17d00ff6071d48b4a355f4284ed63c331785 rdf:first schema:Periodical;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331786 .
 
-_:17d00ff6071d48b4a355f4284ed63c331458 rdf:first bf:Work;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331459 .
+_:17d00ff6071d48b4a355f4284ed63c331786 rdf:first bf:Work;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331787 .
 
-_:17d00ff6071d48b4a355f4284ed63c331459 rdf:first bf:Instance;
+_:17d00ff6071d48b4a355f4284ed63c331787 rdf:first bf:Instance;
   rdf:rest rdf:nil .
 
 issnshapes:P10 sh:path bf:carrier;
@@ -326,7 +343,7 @@ issnshapes:P10 sh:path bf:carrier;
 issnshapes:P11 sh:path bf:classification;
   sh:name "classification"@en;
   sh:description "This property refers to a classification object giving the classification value and the classification scheme it comes from."@en;
-  sh:nodeKind sh:IRI;
+  sh:nodeKind sh:BlankNode;
   sh:node issnshapes:ISSNClassification;
   dct:source "'080$a, 082$a" .
 
@@ -340,7 +357,7 @@ issnshapes:P12 sh:path bf:content;
 issnshapes:P13 sh:path bf:hasReproduction;
   sh:name "reproduced as"@en;
   sh:description "This property refers to another resource that reproduces this resource (a blank node)"@en;
-  sh:nodeKind sh:IRI;
+  sh:nodeKind sh:BlankNode;
   sh:node issnshapes:ISSNReproductions;
   dct:source "'533" .
 
@@ -371,7 +388,7 @@ issnshapes:P16 sh:path bf:media;
 issnshapes:P17 sh:path bf:note;
   sh:name "note"@en;
   sh:description "This property refers to a note object (blank node) that gives additional descriptive information associated with the resource."@en;
-  sh:nodeKind sh:IRI;
+  sh:nodeKind sh:BlankNode;
   sh:node issnshapes:ISSNNote;
   dct:source "588$a" .
 
@@ -426,20 +443,20 @@ issnshapes:P24 sh:path dc:format;
   sh:description "Special information about the physical characteristics of the resource. They are often related to information in other parts of the MARC record especially from field 300 (Physical Description) or one of the 5XX note field"@en;
   sh:minCount "1"^^xsd:integer;
   sh:node issnshapes:Medium;
-  sh:in _:17d00ff6071d48b4a355f4284ed63c331460;
+  sh:in _:17d00ff6071d48b4a355f4284ed63c331788;
   sh:group issnshapes:controlledVocs;
   dct:source "007" .
 
-_:17d00ff6071d48b4a355f4284ed63c331460 rdf:first media:Print;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331461 .
+_:17d00ff6071d48b4a355f4284ed63c331788 rdf:first media:Print;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331789 .
 
-_:17d00ff6071d48b4a355f4284ed63c331461 rdf:first media:Online;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331462 .
+_:17d00ff6071d48b4a355f4284ed63c331789 rdf:first media:Online;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331790 .
 
-_:17d00ff6071d48b4a355f4284ed63c331462 rdf:first media:DigitalCarrier;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331463 .
+_:17d00ff6071d48b4a355f4284ed63c331790 rdf:first media:DigitalCarrier;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331791 .
 
-_:17d00ff6071d48b4a355f4284ed63c331463 rdf:first media:Other;
+_:17d00ff6071d48b4a355f4284ed63c331791 rdf:first media:Other;
   rdf:rest rdf:nil .
 
 issnshapes:P25 sh:path dc:identifier;
@@ -456,23 +473,23 @@ issnshapes:P26 sh:path dct:accrualPeriodicity;
   sh:description "This property contains the publication frequency of the continuing resource, from the Dublin Core Collection Description Frequency Namespace, or as the literal values \"unknown\" or \"other\"."@en;
   sh:minCount "1"^^xsd:integer;
   sh:maxCount "1"^^xsd:integer;
-  sh:or _:17d00ff6071d48b4a355f4284ed63c331464;
+  sh:or _:17d00ff6071d48b4a355f4284ed63c331792;
   dct:source "'008/18" .
 
-_:17d00ff6071d48b4a355f4284ed63c331464 rdf:first _:17d00ff6071d48b4a355f4284ed63c331465;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331466 .
+_:17d00ff6071d48b4a355f4284ed63c331792 rdf:first _:17d00ff6071d48b4a355f4284ed63c331793;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331794 .
 
-_:17d00ff6071d48b4a355f4284ed63c331465 sh:node issnshapes:Freq .
+_:17d00ff6071d48b4a355f4284ed63c331793 sh:node issnshapes:Freq .
 
-_:17d00ff6071d48b4a355f4284ed63c331466 rdf:first _:17d00ff6071d48b4a355f4284ed63c331467;
+_:17d00ff6071d48b4a355f4284ed63c331794 rdf:first _:17d00ff6071d48b4a355f4284ed63c331795;
   rdf:rest rdf:nil .
 
-_:17d00ff6071d48b4a355f4284ed63c331467 sh:in _:17d00ff6071d48b4a355f4284ed63c331468 .
+_:17d00ff6071d48b4a355f4284ed63c331795 sh:in _:17d00ff6071d48b4a355f4284ed63c331796 .
 
-_:17d00ff6071d48b4a355f4284ed63c331468 rdf:first "unknown";
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331469 .
+_:17d00ff6071d48b4a355f4284ed63c331796 rdf:first "unknown";
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331797 .
 
-_:17d00ff6071d48b4a355f4284ed63c331469 rdf:first "other";
+_:17d00ff6071d48b4a355f4284ed63c331797 rdf:first "other";
   rdf:rest rdf:nil .
 
 issnshapes:P27 sh:path dct:spatial;
@@ -480,19 +497,19 @@ issnshapes:P27 sh:path dct:spatial;
   sh:description "This property links the resource to the reference country of its publisher, which is generally used to decide what National Centre is responsible for ISSN assignment"@en;
   sh:minCount "2"^^xsd:integer;
   sh:maxCount "2"^^xsd:integer;
-  sh:or _:17d00ff6071d48b4a355f4284ed63c331470;
+  sh:or _:17d00ff6071d48b4a355f4284ed63c331798;
   sh:group issnshapes:controlledVocs;
   dct:source "'008/15-17, 044$c" .
 
-_:17d00ff6071d48b4a355f4284ed63c331470 rdf:first _:17d00ff6071d48b4a355f4284ed63c331471;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331472 .
+_:17d00ff6071d48b4a355f4284ed63c331798 rdf:first _:17d00ff6071d48b4a355f4284ed63c331799;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331800 .
 
-_:17d00ff6071d48b4a355f4284ed63c331471 sh:node issnshapes:MARCCountry .
+_:17d00ff6071d48b4a355f4284ed63c331799 sh:node issnshapes:MARCCountry .
 
-_:17d00ff6071d48b4a355f4284ed63c331472 rdf:first _:17d00ff6071d48b4a355f4284ed63c331473;
+_:17d00ff6071d48b4a355f4284ed63c331800 rdf:first _:17d00ff6071d48b4a355f4284ed63c331801;
   rdf:rest rdf:nil .
 
-_:17d00ff6071d48b4a355f4284ed63c331473 sh:node issnshapes:ISOCountry .
+_:17d00ff6071d48b4a355f4284ed63c331801 sh:node issnshapes:ISOCountry .
 
 issnshapes:P28 sh:path dct:type;
   sh:name "type"@en;
@@ -587,37 +604,37 @@ issnshapes:P38 sh:path m213XX:M3621_z;
 issnshapes:P39 sh:path rdf:type;
   sh:name "additionnal type"@en;
   sh:description "An additionnal rdf:type statement may be expressed on the resource depending on its characteristics."@en;
-  sh:in _:17d00ff6071d48b4a355f4284ed63c331474;
+  sh:in _:17d00ff6071d48b4a355f4284ed63c331802;
   dct:source "'007, 008/21" .
 
-_:17d00ff6071d48b4a355f4284ed63c331474 rdf:first schema:Dataset;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331475 .
+_:17d00ff6071d48b4a355f4284ed63c331802 rdf:first schema:Dataset;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331803 .
 
-_:17d00ff6071d48b4a355f4284ed63c331475 rdf:first schema:BookSeries;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331476 .
+_:17d00ff6071d48b4a355f4284ed63c331803 rdf:first schema:BookSeries;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331804 .
 
-_:17d00ff6071d48b4a355f4284ed63c331476 rdf:first schema:WebSite;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331477 .
+_:17d00ff6071d48b4a355f4284ed63c331804 rdf:first schema:WebSite;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331805 .
 
-_:17d00ff6071d48b4a355f4284ed63c331477 rdf:first schema:Atlas;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331478 .
+_:17d00ff6071d48b4a355f4284ed63c331805 rdf:first schema:Atlas;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331806 .
 
-_:17d00ff6071d48b4a355f4284ed63c331478 rdf:first schema:Map;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331479 .
+_:17d00ff6071d48b4a355f4284ed63c331806 rdf:first schema:Map;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331807 .
 
-_:17d00ff6071d48b4a355f4284ed63c331479 rdf:first schema:AudioObject;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331480 .
+_:17d00ff6071d48b4a355f4284ed63c331807 rdf:first schema:AudioObject;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331808 .
 
-_:17d00ff6071d48b4a355f4284ed63c331480 rdf:first schema:VideoObject;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331481 .
+_:17d00ff6071d48b4a355f4284ed63c331808 rdf:first schema:VideoObject;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331809 .
 
-_:17d00ff6071d48b4a355f4284ed63c331481 rdf:first schema:Newspaper;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331482 .
+_:17d00ff6071d48b4a355f4284ed63c331809 rdf:first schema:Newspaper;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331810 .
 
-_:17d00ff6071d48b4a355f4284ed63c331482 rdf:first bf:Tactile;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331483 .
+_:17d00ff6071d48b4a355f4284ed63c331810 rdf:first bf:Tactile;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331811 .
 
-_:17d00ff6071d48b4a355f4284ed63c331483 rdf:first dctype:Text;
+_:17d00ff6071d48b4a355f4284ed63c331811 rdf:first dctype:Text;
   rdf:rest rdf:nil .
 
 issnshapes:P40 sh:path schema:about;
@@ -726,9 +743,19 @@ issnshapes:P52 sh:path schema:url;
 issnshapes:P53 sh:path schema:subjectOf;
   sh:name "subject of"@en;
   sh:description "This property links an Online ISSN to a record from the Keeper's registry indicating this serial is archived by an archiving institution"@en;
-  sh:nodeKind sh:IRI;
+  sh:nodeKind sh:BlankNode;
   sh:node issnshapes:ISSNKeepersArchive;
   dct:source "'920" .
+
+issnshapes:P54 sh:path _:17d00ff6071d48b4a355f4284ed63c331812;
+  sh:name "main entity of"@en;
+  sh:description "Inverse of schema:mainEntity"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNRecord .
+
+_:17d00ff6071d48b4a355f4284ed63c331812 sh:inversePath schema:mainEntity .
 
 issnshapes:P56 sh:path bf:absorbed;
   sh:name "absorbed"@en;
@@ -959,18 +986,18 @@ issnshapes:P89 sh:path prov:generated;
   sh:description "This property refers to the entities that the Activity generated : the ISSN Record (http://issn.org/resource/ISSN/{ISSN}#Record) and the identifiers ISSN, ISSN-L, Key title and Abbreviated key title (http://issn.org/resource/ISSN/{ISSN}#ISSN, http://issn.org/resource/ISSN/{ISSN}#ISSN-L, http://issn.org/resource/ISSN/{ISSN}#KeyTitle, http://issn.org/resource/ISSN/{ISSN}#AbbreviatedKeyTitle)"@en;
   sh:minCount "1"^^xsd:integer;
   sh:nodeKind sh:IRI;
-  sh:or _:17d00ff6071d48b4a355f4284ed63c331484;
+  sh:or _:17d00ff6071d48b4a355f4284ed63c331813;
   dct:source "'699$v" .
 
-_:17d00ff6071d48b4a355f4284ed63c331484 rdf:first _:17d00ff6071d48b4a355f4284ed63c331485;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331486 .
+_:17d00ff6071d48b4a355f4284ed63c331813 rdf:first _:17d00ff6071d48b4a355f4284ed63c331814;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331815 .
 
-_:17d00ff6071d48b4a355f4284ed63c331485 sh:node issnshapes:ISSNRecord .
+_:17d00ff6071d48b4a355f4284ed63c331814 sh:node issnshapes:ISSNRecord .
 
-_:17d00ff6071d48b4a355f4284ed63c331486 rdf:first _:17d00ff6071d48b4a355f4284ed63c331487;
+_:17d00ff6071d48b4a355f4284ed63c331815 rdf:first _:17d00ff6071d48b4a355f4284ed63c331816;
   rdf:rest rdf:nil .
 
-_:17d00ff6071d48b4a355f4284ed63c331487 sh:node issnshapes:ISSNID .
+_:17d00ff6071d48b4a355f4284ed63c331816 sh:node issnshapes:ISSNID .
 
 issnshapes:P90 sh:path prov:wasAssociatedWith;
   sh:name "was associated with"@en;
@@ -1044,27 +1071,37 @@ issnshapes:P100 sh:path bf:status;
   sh:maxCount "1"^^xsd:integer;
   sh:nodeKind sh:IRI;
   sh:node issnshapes:Status;
-  sh:in _:17d00ff6071d48b4a355f4284ed63c331488;
+  sh:in _:17d00ff6071d48b4a355f4284ed63c331817;
   sh:group issnshapes:controlledVocs;
   dct:source "'699$8" .
 
-_:17d00ff6071d48b4a355f4284ed63c331488 rdf:first recordStatus:Register;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331489 .
+_:17d00ff6071d48b4a355f4284ed63c331817 rdf:first recordStatus:Register;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331818 .
 
-_:17d00ff6071d48b4a355f4284ed63c331489 rdf:first recordStatus:Unreported;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331490 .
+_:17d00ff6071d48b4a355f4284ed63c331818 rdf:first recordStatus:Unreported;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331819 .
 
-_:17d00ff6071d48b4a355f4284ed63c331490 rdf:first recordStatus:Provisional;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331491 .
+_:17d00ff6071d48b4a355f4284ed63c331819 rdf:first recordStatus:Provisional;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331820 .
 
-_:17d00ff6071d48b4a355f4284ed63c331491 rdf:first recordStatus:Legacy;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331492 .
+_:17d00ff6071d48b4a355f4284ed63c331820 rdf:first recordStatus:Legacy;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331821 .
 
-_:17d00ff6071d48b4a355f4284ed63c331492 rdf:first recordStatus:Cancelled;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331493 .
+_:17d00ff6071d48b4a355f4284ed63c331821 rdf:first recordStatus:Cancelled;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331822 .
 
-_:17d00ff6071d48b4a355f4284ed63c331493 rdf:first recordStatus:Suppressed;
+_:17d00ff6071d48b4a355f4284ed63c331822 rdf:first recordStatus:Suppressed;
   rdf:rest rdf:nil .
+
+issnshapes:P101 sh:path _:17d00ff6071d48b4a355f4284ed63c331823;
+  sh:name "generatedBy"@en;
+  sh:description "Inverse of prov:generated"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNRecordCreation .
+
+_:17d00ff6071d48b4a355f4284ed63c331823 sh:inversePath prov:generated .
 
 issnshapes:P103 sh:path rdf:type;
   sh:name "type"@en;
@@ -1078,23 +1115,23 @@ issnshapes:P104 sh:path schema:location;
   sh:minCount "1"^^xsd:integer;
   sh:maxCount "1"^^xsd:integer;
   sh:nodeKind sh:IRI;
-  sh:or _:17d00ff6071d48b4a355f4284ed63c331494;
+  sh:or _:17d00ff6071d48b4a355f4284ed63c331824;
   dct:source "#ReferencePublicationEvent : 008/15-17, 044$cOther events : 260$a, 264$a, 533$b" .
 
-_:17d00ff6071d48b4a355f4284ed63c331494 rdf:first _:17d00ff6071d48b4a355f4284ed63c331495;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331496 .
+_:17d00ff6071d48b4a355f4284ed63c331824 rdf:first _:17d00ff6071d48b4a355f4284ed63c331825;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331826 .
 
-_:17d00ff6071d48b4a355f4284ed63c331495 sh:node issnshapes:MARCCountry .
+_:17d00ff6071d48b4a355f4284ed63c331825 sh:node issnshapes:MARCCountry .
 
-_:17d00ff6071d48b4a355f4284ed63c331496 rdf:first _:17d00ff6071d48b4a355f4284ed63c331497;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331498 .
+_:17d00ff6071d48b4a355f4284ed63c331826 rdf:first _:17d00ff6071d48b4a355f4284ed63c331827;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331828 .
 
-_:17d00ff6071d48b4a355f4284ed63c331497 sh:node issnshapes:ISOCountry .
+_:17d00ff6071d48b4a355f4284ed63c331827 sh:node issnshapes:ISOCountry .
 
-_:17d00ff6071d48b4a355f4284ed63c331498 rdf:first _:17d00ff6071d48b4a355f4284ed63c331499;
+_:17d00ff6071d48b4a355f4284ed63c331828 rdf:first _:17d00ff6071d48b4a355f4284ed63c331829;
   rdf:rest rdf:nil .
 
-_:17d00ff6071d48b4a355f4284ed63c331499 sh:node issnshapes:ISSNPlaces .
+_:17d00ff6071d48b4a355f4284ed63c331829 sh:node issnshapes:ISSNPlaces .
 
 issnshapes:P105 sh:path schema:publishedBy;
   sh:name "published by"@en;
@@ -1230,17 +1267,17 @@ issnshapes:P125 sh:path bf:status;
   sh:description "This property refers to the status of the ISSN (valid, incorrect or cancelled). This property is used on the ISSN and the ISSN-L identifier."@en;
   sh:maxCount "1"^^xsd:integer;
   sh:node issnshapes:IDStatus;
-  sh:in _:17d00ff6071d48b4a355f4284ed63c331500;
+  sh:in _:17d00ff6071d48b4a355f4284ed63c331830;
   sh:group issnshapes:controlledVocs;
   dct:source "022$a, 022$l, 022$m, 022$y, 022$z, 210$a, 222$a" .
 
-_:17d00ff6071d48b4a355f4284ed63c331500 rdf:first idStatus:Valid;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331501 .
+_:17d00ff6071d48b4a355f4284ed63c331830 rdf:first idStatus:Valid;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331831 .
 
-_:17d00ff6071d48b4a355f4284ed63c331501 rdf:first idStatus:Incorrect;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331502 .
+_:17d00ff6071d48b4a355f4284ed63c331831 rdf:first idStatus:Incorrect;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331832 .
 
-_:17d00ff6071d48b4a355f4284ed63c331502 rdf:first idStatus:Cancelled;
+_:17d00ff6071d48b4a355f4284ed63c331832 rdf:first idStatus:Cancelled;
   rdf:rest rdf:nil .
 
 issnshapes:P126 sh:path issnprop:hasCancelledISSN;
@@ -1284,7 +1321,7 @@ issnshapes:P132 sh:path bf:translationOf;
   sh:name "translation of"@en;
   sh:description "When the title is a transliteration, this property indicates the original title from which the transliteration was done. The original title will have a bf:mainTitle property with a language code containing the script of the original title"@en;
   sh:maxCount "1"^^xsd:integer;
-  sh:nodeKind sh:IRI;
+  sh:nodeKind sh:BlankNode;
   sh:node issnshapes:ISSNOriginalTitle .
 
 issnshapes:P134 sh:path rdf:type;
@@ -1299,18 +1336,18 @@ issnshapes:P135 sh:path schema:name;
   sh:minCount "1"^^xsd:integer;
   sh:maxCount "1"^^xsd:integer;
   sh:nodeKind sh:Literal;
-  sh:or _:17d00ff6071d48b4a355f4284ed63c331503;
+  sh:or _:17d00ff6071d48b4a355f4284ed63c331833;
   dct:source "2601$b, 2602$b, 2603$b, 533$c. For ISSN Centre label, this is not from the MARC21 file." .
 
-_:17d00ff6071d48b4a355f4284ed63c331503 rdf:first _:17d00ff6071d48b4a355f4284ed63c331504;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331505 .
+_:17d00ff6071d48b4a355f4284ed63c331833 rdf:first _:17d00ff6071d48b4a355f4284ed63c331834;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331835 .
 
-_:17d00ff6071d48b4a355f4284ed63c331504 sh:datatype xsd:string .
+_:17d00ff6071d48b4a355f4284ed63c331834 sh:datatype xsd:string .
 
-_:17d00ff6071d48b4a355f4284ed63c331505 rdf:first _:17d00ff6071d48b4a355f4284ed63c331506;
+_:17d00ff6071d48b4a355f4284ed63c331835 rdf:first _:17d00ff6071d48b4a355f4284ed63c331836;
   rdf:rest rdf:nil .
 
-_:17d00ff6071d48b4a355f4284ed63c331506 sh:datatype rdf:langString .
+_:17d00ff6071d48b4a355f4284ed63c331836 sh:datatype rdf:langString .
 
 issnshapes:P136 sh:path schema:alternateName;
   sh:name "alternate name"@en;
@@ -1357,7 +1394,7 @@ issnshapes:P141 sh:path schema:identifier;
 issnshapes:P142 sh:path schema:address;
   sh:name "address"@en;
   sh:description "Postal address entity of the ISSN Centre"@en;
-  sh:nodeKind sh:IRI;
+  sh:nodeKind sh:BlankNode;
   sh:node issnshapes:ISSNPostalAddress;
   dct:source "not applicable" .
 
@@ -1392,7 +1429,7 @@ issnshapes:P146 sh:path schema:faxNumber;
 issnshapes:P147 sh:path schema:contactPoint;
   sh:name "contact"@en;
   sh:description "A Person contact point of an ISSN Centre"@en;
-  sh:nodeKind sh:IRI;
+  sh:nodeKind sh:BlankNode;
   sh:node issnshapes:ISSNContactPoint;
   dct:source "not applicable" .
 
@@ -1480,12 +1517,12 @@ issnshapes:P161 sh:path rdf:type;
   sh:name "type"@en;
   sh:minCount "1"^^xsd:integer;
   sh:maxCount "1"^^xsd:integer;
-  sh:in _:17d00ff6071d48b4a355f4284ed63c331507 .
+  sh:in _:17d00ff6071d48b4a355f4284ed63c331837 .
 
-_:17d00ff6071d48b4a355f4284ed63c331507 rdf:first bf:ClassificationUdc;
-  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331508 .
+_:17d00ff6071d48b4a355f4284ed63c331837 rdf:first bf:ClassificationUdc;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331838 .
 
-_:17d00ff6071d48b4a355f4284ed63c331508 rdf:first bf:ClassificationDdc;
+_:17d00ff6071d48b4a355f4284ed63c331838 rdf:first bf:ClassificationDdc;
   rdf:rest rdf:nil .
 
 issnshapes:P162 sh:path rdf:value;
@@ -1568,6 +1605,7 @@ issnshapes:P174 sh:path schema:mainEntity;
   sh:description "Points to a blank node without any type information, holding the name, publisher and ISSN of the archived periodical (see below)"@en;
   sh:minCount "1"^^xsd:integer;
   sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:BlankNode;
   sh:node issnshapes:ISSNProvidedResourceDescription .
 
 issnshapes:P175 sh:path schema:url;
