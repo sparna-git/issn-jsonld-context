@@ -1,0 +1,1637 @@
+@prefix bfrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix schema: <http://schema.org/> .
+@prefix bfmarc: <http://bibfra.me/vocab/marc/> .
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix media: <http://issn.org/vocabularies/Medium#> .
+@prefix m213XX: <http://marc21rdf.info/elements/3XX/> .
+@prefix idStatus: <http://issn.org/vocabularies/IdentifierStatus#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix bflc: <http://id.loc.gov/ontologies/bflc/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix m21terms: <http://marc21rdf.info/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix issnprop: <http://issn.org/vocabularies/properties/> .
+@prefix issnshapes: <http://issn.org/vocabularies/shapes/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
+@prefix recordStatus: <http://issn.org/vocabularies/RecordStatus#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix m2100X: <http://marc21rdf.info/elements/00X/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+<http://issn.org/vocabularies/shapes> a owl:Ontology;
+  rdfs:label "ISSN linked data application profile SHACL encoding"@en;
+  rdfs:comment "The encoding of the [ISSN Application Profile](https://www.issn.org/understanding-the-issn/assignment-rules/issn-linked-data-application-profile/) in SHACL"@en;
+  owl:versionInfo "2.0";
+  dct:modified "2024-09-01T00:00:00.000Z"^^xsd:dateTime .
+
+issnshapes:ISSNResource a sh:NodeShape;
+  rdfs:label "ISSN resource"@en;
+  sh:targetClass schema:Periodical;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http://issn.org/resource/ISSN/[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9]$";
+  sh:property issnshapes:P9, issnshapes:P10, issnshapes:P11, issnshapes:P12, issnshapes:P13,
+    issnshapes:P14, issnshapes:P15, issnshapes:P16, issnshapes:P17, issnshapes:P18, issnshapes:P19,
+    issnshapes:P20, issnshapes:P21, issnshapes:P22, issnshapes:P23, issnshapes:P24, issnshapes:P25,
+    issnshapes:P26, issnshapes:P27, issnshapes:P28, issnshapes:P29, issnshapes:P30, issnshapes:P31,
+    issnshapes:P32, issnshapes:P33, issnshapes:P34, issnshapes:P35, issnshapes:P36, issnshapes:P37,
+    issnshapes:P38, issnshapes:P39, issnshapes:P40, issnshapes:P41, issnshapes:P42, issnshapes:P43,
+    issnshapes:P44, issnshapes:P45, issnshapes:P46, issnshapes:P47, issnshapes:P48, issnshapes:P49,
+    issnshapes:P50, issnshapes:P51, issnshapes:P52, issnshapes:P53, issnshapes:P56, issnshapes:P57,
+    issnshapes:P58, issnshapes:P59, issnshapes:P60, issnshapes:P61, issnshapes:P62, issnshapes:P63,
+    issnshapes:P64, issnshapes:P65, issnshapes:P66, issnshapes:P67, issnshapes:P68, issnshapes:P69,
+    issnshapes:P70, issnshapes:P71, issnshapes:P72, issnshapes:P73, issnshapes:P74, issnshapes:P75,
+    issnshapes:P76, issnshapes:P77, issnshapes:P78, issnshapes:P79, issnshapes:P80, issnshapes:P81,
+    issnshapes:P82, issnshapes:P83, issnshapes:P84, issnshapes:P85 .
+
+issnshapes:ISSN-L a sh:NodeShape;
+  rdfs:label "ISSN-L"@en;
+  sh:targetClass schema:CreativeWork;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http://issn.org/resource/ISSN-L/[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9]$";
+  sh:property issnshapes:P92, issnshapes:P93, issnshapes:P94 .
+
+issnshapes:ISSNRecordCreation a sh:NodeShape;
+  rdfs:label "Record Creation Activity"@en;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http://issn.org/resource/ISSN/[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9]#RecordCreation$";
+  sh:property issnshapes:P87, issnshapes:P88, issnshapes:P89, issnshapes:P90 .
+
+issnshapes:ISSNRecord a sh:NodeShape;
+  rdfs:label "ISSN Record"@en;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http://issn.org/resource/ISSN/[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9]#Record";
+  sh:property issnshapes:P96, issnshapes:P97, issnshapes:P98, issnshapes:P99, issnshapes:P100 .
+
+issnshapes:ISSNPublicationEvent a sh:NodeShape;
+  rdfs:label "ISSN Publication Event"@en;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http://issn.org/resource/ISSN/[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9](#ReferencePublicationEvent|#EarliestPublicationEvent|#InterveningPublicationEvent[0-9]+|#LatestPublicationEvent)$";
+  sh:property issnshapes:P103, issnshapes:P104, issnshapes:P105, issnshapes:P106 .
+
+issnshapes:ISSNPlaces a sh:NodeShape;
+  rdfs:label "Places"@en;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http://issn.org/resource/ISSN/[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9](#PublicationPlace-.*|#ReproductionPlace-.*)$";
+  sh:property issnshapes:P108, issnshapes:P109, issnshapes:P110, issnshapes:P111 .
+
+issnshapes:ISSNGeocoordinates a sh:NodeShape;
+  rdfs:label "Geocordinates"@en;
+  sh:nodeKind sh:BlankNode;
+  sh:pattern "^http://issn.org/resource/ISSN/[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9](#PublicationPlace-.*-GeoCoordinates|#ReproductionPlace-.*-Geocoordinates$";
+  sh:property issnshapes:P113, issnshapes:P114, issnshapes:P115, issnshapes:P116 .
+
+issnshapes:ISSNReproductions a sh:NodeShape;
+  rdfs:label "Reproductions"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P118, issnshapes:P119, issnshapes:P120, issnshapes:P121 .
+
+issnshapes:ISSNID a sh:NodeShape;
+  rdfs:label "Identifiers"@en;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http://issn.org/resource/ISSN/[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9](#ISSN|#ISSN-L|#CODEN|#KeyTitle|#AbbreviatedKeyTitle$";
+  sh:property issnshapes:P123, issnshapes:P124, issnshapes:P125, issnshapes:P126, issnshapes:P127 .
+
+issnshapes:ISSNOriginalTitle a sh:NodeShape;
+  rdfs:label "Original Title"@en;
+  sh:nodeKind sh:BlankNode;
+  sh:property issnshapes:P184, issnshapes:P185 .
+
+issnshapes:ISSNTitle a sh:NodeShape;
+  rdfs:label "Titles"@en;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http://issn.org/resource/ISSN/[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9](#KeyTitle|#AbbreviatedKeyTitle$";
+  sh:property issnshapes:P129, issnshapes:P130, issnshapes:P131, issnshapes:P132 .
+
+issnshapes:ISSNOrganization a sh:NodeShape;
+  rdfs:label "Organizations"@en;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http://issn.org/organization/ISSNCenter#.*|http://issn.org/resource/ISSN/[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9](#Publisher-.*|#IssuingBody-.*|#ReproductionAgency-.*)$";
+  sh:property issnshapes:P134, issnshapes:P135, issnshapes:P136, issnshapes:P137, issnshapes:P138,
+    issnshapes:P139, issnshapes:P140, issnshapes:P141, issnshapes:P142, issnshapes:P143,
+    issnshapes:P144, issnshapes:P145, issnshapes:P146, issnshapes:P147 .
+
+issnshapes:ISSNContactPoint a sh:NodeShape;
+  rdfs:label "Contact points"@en;
+  sh:nodeKind sh:BlankNode;
+  sh:property issnshapes:P149, issnshapes:P150, issnshapes:P151, issnshapes:P152, issnshapes:P153,
+    issnshapes:P154 .
+
+issnshapes:ISSNPostalAddress a sh:NodeShape;
+  rdfs:label "Adresses"@en;
+  sh:nodeKind sh:BlankNode;
+  sh:property issnshapes:P156, issnshapes:P157, issnshapes:P158, issnshapes:P159 .
+
+issnshapes:ISSNClassification a sh:NodeShape;
+  rdfs:label "Classifications"@en;
+  sh:nodeKind sh:BlankNode;
+  sh:property issnshapes:P161, issnshapes:P162 .
+
+issnshapes:ISSNNote a sh:NodeShape;
+  rdfs:label "Notes"@en;
+  sh:nodeKind sh:BlankNode;
+  sh:property issnshapes:P164, issnshapes:P165, issnshapes:P166 .
+
+issnshapes:ISSNKeepersArchive a sh:NodeShape;
+  rdfs:label "Keepers Archive"@en;
+  sh:nodeKind sh:BlankNode;
+  sh:property issnshapes:P168, issnshapes:P169, issnshapes:P170, issnshapes:P171, issnshapes:P172,
+    issnshapes:P173, issnshapes:P174, issnshapes:P175, issnshapes:P176, issnshapes:P177 .
+
+issnshapes:ISSNProvidedResourceDescription a sh:NodeShape;
+  rdfs:label "Provided resource description"@en;
+  sh:nodeKind sh:BlankNode;
+  sh:property issnshapes:P179, issnshapes:P180, issnshapes:P181, issnshapes:P182 .
+
+issnshapes:ISSNArchiveOrganization a sh:NodeShape;
+  rdfs:label "Archival organization"@en;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http://issn.org/organization/keepers#.*$";
+  sh:property issnshapes:P190, issnshapes:P191, issnshapes:P192 .
+
+issnshapes:ISSNCompleteArchive a sh:NodeShape;
+  rdfs:label "Complete archive"@en;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http://issn.org/resource/ISSN/[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9]#WebArchive-.*$";
+  sh:property issnshapes:P194, issnshapes:P195, issnshapes:P196 .
+
+issnshapes:CarrierType a sh:NodeShape;
+  rdfs:label "Carrier Type Voc"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P203 .
+
+issnshapes:ContentType a sh:NodeShape;
+  rdfs:label "ContentType"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P204 .
+
+issnshapes:MediaType a sh:NodeShape;
+  rdfs:label "MediaType"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P205 .
+
+issnshapes:Regularity a sh:NodeShape;
+  rdfs:label "Regularity"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P206 .
+
+issnshapes:DCFormat a sh:NodeShape;
+  rdfs:label "DCFormat"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P207 .
+
+issnshapes:MARCCountry a sh:NodeShape;
+  rdfs:label "MARCCountry"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P208 .
+
+issnshapes:DCTType a sh:NodeShape;
+  rdfs:label "DCTType"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P209 .
+
+issnshapes:PublicationStatus a sh:NodeShape;
+  rdfs:label "PublicationStatus"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P210 .
+
+issnshapes:FormOriginalItem a sh:NodeShape;
+  rdfs:label "FormOriginalItem"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P211 .
+
+issnshapes:FormItem a sh:NodeShape;
+  rdfs:label "FormItem"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P212 .
+
+issnshapes:OriginalAlphabet a sh:NodeShape;
+  rdfs:label "OriginalAlphabet"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P213 .
+
+issnshapes:UDCAbout a sh:NodeShape;
+  rdfs:label "UDCAbout"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P214 .
+
+issnshapes:InLanguage a sh:NodeShape;
+  rdfs:label "InLanguage"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P215 .
+
+issnshapes:Status a sh:NodeShape;
+  rdfs:label "Status"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P216 .
+
+issnshapes:IDStatus a sh:NodeShape;
+  rdfs:label "IDStatus"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P217 .
+
+issnshapes:ISOCountry a sh:NodeShape;
+  rdfs:label "ISOCountry"@en;
+  sh:nodeKind sh:IRI .
+
+issnshapes:Medium a sh:NodeShape;
+  rdfs:label "Medium"@en;
+  sh:nodeKind sh:IRI;
+  sh:property issnshapes:P219 .
+
+issnshapes:P9 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:in _:17d00ff6071d48b4a355f4284ed63c331240 .
+
+_:17d00ff6071d48b4a355f4284ed63c331240 rdf:first schema:Periodical;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331241 .
+
+_:17d00ff6071d48b4a355f4284ed63c331241 rdf:first bf:Work;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331242 .
+
+_:17d00ff6071d48b4a355f4284ed63c331242 rdf:first bf:Instance;
+  rdf:rest rdf:nil .
+
+issnshapes:P10 sh:path bf:carrier;
+  sh:name "carrier type"@en;
+  sh:description "Categorization reflecting the format of the storage medium and housing of a carrier."@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:CarrierType;
+  sh:group issnshapes:controlledVocs;
+  dct:source "'338$b" .
+
+issnshapes:P11 sh:path bf:classification;
+  sh:name "classification"@en;
+  sh:description "This property refers to a classification object giving the classification value and the classification scheme it comes from."@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNClassification;
+  dct:source "'080$a, 082$a" .
+
+issnshapes:P12 sh:path bf:content;
+  sh:name "content type"@en;
+  sh:description "\"Categorization reflecting the fundamental form of communication in which the content is expressed and the human sense through which it is intended to be perceived.\""@en;
+  sh:node issnshapes:ContentType;
+  sh:group issnshapes:controlledVocs;
+  dct:source "'336$b" .
+
+issnshapes:P13 sh:path bf:hasReproduction;
+  sh:name "reproduced as"@en;
+  sh:description "This property refers to another resource that reproduces this resource (a blank node)"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNReproductions;
+  dct:source "'533" .
+
+issnshapes:P14 sh:path bf:identifiedBy;
+  sh:name "identified by"@en;
+  sh:description "This property refers to an identifier of the resource : an ISSN, ISSN-L, CODEN, key title or abbreviated key title."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNID;
+  dct:source "'022$a, 022$l, 030$a, 210$a, 222$a" .
+
+issnshapes:P15 sh:path bf:mainTitle;
+  sh:name "main title"@en;
+  sh:description "This property contains the title proper of the resource."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'245$a + $n + $p if present" .
+
+issnshapes:P16 sh:path bf:media;
+  sh:name "media type"@en;
+  sh:description "\"Categorization reflecting the general type of intermediation device required to view, play, run, etc., the content of a resource.\""@en;
+  sh:node issnshapes:MediaType;
+  sh:group issnshapes:controlledVocs;
+  dct:source "'337$b" .
+
+issnshapes:P17 sh:path bf:note;
+  sh:name "note"@en;
+  sh:description "This property refers to a note object (blank node) that gives additional descriptive information associated with the resource."@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNNote;
+  dct:source "588$a" .
+
+issnshapes:P18 sh:path bf:provisionActivityStatement;
+  sh:name "provision activity statement"@en;
+  sh:description "This property transcribes the statement relating to providers of a resource, generally known as “publication statement”"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'260#, 2602, 2603, 264#, 2642, 2643" .
+
+issnshapes:P19 sh:path bf:title;
+  sh:name "title"@en;
+  sh:description "This property refers to one of the title object for the ISSN resource."@en;
+  sh:node issnshapes:ISSNTitle;
+  dct:source "'245$a, 246#$a, 2461$a, 2462$a, 2463$a, 2464$a, 2465$a, 2466$a, 2467$a, 2468$a" .
+
+issnshapes:P20 sh:path bfmarc:regularity;
+  sh:name "regularity"@en;
+  sh:description "The intended publication regularity of a continuing resource"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node m21terms:continuingreg;
+  sh:group issnshapes:controlledVocs;
+  dct:source "'008/19" .
+
+issnshapes:P21 sh:path bfmarc:reproductionNote;
+  sh:name "reproduction note"@en;
+  sh:description "This property stores the reproduction note as a string literal."@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'533" .
+
+issnshapes:P22 sh:path bfrel:isb;
+  sh:name "issuing body"@en;
+  sh:description "This property relates the resource to the organization in charge of editing its intellectual content (generally a university, a specific department within an internationalorganization…). In very rare cases, it may be an individual person. In the ISSN data model, this property is similar to schema:contributor but it is used in parallel as more precise."@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNOrganization;
+  dct:source "710$a, 710$b, 711$a,720" .
+
+issnshapes:P23 sh:path bibo:issn;
+  sh:name "issn"@en;
+  sh:description "This property contains the ISSN string of the continuing resource."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'022$a" .
+
+issnshapes:P24 sh:path dc:format;
+  sh:name "format"@en;
+  sh:description "Special information about the physical characteristics of the resource. They are often related to information in other parts of the MARC record especially from field 300 (Physical Description) or one of the 5XX note field"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:node issnshapes:Medium;
+  sh:in _:17d00ff6071d48b4a355f4284ed63c331243;
+  sh:group issnshapes:controlledVocs;
+  dct:source "007" .
+
+_:17d00ff6071d48b4a355f4284ed63c331243 rdf:first media:Print;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331244 .
+
+_:17d00ff6071d48b4a355f4284ed63c331244 rdf:first media:Online;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331245 .
+
+_:17d00ff6071d48b4a355f4284ed63c331245 rdf:first media:DigitalCarrier;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331246 .
+
+_:17d00ff6071d48b4a355f4284ed63c331246 rdf:first media:Other;
+  rdf:rest rdf:nil .
+
+issnshapes:P25 sh:path dc:identifier;
+  sh:name "identifier"@en;
+  sh:description "This property contains the ISSN string of the continuing resource."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'022$a" .
+
+issnshapes:P26 sh:path dct:accrualPeriodicity;
+  sh:name "accrual periodicity"@en;
+  sh:description "This property contains the publication frequency of the continuing resource, from the Dublin Core Collection Description Frequency Namespace, or as the literal values \"unknown\" or \"other\"."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  dct:source "'008/18" .
+
+issnshapes:P27 sh:path dct:spatial;
+  sh:name "spatial"@en;
+  sh:description "This property links the resource to the reference country of its publisher, which is generally used to decide what National Centre is responsible for ISSN assignment"@en;
+  sh:minCount "2"^^xsd:integer;
+  sh:maxCount "2"^^xsd:integer;
+  sh:or _:17d00ff6071d48b4a355f4284ed63c331247;
+  dct:source "'008/15-17, 044$c" .
+
+_:17d00ff6071d48b4a355f4284ed63c331247 rdf:first _:17d00ff6071d48b4a355f4284ed63c331248;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331249 .
+
+_:17d00ff6071d48b4a355f4284ed63c331248 sh:node issnshapes:MARCCountry .
+
+_:17d00ff6071d48b4a355f4284ed63c331249 rdf:first _:17d00ff6071d48b4a355f4284ed63c331250;
+  rdf:rest rdf:nil .
+
+_:17d00ff6071d48b4a355f4284ed63c331250 sh:node issnshapes:ISOCountry .
+
+issnshapes:P28 sh:path dct:type;
+  sh:name "type"@en;
+  sh:description "This property indicates the type of material of the resource, which will decide on the type of record which will be used to describe it"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:node issnshapes:DCFormat;
+  sh:group issnshapes:controlledVocs;
+  dct:source "'LDR/06" .
+
+issnshapes:P29 sh:path issnprop:hasCancelledISSN-L;
+  sh:name "has cancelled ISSN-L"@en;
+  sh:description "This property indicates the value of a former ISSN-L of the resource, which has been cancelled. This generally happens when it is recognized that a link between two different medium versions of the same resource has not been recorded in the original record."@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'022$m" .
+
+issnshapes:P30 sh:path issnprop:hasIncorrectISSN;
+  sh:name "has incorrect ISSN"@en;
+  sh:description "This property indicates the value of an incorrect ISSN wrongly displayed on the resource. The incorrect ISSN may be structurally invalid (e.g. wrong control number) or it may be a valid ISSN assigned to another resource."@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'022$y" .
+
+issnshapes:P31 sh:path m2100X:M00806;
+  sh:name "Type of date or Publication status of All materials"@en;
+  sh:description "This property indicates if the resource is currently published, ceased, or if its status is unknown"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:PublicationStatus;
+  sh:group issnshapes:controlledVocs;
+  dct:source "'008/06" .
+
+issnshapes:P32 sh:path m2100X:M008CR22;
+  sh:name "Form of original item of Continuing Resources"@en;
+  sh:description "This property indicates the form of material in which an item was originally published"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:FormOriginalItem;
+  sh:group issnshapes:controlledVocs;
+  dct:source "'008/22" .
+
+issnshapes:P33 sh:path m2100X:M008CR23;
+  sh:name "Form of item of Continuing Resources"@en;
+  sh:description "This property indicates the form of material for the item being described"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:FormItem;
+  sh:group issnshapes:controlledVocs;
+  dct:source "'008/23" .
+
+issnshapes:P34 sh:path m2100X:M008CR33;
+  sh:name "Original alphabet or script of title of Continuing Resources"@en;
+  sh:description "This property indicates the original alphabet or script of the language of the title on the source item upon which the key title is based"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:OriginalAlphabet;
+  sh:group issnshapes:controlledVocs;
+  dct:source "'008/33" .
+
+issnshapes:P35 sh:path m213XX:M3620_a;
+  sh:name "Dates of publication and sequential designation in Dates of Publication and Sequential Designation (Formatted style)"@en;
+  sh:description "This property indicates the beginning/ending date(s) of a resource and/or the sequential designations used on each part. The information is formatted. Dates in this field may be identical to the information in fields 008/07-10 (start date) and/or 008/11-14 (end date)"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'3620$a" .
+
+issnshapes:P36 sh:path m213XX:M3620_z;
+  sh:name "Source of information in Dates of Publication and Sequential Designation (Formatted style)"@en;
+  sh:description "This property provides additional information about the source of information used to record the Dates of Publication and Sequential Designation"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'3620$z" .
+
+issnshapes:P37 sh:path m213XX:M3621_a;
+  sh:name "Dates of publication and sequential designation in Dates of Publication and Sequential Designation (Unformatted note)"@en;
+  sh:description "This property indicates the beginning/ending date(s) of a resource and/or the sequential designations used on each part. The information is unformatted."@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'3621$a" .
+
+issnshapes:P38 sh:path m213XX:M3621_z;
+  sh:name "Source of information in Dates of Publication and Sequential Designation (Unformatted note)"@en;
+  sh:description "This property provides additional information about the source of information used to record the Dates of Publication and Sequential Designation"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'3621$z" .
+
+issnshapes:P39 sh:path rdf:type;
+  sh:name "additionnal type"@en;
+  sh:description "An additionnal rdf:type statement may be expressed on the resource depending on its characteristics."@en;
+  sh:in _:17d00ff6071d48b4a355f4284ed63c331251;
+  dct:source "'007, 008/21" .
+
+_:17d00ff6071d48b4a355f4284ed63c331251 rdf:first schema:Dataset;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331252 .
+
+_:17d00ff6071d48b4a355f4284ed63c331252 rdf:first schema:BookSeries;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331253 .
+
+_:17d00ff6071d48b4a355f4284ed63c331253 rdf:first schema:WebSite;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331254 .
+
+_:17d00ff6071d48b4a355f4284ed63c331254 rdf:first schema:Atlas;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331255 .
+
+_:17d00ff6071d48b4a355f4284ed63c331255 rdf:first schema:Map;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331256 .
+
+_:17d00ff6071d48b4a355f4284ed63c331256 rdf:first schema:AudioObject;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331257 .
+
+_:17d00ff6071d48b4a355f4284ed63c331257 rdf:first schema:VideoObject;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331258 .
+
+_:17d00ff6071d48b4a355f4284ed63c331258 rdf:first schema:Newspaper;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331259 .
+
+_:17d00ff6071d48b4a355f4284ed63c331259 rdf:first bf:Tactile;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331260 .
+
+_:17d00ff6071d48b4a355f4284ed63c331260 rdf:first dctype:Text;
+  rdf:rest rdf:nil .
+
+issnshapes:P40 sh:path schema:about;
+  sh:name "about"@en;
+  sh:description "This property refers to a classification URI value from the UDC Summary."@en;
+  sh:node issnshapes:UDCAbout;
+  sh:group issnshapes:controlledVocs;
+  dct:source "'989$u" .
+
+issnshapes:P41 sh:path schema:alternateName;
+  sh:name "alternate name"@en;
+  sh:description "This property contains an alternate title for the continuing resource i.e. any title other than the key title and title proper."@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'210$a+210$b, 222$a+222$b, 246a, 246$1, 246$2, 246$3, 246$4, 246$5, 246$6, 246$7, 246$8" .
+
+issnshapes:P42 sh:path schema:contributor;
+  sh:name "contributor"@en;
+  sh:description "This property relates the resource to the organization in charge of editing its intellectual content (generally a university, a specific department within an international organization…). In very rare cases, it may be an individual person. In the ISSN data model, this property is similar to bfrel:isb but has been kept in parallel as it is a schema.org property."@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNOrganization;
+  dct:source "'710$a, 710$b, 711$a" .
+
+issnshapes:P43 sh:path schema:endDate;
+  sh:name "end date"@en;
+  sh:description "This property contains the end date of the ISSN. The value \"u\" indicates that the date or a part of a date is unknown. Hence the datatype is kept as xsd:string. Value 9999 means that the resource is still running."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'008/11-14" .
+
+issnshapes:P44 sh:path schema:inLanguage;
+  sh:name "in language"@en;
+  sh:description "This property refers to the language of the continuing resource."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:node issnshapes:InLanguage;
+  sh:group issnshapes:controlledVocs;
+  dct:source "'008/35-37, 041$a" .
+
+issnshapes:P45 sh:path schema:isPartOf;
+  sh:name "is part of"@en;
+  sh:description "This property refers to the ISSN-L of which this ISSN is part of (http://issn.org/resource/{ISSN-L})."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:node issnshapes:ISSN-L;
+  dct:source "'022$l" .
+
+issnshapes:P46 sh:path schema:issn;
+  sh:name "issn"@en;
+  sh:description "This property contains the ISSN string of the continuing resource."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'022$a" .
+
+issnshapes:P47 sh:path schema:keywords;
+  sh:name "keywords"@en;
+  sh:description "The label of the UDC classification summary"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'989$a" .
+
+issnshapes:P48 sh:path schema:name;
+  sh:name "name"@en;
+  sh:description "This property contains the key title and title proper of the continuing resource."@en;
+  sh:minCount "2"^^xsd:integer;
+  sh:maxCount "2"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'222$a, 245$a" .
+
+issnshapes:P49 sh:path schema:publication;
+  sh:name "publication"@en;
+  sh:description "This property refers on one hand to the reference publication event of that ISSN resource (#ReferencePublicationEvent), and on the other hand to each of the publication event in the publication history (#EarliestPublicationEvent, #InterveningPublicationEvent{n}, #LatestPublicationEvent)."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNPublicationEvent;
+  dct:source "'008/15-17, 260#, 2602, 2603, 264#, 2642, 2643" .
+
+issnshapes:P50 sh:path schema:publisher;
+  sh:name "publisher"@en;
+  sh:description "This property refers to the publisher(s) of the resource (#Publisher-{publisherName}). In very rare cases, it may be an individual person even though the schema:Organization class is used, as this person is acting as an organization."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNOrganization;
+  dct:source "'260#$b, 2602$b, 2603$b, 264#$b, 2642$b, 2643$b" .
+
+issnshapes:P51 sh:path schema:startDate;
+  sh:name "start date"@en;
+  sh:description "This property contains the start date of the ISSN. The value \"u\" indicates that the date or a part of the date is unknown. Hence the datatype is kept as xsd:string"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'008/07-10" .
+
+issnshapes:P52 sh:path schema:url;
+  sh:name "url"@en;
+  sh:description "This property indicates the URL address where the resource may be accessed or was previously accessible. It may also link to a web archive."@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "'856$u" .
+
+issnshapes:P53 sh:path schema:subjectOf;
+  sh:name "subject of"@en;
+  sh:description "This property links an Online ISSN to a record from the Keeper's registry indicating this serial is archived by an archiving institution"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNKeepersArchive;
+  dct:source "'920" .
+
+issnshapes:P56 sh:path bf:absorbed;
+  sh:name "absorbed"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "78005$x, 78006$x" .
+
+issnshapes:P57 sh:path bf:absorbedBy;
+  sh:name "absorbed by"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "78504$x, 78505$x" .
+
+issnshapes:P58 sh:path bf:continuedBy;
+  sh:name "continued by"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "78500$x" .
+
+issnshapes:P59 sh:path bf:continuedInPartBy;
+  sh:name "continued in part by"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "78501$x" .
+
+issnshapes:P60 sh:path bf:continues;
+  sh:name "continues"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "78000$x" .
+
+issnshapes:P61 sh:path bf:continuesInPart;
+  sh:name "continues in part"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "78001$x" .
+
+issnshapes:P62 sh:path bf:hasSubseries;
+  sh:name "hasSubseries"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "762$x" .
+
+issnshapes:P63 sh:path bf:issuedWith;
+  sh:name "issuedWith"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "777$x" .
+
+issnshapes:P64 sh:path bf:mergedToForm;
+  sh:name "merged to form"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "78507$x" .
+
+issnshapes:P65 sh:path bf:mergerOf;
+  sh:name "merger of"@en;
+  sh:description "The property is repeated to reflect the merge."@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "78004$x" .
+
+issnshapes:P66 sh:path bf:otherEdition;
+  sh:name "other edition"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "775$x" .
+
+issnshapes:P67 sh:path bf:otherPhysicalFormat;
+  sh:name "other physical format"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "776$x" .
+
+issnshapes:P68 sh:path bf:precededBy;
+  sh:name "preceded by"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "7800#$x" .
+
+issnshapes:P69 sh:path bf:replacedBy;
+  sh:name "replaced by"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "78502$x, 78503$x" .
+
+issnshapes:P70 sh:path bf:replacementOf;
+  sh:name "replacement of"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "78002$x, 78003$x" .
+
+issnshapes:P71 sh:path bf:separatedFrom;
+  sh:name "separated form"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "78007$x" .
+
+issnshapes:P72 sh:path bf:splitInto;
+  sh:name "split into"@en;
+  sh:description "The property is repeated to reflect the split."@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "78506$x" .
+
+issnshapes:P73 sh:path bf:subseriesOf;
+  sh:name "subseries of"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "760$x" .
+
+issnshapes:P74 sh:path bf:supplement;
+  sh:name "supplement"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "772$x" .
+
+issnshapes:P75 sh:path bf:supplementTo;
+  sh:name "supplement to"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "770$x" .
+
+issnshapes:P76 sh:path bf:translation;
+  sh:name "translation"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "767$x" .
+
+issnshapes:P77 sh:path bf:translationOf;
+  sh:name "translation of"@en;
+  sh:description "See Bibframe documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "765$x" .
+
+issnshapes:P78 sh:path schema:translationOfWork;
+  sh:name "translation of work"@en;
+  sh:description "See schema.org documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "765$x" .
+
+issnshapes:P79 sh:path schema:workTranslation;
+  sh:name "work translation"@en;
+  sh:description "See schema.org documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "767$x" .
+
+issnshapes:P80 sh:path dc:relation;
+  sh:name "relation"@en;
+  sh:description "See DCMI documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "770$x, 772$x, 777$x, 787$x,7800$x, 7850$x, 7870$x" .
+
+issnshapes:P81 sh:path dct:isFormatOf;
+  sh:name "is format of"@en;
+  sh:description "See DCMI documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "776$x" .
+
+issnshapes:P82 sh:path dct:isVersionOf;
+  sh:name "is version of"@en;
+  sh:description "See DCMI documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "775$x" .
+
+issnshapes:P83 sh:path schema:citation;
+  sh:name "citation"@en;
+  sh:description "This property refers to another continuing resource that is cited by this one."@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "510$x" .
+
+issnshapes:P84 sh:path dct:hasPart;
+  sh:name "has part"@en;
+  sh:description "See DCMI documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "762$x" .
+
+issnshapes:P85 sh:path dct:isPartOf;
+  sh:name "is part of"@en;
+  sh:description "See DCMI documentation"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "760$x" .
+
+issnshapes:P87 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:hasValue prov:Activity .
+
+issnshapes:P88 sh:path prov:startedAtTime;
+  sh:name "record creation date"@en;
+  sh:description "This property holds the date at which the record was created. It is set since 2004."@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:date;
+  dct:source "'039$v" .
+
+issnshapes:P89 sh:path prov:generated;
+  sh:name "generated"@en;
+  sh:description "This property refers to the entities that the Activity generated : the ISSN Record (http://issn.org/resource/ISSN/{ISSN}#Record) and the identifiers ISSN, ISSN-L, Key title and Abbreviated key title (http://issn.org/resource/ISSN/{ISSN}#ISSN, http://issn.org/resource/ISSN/{ISSN}#ISSN-L, http://issn.org/resource/ISSN/{ISSN}#KeyTitle, http://issn.org/resource/ISSN/{ISSN}#AbbreviatedKeyTitle)"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:or _:17d00ff6071d48b4a355f4284ed63c331261;
+  dct:source "'699$v" .
+
+_:17d00ff6071d48b4a355f4284ed63c331261 rdf:first _:17d00ff6071d48b4a355f4284ed63c331262;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331263 .
+
+_:17d00ff6071d48b4a355f4284ed63c331262 sh:node issnshapes:ISSNRecord .
+
+_:17d00ff6071d48b4a355f4284ed63c331263 rdf:first _:17d00ff6071d48b4a355f4284ed63c331264;
+  rdf:rest rdf:nil .
+
+_:17d00ff6071d48b4a355f4284ed63c331264 sh:node issnshapes:ISSNID .
+
+issnshapes:P90 sh:path prov:wasAssociatedWith;
+  sh:name "was associated with"@en;
+  sh:description "This property refers to the ISSN Centre (including ISSN International Centre) that created the record (http://issn.org/organization/ISSNCentre#{CentreCode})"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNOrganization;
+  dct:source "'699$v" .
+
+issnshapes:P92 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:class schema:CreativeWork;
+  sh:hasValue schema:CreativeWork .
+
+issnshapes:P93 sh:path bf:identifiedBy;
+  sh:name "identified by"@en;
+  sh:description "This property refers to the ISSN-L that identifies this resource."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSN-L;
+  dct:source "022$l" .
+
+issnshapes:P94 sh:path schema:hasPart;
+  sh:name "has part"@en;
+  sh:description "This property refers to the ISSN resources that are part of this ISSN-L."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "022$l" .
+
+issnshapes:P96 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:hasValue schema:CreativeWork .
+
+issnshapes:P97 sh:path dct:modified;
+  sh:name "modified"@en;
+  sh:description "This property contains the date of last modification of the record."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:date;
+  dct:source "'005" .
+
+issnshapes:P98 sh:path schema:mainEntity;
+  sh:name "main entity"@en;
+  sh:description "This property refers to the ISSN resource that this record describes (http://issn.org/resource/ISSN/{ISSN})"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNResource;
+  dct:source "'022$2" .
+
+issnshapes:P99 sh:path prov:wasAttributedTo;
+  sh:name "was attributed to"@en;
+  sh:description "This property refers to the centre that is responsible for the record.The PROV ontology indicates that \"Attribution is the ascribing of an entity to an agent.\" This fits with the intended meaning of the link between the record and the ISSN centre, since ISSN records can be re-attributed between ISSN centres, so the ISSN centre referred to by this property cannot be said to be the \"creator\" or the \"author\" of the record."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNOrganization;
+  dct:source "'022$2" .
+
+issnshapes:P100 sh:path bf:status;
+  sh:name "status"@en;
+  sh:description "This property refers to the status of this record."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:Status;
+  sh:group issnshapes:controlledVocs;
+  dct:source "'699$8" .
+
+issnshapes:P103 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:hasValue schema:PublicationEvent .
+
+issnshapes:P104 sh:path schema:location;
+  sh:name "location"@en;
+  sh:description "On the #ReferencePublicationEvent, this property will refer to the MARC or ISO code list for the country. Note that the country URI will have an rdfs:label property containing the country name.On the other events in the publication event history, this property refers to the place of the publication event (http://issn.org/resource/ISSN/{ISSN}#PublicationPlace-{placename} or http://issn.org/resource/ISSN/{ISSN}#ReproductionPlace-{placeName})."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  dct:source "#ReferencePublicationEvent : 008/15-17, 044$cOther events : 260$a, 264$a, 533$b" .
+
+issnshapes:P105 sh:path schema:publishedBy;
+  sh:name "published by"@en;
+  sh:description "This property refers to the publisher that published (or reproduced) the continuing resource during that period.This property is not present on the #ReferencePublicationEvent."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNOrganization;
+  dct:source "260$b, 264$b, 533$c" .
+
+issnshapes:P106 sh:path dct:temporal;
+  sh:name "temporal"@en;
+  sh:description "This property contains the start date and end date (if any) of the period covered by this publication event.As the content of the originalMARC field is generally not structured, use of schema:startDate and schema:endDate is not possible. The content is typed as a string.This property is not present on the #ReferencePublicationEvent."@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "260$c, 264$c, 533$d" .
+
+issnshapes:P108 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:hasValue schema:Place .
+
+issnshapes:P109 sh:path rdfs:label;
+  sh:name "label"@en;
+  sh:description "This property contains the name of the place (generally a city)."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "260#$a, 2602$a, 2603$a, 264#$a, 2642$a, 2643$a,533$b" .
+
+issnshapes:P110 sh:path schema:sameAs;
+  sh:name "same as"@en;
+  sh:description "This property refers to an equivalent entry for this place in the Geonames database (i.e. the Geonames URI)"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  dct:source "260#$a, 2602$a, 2603$a, 264#$a, 2642$a, 2643$a, 533$b (URI en 926$u)" .
+
+issnshapes:P111 sh:path schema:geo;
+  sh:name "geo"@en;
+  sh:description "This property refers to the position of this place (http://issn.org/resource/ISSN/{ISSN}#PublicationPlace-{placename}-GeoCoordinates)"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNGeocoordinates;
+  dct:source "926, 953, 533$b" .
+
+issnshapes:P113 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:hasValue schema:GeoCoordinates .
+
+issnshapes:P114 sh:path schema:latitude;
+  sh:name "latitude"@en;
+  sh:description "This property contains the latitude of the geographic coordinates."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:decimal;
+  dct:source "926$l, 953, 533$b" .
+
+issnshapes:P115 sh:path schema:longitude;
+  sh:name "longitude"@en;
+  sh:description "This property contains the longitude of the geographic coordinates."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:decimal;
+  dct:source "926$o, 953, 533$b" .
+
+issnshapes:P116 sh:path schema:addressCountry;
+  sh:name "addressCountry"@en;
+  sh:description "This property contains the name of the country of the geographic coordinates."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "926$b, 953$b" .
+
+issnshapes:P118 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:hasValue schema:CreativeWork .
+
+issnshapes:P119 sh:path schema:publisher;
+  sh:name "publisher"@en;
+  sh:description "This property refers to the publisher (i.e. Reproduction Agency) of reproduction."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNOrganization;
+  dct:source "533$c" .
+
+issnshapes:P120 sh:path dct:spatial;
+  sh:name "spatial"@en;
+  sh:description "This property refers to the publication place of the reproduction."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNPlaces;
+  dct:source "533$b" .
+
+issnshapes:P121 sh:path schema:publication;
+  sh:name "publication"@en;
+  sh:description "This property refers to the publication event of the reproduction."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNPublicationEvent;
+  dct:source "533" .
+
+issnshapes:P123 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:hasValue bf:Identifier .
+
+issnshapes:P124 sh:path rdf:value;
+  sh:name "value"@en;
+  sh:description "This property contains the actual string value of the identifier. Note that KeyTitles and AbbreviatedKeyTitles have both rdf:value and bf:mainTitle properties, being both identifiers and titles."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "022$a, 022$l, 022$m, 022$y, 022$z, 030$a, 210$a, 222$a" .
+
+issnshapes:P125 sh:path bf:status;
+  sh:name "status"@en;
+  sh:description "This property refers to the status of the ISSN (valid, incorrect or cancelled). This property is used on the ISSN and the ISSN-L identifier."@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:node issnshapes:IDStatus;
+  sh:group issnshapes:controlledVocs;
+  dct:source "022$a, 022$l, 022$m, 022$y, 022$z, 210$a, 222$a" .
+
+issnshapes:P126 sh:path issnprop:hasCancelledISSN;
+  sh:name "has cancelled ISSN"@en;
+  sh:description "This property refers to an ISSN which has been cancelled in favour of the actual ISSN. This property is used only on the ISSN identifier."@en;
+  sh:nodeKind sh:IRI;
+  sh:class bf:Issn;
+  dct:source "022$z" .
+
+issnshapes:P127 sh:path issnprop:cancelledInFavorOf;
+  sh:name "cancelled in favor of"@en;
+  sh:description "This property refers to an ISSN that replaces this cancelled ISSN. This property is used only on the ISSN identifier."@en;
+  sh:nodeKind sh:IRI;
+  sh:class bf:Issn;
+  dct:source "022$v" .
+
+issnshapes:P129 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:hasValue bf:Title .
+
+issnshapes:P130 sh:path bf:mainTitle;
+  sh:name "main title"@en;
+  sh:description "This property contains the actual title, with a language code containing the title script code. Note that KeyTitles and AbbreviatedKeyTitles have both rdf:value and bf:mainTitle properties, being both identifiers and titles."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype rdf:langString;
+  dct:source "245$a, 246#$a, 2461$a, 2462$a, 2463$a, 2464$a, 2465$a, 2466$a, 2467$a, 2468$a" .
+
+issnshapes:P131 sh:path bf:variantType;
+  sh:name "variant type"@en;
+  sh:description "This property stores the type of the title, in the case of a variant title. For a key title or a parallel title it is not present."@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "246#$a, 2461$a, 2462$a, 2463$a, 2464$a, 2465$a, 2466$a, 2467$a, 2468$a" .
+
+issnshapes:P132 sh:path bf:translationOf;
+  sh:name "translation of"@en;
+  sh:description "When the title is a transliteration, this property indicates the original title from which the transliteration was done. The original title will have a bf:mainTitle property with a language code containing the script of the original title"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNOriginalTitle .
+
+issnshapes:P134 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:hasValue schema:Organization .
+
+issnshapes:P135 sh:path schema:name;
+  sh:name "name"@en;
+  sh:description "This property contains the name of the Organization, in the original language when it is known, or in latin script when the latin script is not transliterated from an original language."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:or _:17d00ff6071d48b4a355f4284ed63c331265;
+  dct:source "2601$b, 2602$b, 2603$b, 533$c. For ISSN Centre label, this is not from the MARC21 file." .
+
+_:17d00ff6071d48b4a355f4284ed63c331265 rdf:first _:17d00ff6071d48b4a355f4284ed63c331266;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331267 .
+
+_:17d00ff6071d48b4a355f4284ed63c331266 sh:datatype xsd:string .
+
+_:17d00ff6071d48b4a355f4284ed63c331267 rdf:first _:17d00ff6071d48b4a355f4284ed63c331268;
+  rdf:rest rdf:nil .
+
+_:17d00ff6071d48b4a355f4284ed63c331268 sh:datatype rdf:langString .
+
+issnshapes:P136 sh:path schema:alternateName;
+  sh:name "alternate name"@en;
+  sh:description "This property contains the name of the Organization in latin script when it has been transliterated from the original language"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype rdf:langString .
+
+issnshapes:P137 sh:path schema:sameAs;
+  sh:name "sameAs"@en;
+  sh:description "This property refers to an equivalent URI for the organization, in the case of publishers or reproduction agencies, or to a Wikidata URI in the case of Keeper's agencies."@en;
+  sh:nodeKind sh:IRI;
+  dct:source "710, 711, 720, 533$c" .
+
+issnshapes:P138 sh:path schema:parentOrganization;
+  sh:name "parent organization"@en;
+  sh:description "This property refers to the parent organization of this organization, in the case of issuing bodies."@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNOrganization;
+  dct:source "710$b" .
+
+issnshapes:P139 sh:path schema:logo;
+  sh:name "logo"@en;
+  sh:description "Logo of an ISSN Centre"@en;
+  sh:nodeKind sh:IRI;
+  dct:source "not applicable" .
+
+issnshapes:P140 sh:path dct:spatial;
+  sh:name "country"@en;
+  sh:description "Country of an ISSN Centre"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISOCountry;
+  sh:group issnshapes:controlledVocs;
+  dct:source "not applicable" .
+
+issnshapes:P141 sh:path schema:identifier;
+  sh:name "center code"@en;
+  sh:description "Code of an ISSN Centre, or Keeper's code of an Archival insitution in Keeper's Registry"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "not applicable" .
+
+issnshapes:P142 sh:path schema:address;
+  sh:name "address"@en;
+  sh:description "Postal address entity of the ISSN Centre"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNPostalAddress;
+  dct:source "not applicable" .
+
+issnshapes:P143 sh:path schema:telephone;
+  sh:name "telephone"@en;
+  sh:description "Telephone of an ISSN Centre"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "not applicable" .
+
+issnshapes:P144 sh:path schema:url;
+  sh:name "website / url"@en;
+  sh:description "Website of an ISSN Centre"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "not applicable" .
+
+issnshapes:P145 sh:path schema:email;
+  sh:name "e-mail"@en;
+  sh:description "Direct email of an ISSN Centre"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "not applicable" .
+
+issnshapes:P146 sh:path schema:faxNumber;
+  sh:name "fax"@en;
+  sh:description "Fax number of an ISSN Centre"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "not applicable" .
+
+issnshapes:P147 sh:path schema:contactPoint;
+  sh:name "contact"@en;
+  sh:description "A Person contact point of an ISSN Centre"@en;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNContactPoint;
+  dct:source "not applicable" .
+
+issnshapes:P149 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:hasValue schema:ContactPoint .
+
+issnshapes:P150 sh:path schema:email;
+  sh:name "e-mail"@en;
+  sh:description "E-mail of the person"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "not applicable" .
+
+issnshapes:P151 sh:path schema:contactType;
+  sh:name "main contact ?"@en;
+  sh:description "Contains the string \"Main contact point\" for the first contact point in the list"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "not applicable" .
+
+issnshapes:P152 sh:path schema:name;
+  sh:name "name"@en;
+  sh:description "Concatenation of the civility, first name, last name and job position"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "not applicable" .
+
+issnshapes:P153 sh:path schema:telephone;
+  sh:name "telephone"@en;
+  sh:description "Can be repeated for multiple phone numbers"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "not applicable" .
+
+issnshapes:P154 sh:path schema:faxNumber;
+  sh:name "faxNumber"@en;
+  sh:description "Fax number"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "not applicable" .
+
+issnshapes:P156 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:hasValue schema:PostalAddress .
+
+issnshapes:P157 sh:path schema:streetAddress;
+  sh:name "address"@en;
+  sh:description "Full street address of the ISSN Centre"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "not applicable" .
+
+issnshapes:P158 sh:path schema:addressLocality;
+  sh:name "city"@en;
+  sh:description "City of the ISSN Centre"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "not applicable" .
+
+issnshapes:P159 sh:path schema:addressCountry;
+  sh:name "address country"@en;
+  sh:description "ISO code of the country for the address (duplicated from the country of the Centre itself)"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "not applicable" .
+
+issnshapes:P161 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:in _:17d00ff6071d48b4a355f4284ed63c331269 .
+
+_:17d00ff6071d48b4a355f4284ed63c331269 rdf:first bf:ClassificationUdc;
+  rdf:rest _:17d00ff6071d48b4a355f4284ed63c331270 .
+
+_:17d00ff6071d48b4a355f4284ed63c331270 rdf:first bf:ClassificationDdc;
+  rdf:rest rdf:nil .
+
+issnshapes:P162 sh:path rdf:value;
+  sh:name "value"@en;
+  sh:description "This property contains the actual classification value."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "080$a, 082$a" .
+
+issnshapes:P164 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:hasValue bf:Note .
+
+issnshapes:P165 sh:path bf:noteType;
+  sh:name "note type"@en;
+  sh:description "This property contains the type of the note, as a string literal."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "588$a" .
+
+issnshapes:P166 sh:path rdf:value;
+  sh:name "value"@en;
+  sh:description "This property contains the actual note value, as a string literal."@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dct:source "588$a" .
+
+issnshapes:P168 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:hasValue schema:ArchiveComponent .
+
+issnshapes:P169 sh:path schema:creativeWorkStatus;
+  sh:name "archive status"@en;
+  sh:description "This property contains one the possible string : \"Archived\", \"In Progress\" or \"Triggered\", value example : \"Archived\""@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+issnshapes:P170 sh:path schema:description;
+  sh:name "archive extent (full)"@en;
+  sh:description "Contains the full extent of the archive's content, value example : \"Archived : 13; 20 (2 to 4); 21 (1 to 4); 22 (1 to 4); 23 (1 to 4); 24 (1 to 4); 25 (1 to 4); 26 (1 to 4); 27 (1 to 4); 28 (1 to 4); 29 (1 to 4); 30 (1 to 4); 31 (1 to 4); 32 (1 to 4); 33 (1 to 4); 34 (1 to 4); 35 (1 to 4); 36 (1 to 4); 37 (1 to 4); 38 (1 to 4); 39 (1 to 4); 40 (1, 3, 4); 42; 43 (2); 44 (3)\""@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+issnshapes:P171 sh:path schema:abstract;
+  sh:name "archive extent (short)"@en;
+  sh:description "Contains the shortened version of the archive's content. Either both full and short extent are present, either none is present, value example : \"Archived : 13, 20 to 40, 42 to 44\""@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+issnshapes:P172 sh:path schema:dateModified;
+  sh:name "last update date"@en;
+  sh:description "The date the archive was last updated, value example : \"2020-04-02\"^^xsd:date"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:date .
+
+issnshapes:P173 sh:path schema:temporalCoverage;
+  sh:name "temporal coverage"@en;
+  sh:description "Captures the start and end year of the archive, in the form \"start year/end year\", value example : 1988/2000"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+issnshapes:P174 sh:path schema:mainEntity;
+  sh:name "archived serial description (as provided by archival institution)"@en;
+  sh:description "Points to a blank node without any type information, holding the name, publisher and ISSN of the archived periodical (see below)"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:node issnshapes:ISSNProvidedResourceDescription .
+
+issnshapes:P175 sh:path schema:url;
+  sh:name "url (when accessible online)"@en;
+  sh:description "Contains the URL where the archive is accessible, when it is accessible online"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:anyUri .
+
+issnshapes:P176 sh:path schema:holdingArchive;
+  sh:name "archival organisation"@en;
+  sh:description "Refers to the responsible archival organisation"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNArchiveOrganization .
+
+issnshapes:P177 sh:path schema:isPartOf;
+  sh:name "web archive"@en;
+  sh:description "Refers to the complete archive entity that holds this particular archive"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNCompleteArchive .
+
+issnshapes:P179 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer .
+
+issnshapes:P180 sh:path schema:name;
+  sh:name "name"@en;
+  sh:description "Title of the archived serial, as provided by the archival institution, value example : \"Medical Dosimetry\""@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+issnshapes:P181 sh:path schema:publisher;
+  sh:name "publisher"@en;
+  sh:description "Name of the publisher of the serial, as provided by the archival institution, value example : \"Elsevier\""@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+issnshapes:P182 sh:path schema:issn;
+  sh:name "issn"@en;
+  sh:description "ISSN of the archived serial, as provided by the archival institution. At least one ISSN is present. This can be present 2 times with the print and electronic ISSN, value example : \"0958-3947\""@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "2"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+issnshapes:P184 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer .
+
+issnshapes:P185 sh:path bf:mainTitle;
+  sh:name "main title"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype rdf:langString .
+
+issnshapes:P190 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:hasValue schema:ArchiveOrganization .
+
+issnshapes:P191 sh:path schema:name;
+  sh:name "name"@en;
+  sh:description "Name of the archival institution, value example : \"CLOCKSS Archive\""@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+issnshapes:P192 sh:path schema:identifier;
+  sh:name "identifier"@en;
+  sh:description "Code of the archival institution, value example : \"clockss\""@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+issnshapes:P194 sh:path rdf:type;
+  sh:name "type"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:hasValue schema:ArchiveComponent .
+
+issnshapes:P195 sh:path schema:name;
+  sh:name "name"@en;
+  sh:description "Name of the archive, value example : \"Wayback machine\""@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+issnshapes:P196 sh:path schema:holdingArchive;
+  sh:name "archival organisation"@en;
+  sh:description "Refers to the responsible archival organisation"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:node issnshapes:ISSNArchiveOrganization .
+
+issnshapes:P203 sh:path skos:inScheme;
+  sh:name "skos:inScheme"@en;
+  sh:hasValue <http://id.loc.gov/vocabulary/carriers> .
+
+issnshapes:P204 sh:path skos:inScheme;
+  sh:name "skos:inScheme"@en;
+  sh:hasValue <http://id.loc.gov/vocabulary/contentTypes> .
+
+issnshapes:P205 sh:path skos:inScheme;
+  sh:name "skos:inScheme"@en;
+  sh:hasValue <http://id.loc.gov/vocabulary/mediaTypes> .
+
+issnshapes:P206 sh:path skos:inScheme;
+  sh:name "skos:inScheme"@en;
+  sh:hasValue m21terms:continuingreg .
+
+issnshapes:P207 sh:path skos:inScheme;
+  sh:name "skos:inScheme"@en;
+  sh:hasValue m21terms:formofmaterial .
+
+issnshapes:P208 sh:path skos:inScheme;
+  sh:name "skos:inScheme"@en;
+  sh:hasValue <http://id.loc.gov/vocabulary/countries> .
+
+issnshapes:P209 sh:path skos:inScheme;
+  sh:name "skos:inScheme"@en;
+  sh:hasValue m21terms:formofmaterial .
+
+issnshapes:P210 sh:path skos:inScheme;
+  sh:name "skos:inScheme"@en;
+  sh:hasValue m21terms:alltyp .
+
+issnshapes:P211 sh:path skos:inScheme;
+  sh:name "skos:inScheme"@en;
+  sh:hasValue m21terms:continuingori .
+
+issnshapes:P212 sh:path skos:inScheme;
+  sh:name "skos:inScheme"@en;
+  sh:hasValue m21terms:commonfor .
+
+issnshapes:P213 sh:path skos:inScheme;
+  sh:name "skos:inScheme"@en;
+  sh:hasValue m21terms:continuingscr .
+
+issnshapes:P214 sh:path skos:inScheme;
+  sh:name "skos:inScheme"@en;
+  sh:hasValue <http://udcdata.info/udc-schema> .
+
+issnshapes:P215 sh:path skos:inScheme;
+  sh:name "skos:inScheme"@en;
+  sh:hasValue <http://id.loc.gov/vocabulary/languages> .
+
+issnshapes:P216 sh:path skos:inScheme;
+  sh:name "skos:inScheme"@en;
+  sh:hasValue <http://issn.org/vocabularies/RecordStatus> .
+
+issnshapes:P217 sh:path skos:inScheme;
+  sh:name "skos:inScheme"@en;
+  sh:hasValue <http://issn.org/vocabularies/IdStatus> .
+
+issnshapes:P219 sh:path skos:inScheme;
+  sh:name "skos:inScheme"@en;
+  sh:hasValue <http://issn.org/vocabularies/Medium> .
+
+issnshapes:controlledVocs a sh:PropertyGroup;
+  rdfs:label "controlled vocs."@en .
