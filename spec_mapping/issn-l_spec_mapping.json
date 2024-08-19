@@ -11,11 +11,8 @@
 
   // toujours vide
   "id" : "",
-  // toujours les 2 même valeurs
-  "type" : [
-      "bf:Instance",
-      "bf:Work"
-  ],
+  // toujours la même valeur
+  "type" : "schema:CreativeWork",
   "identifiedBy" : {
     // insérer l'ISSN-L
     "id" : "resource:ISSN/0256-8888#ISSN-L",
