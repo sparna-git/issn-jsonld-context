@@ -137,6 +137,22 @@
     "wasAttributedTo" : {
       "id" : "issnCenter:_7",
       "type" : "schema:Organization"
+    },
+    "generated_by" : {
+      "id" : "#RecordCreation",
+      "type" : "prov:Activity",
+      "generated" : [ 
+        "#KeyTitle",
+        "#ISSN-L",
+        "#ISSN",
+        "#Record"
+      ],
+      // date de création du Record, 039$v
+      // prende la plus ancienne si il y en a plusieurs
+      "created" : "YYYY-MM-DD",
+      // 699$v
+      // centre qui a créé le record à l'origine
+      "wasAssociatedWith" : "issnCenter:xxxxxx"
     }
   },
 
