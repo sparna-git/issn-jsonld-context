@@ -69,7 +69,9 @@
   // si commence par "cr" = medium:Online
   // si commence par "co" = medium:DigitalCarrier
   // sinon = medium:Other
-  "format" : "medium:Print",
+  "format" : [
+    "medium:Print"
+  ],
   // 022$a 
   "identifier" : "0247-0624",
   // LDR/06 qui sera toujours "a"

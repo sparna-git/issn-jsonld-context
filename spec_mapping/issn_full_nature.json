@@ -227,22 +227,12 @@
   "accrualPeriodicity" : "http://purl.org/cld/freq/weekly",
   "spatial" : [
     // pays MARC
-    {
-      "id" : "http://id.loc.gov/vocabulary/countries/enk",
-      "label" : "England"
-    },
+    "http://id.loc.gov/vocabulary/countries/enk",
     // pays ISO
-    {
-      // la génération de cette URL demande à avoir
-      // une table de correspondance entre le code 3 lettres du pays stocké en base,
-      // son code 2 lettres pour construire l'URL
-      // et son libellé
-      "id" : "https://www.iso.org/obp/ui/#iso:code:3166:UK",
-      "label" : "..."
-    },
+    "https://www.iso.org/obp/ui/#iso:code:3166:UK"
   ],
   // LDR/06
-  "type_dct" : "http://marc21rdf.info/terms/formofmaterial#a",
+  "type_dct" : "formofmaterial:a",
   // 981$u, 982$u, 983$u, 984$u, 985$u, 986$u, 987$u
   // CDU simplifiée
   // ces zones stockent l'information de hiérarchie de la CDU simplifiée
@@ -598,9 +588,9 @@
     }
   ],
   // 022$m
-  "hasCancelledISSN-L" : "",
+  "hasCancelledISSN-L" : [ "" ],
   // 022$y
-  "hasIncorrectISSN" : "",
+  "hasIncorrectISSN" : [ "" ],
   // 710$a, 710$b, 711$a - une schema:Organization
   // on va aussi prendre le champ 720
   // on recopie ici les URIs générées pour la propriété "isb"
@@ -610,7 +600,7 @@
     ""
   ],
   // 856$u
-  "url": "",
+  "url": [ "" ],
   // 920
   // voir l'autre exemple avec les métadonnées Keepers .
   // est-ce qu'on le garde ici ?
